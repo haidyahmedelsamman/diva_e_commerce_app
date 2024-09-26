@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:965153425522:android:31cd34d90cf9301d0c1aeb",
         "android_client_info": {
-          "package_name": "diva.e_commerce_app"
+          "package_name": "com.example.diva_e_commerce_app"
         }
       },
       "oauth_client": [],

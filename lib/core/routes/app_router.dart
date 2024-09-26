@@ -6,11 +6,12 @@ class AppRouter {
   static Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.animatedSplashScreenRoute:
-        return MaterialPageRoute(
-          builder: (_) {
-            return const AnimatedSplashScreen();
-          },
+        return PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) =>
+              const AnimatedSplashScreen(),
+          transitionDuration: Duration.zero,
         );
+
       case AppRoutes.homeScreenRoute:
         return PageRouteBuilder(
           pageBuilder: (context, animation1, animation2) => const HomeScreen(),
