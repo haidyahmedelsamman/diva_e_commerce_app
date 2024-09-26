@@ -1,3 +1,4 @@
+import 'package:diva_e_commerce_app/core/routes/app_router.dart';
 import 'package:flutter/material.dart';
 
 class DivaECommerceApp extends StatelessWidget {
@@ -5,10 +6,9 @@ class DivaECommerceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Diva E-Commerce App'),
-      ),
+    return const MaterialApp(
+      initialRoute: AppRoutes.animatedSplashScreenRoute,
+      onGenerateRoute: AppRouter.generateRoute,
     );
   }
 }

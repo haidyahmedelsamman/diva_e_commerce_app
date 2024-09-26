@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "965153425522",
+    "project_id": "diva-e-commerce-app",
+    "storage_bucket": "diva-e-commerce-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965153425522:android:31cd34d90cf9301d0c1aeb",
+        "android_client_info": {
+          "package_name": "diva.e_commerce_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1Ne5lE4c3FtF-baLHblRWoFqQ-IcR1jI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
