@@ -54,9 +54,10 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyD1Ne5lE4c3FtF-baLHblRWoFqQ-IcR1jI',
-    appId: '1:965153425522:android:31cd34d90cf9301d0c1aeb',
+    appId: '1:965153425522:android:fad3c7e91a3afa690c1aeb',
     messagingSenderId: '965153425522',
     projectId: 'diva-e-commerce-app',
     storageBucket: 'diva-e-commerce-app.appspot.com',
   );
+
 }
