@@ -24,6 +24,12 @@ class SignUpScreen extends StatelessWidget {
                 style: TextStyleManager.font24BlackRegular,
               ),
               verticalSpace(16),
+              Image.asset(
+                StringManager.signUpImagePath,
+                width: 230,
+                height: 230,
+              ),
+              verticalSpace(16),
             ],
           ),
         ),
