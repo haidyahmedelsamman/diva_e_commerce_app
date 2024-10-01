@@ -1,6 +1,7 @@
 class StringManager {
   static const String signUp = 'Sign UP';
   static const String email = 'E-mail';
+  static const String alreadyHaveAnAcount = 'Already have an account?';
   static const String password = 'Password';
   static const String confirmPassword = 'Confirm Password';
   static const String imageBasePath = 'assets/images';

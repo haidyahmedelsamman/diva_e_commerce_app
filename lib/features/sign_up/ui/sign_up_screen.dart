@@ -1,4 +1,7 @@
+import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
 import 'package:diva_e_commerce_app/core/widgets/app_text_form_field.dart';
+import 'package:diva_e_commerce_app/core/widgets/or_divider.dart';
+import 'package:diva_e_commerce_app/features/sign_up/ui/widgets/already_have_account.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -49,6 +52,13 @@ class SignUpScreen extends StatelessWidget {
                   size: 24.sp,
                 ),
               ),
+              const OrDivider(),
+              CircleAvatar(
+                backgroundColor: ColorsManager.white,
+                radius: 30,
+              ),
+              verticalSpace(40),
+              const AlreadyHaveAccount(),
             ],
           ),
         ),
