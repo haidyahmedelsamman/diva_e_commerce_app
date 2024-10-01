@@ -6,4 +6,6 @@ class StringManager {
   static const String confirmPassword = 'Confirm Password';
   static const String imageBasePath = 'assets/images';
   static const String signUpImagePath = '$imageBasePath/signup_welcome.png';
+  static const String googleIconPath = '$imageBasePath/google_icon.png';
+  static const String facebookIconPath = '$imageBasePath/facebook_icon.png';
 }

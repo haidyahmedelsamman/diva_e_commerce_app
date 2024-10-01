@@ -8,6 +8,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/constants/string_manager.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theme/text_style_manager.dart';
+import '../../../core/widgets/cricle_avatar_icon.dart';
+import '../../../core/widgets/row_cricle_avatar_icon.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -53,11 +55,8 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
               const OrDivider(),
-              CircleAvatar(
-                backgroundColor: ColorsManager.white,
-                radius: 30,
-              ),
-              verticalSpace(40),
+              const RowCricleAvatarIcon(),
+              verticalSpace(20),
               const AlreadyHaveAccount(),
             ],
           ),
