@@ -1,3 +1,4 @@
+import 'package:diva_e_commerce_app/core/widgets/app_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,11 +15,12 @@ class SignUpScreen extends StatelessWidget {
       body: SafeArea(
           child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 30.h, horizontal: 30.w),
+          padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 22.w),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            //      mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              verticalSpace(100),
+              verticalSpace(50),
               Text(
                 StringManager.signUp,
                 style: TextStyleManager.font24BlackRegular,
@@ -30,6 +32,23 @@ class SignUpScreen extends StatelessWidget {
                 height: 230,
               ),
               verticalSpace(16),
+              const AppTextFormField(hintText: StringManager.email),
+              verticalSpace(10),
+              AppTextFormField(
+                hintText: StringManager.password,
+                suffixIcon: Icon(
+                  Icons.visibility,
+                  size: 24.sp,
+                ),
+              ),
+              verticalSpace(10),
+              AppTextFormField(
+                hintText: StringManager.confirmPassword,
+                suffixIcon: Icon(
+                  Icons.visibility,
+                  size: 24.sp,
+                ),
+              ),
             ],
           ),
         ),
