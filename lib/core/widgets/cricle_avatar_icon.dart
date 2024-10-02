@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../constants/string_manager.dart';
 import '../theme/colors_manager.dart';
 
 class CricleAvatarIcon extends StatelessWidget {
