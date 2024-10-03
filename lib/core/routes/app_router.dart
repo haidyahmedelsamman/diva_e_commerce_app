@@ -1,6 +1,7 @@
 import 'package:diva_e_commerce_app/features/animated_splash/animated_splash_screen.dart';
-import 'package:diva_e_commerce_app/features/home_screen/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../features/home_screen/presentation/screens/home_screen.dart';
 
 class AppRouter {
   static Route? generateRoute(RouteSettings settings) {
