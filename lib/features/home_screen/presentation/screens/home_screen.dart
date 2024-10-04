@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../widgets/ads_list_view.dart';
+import '../widgets/bottom_nav_bar.dart';
 import '../widgets/categories_list_view.dart';
 import '../widgets/home_top_bar.dart';
 import '../widgets/search_text_field_and_filter.dart';
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             20.0,
             16.0,
             20.0,
-            28.0,
+            8.0,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,6 +46,8 @@ class HomeScreen extends StatelessWidget {
               const CategoriesListView(),
               verticalSpace(18),
               const OutfitsListView(),
+              verticalSpace(10),
+              const BottomNavBar(),
             ],
           ),
         ),
