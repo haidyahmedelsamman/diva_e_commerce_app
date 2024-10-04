@@ -1,3 +1,4 @@
+import 'package:diva_e_commerce_app/features/home_screen/presentation/widgets/outfits_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -40,8 +41,10 @@ class HomeScreen extends StatelessWidget {
                 validator: (value) {},
               ),
               const AdsListView(),
-              verticalSpace(14),
+              verticalSpace(18),
               const CategoriesListView(),
+              verticalSpace(18),
+              const OutfitsListView(),
             ],
           ),
         ),
