@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../widgets/ads_list_view.dart';
+import '../widgets/categories_list_view.dart';
 import '../widgets/home_top_bar.dart';
 import '../widgets/search_text_field_and_filter.dart';
 
@@ -39,6 +40,8 @@ class HomeScreen extends StatelessWidget {
                 validator: (value) {},
               ),
               const AdsListView(),
+              verticalSpace(14),
+              const CategoriesListView(),
             ],
           ),
         ),
