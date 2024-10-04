@@ -9,6 +9,11 @@ class TextStyleManager {
     fontWeight: FontWeightManager.regular,
     color: ColorsManager.black,
   );
+  static TextStyle font16GreyBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightManager.bold,
+    color: ColorsManager.grey,
+  );
   static TextStyle font18GreyRegular = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightManager.regular,
@@ -16,6 +21,11 @@ class TextStyleManager {
   );
   static TextStyle font14PrimaryRegular = TextStyle(
     fontSize: 14.sp,
+    fontWeight: FontWeightManager.regular,
+    color: ColorsManager.primary,
+  );
+  static TextStyle font18PrimaryRegular = TextStyle(
+    fontSize: 18.sp,
     fontWeight: FontWeightManager.regular,
     color: ColorsManager.primary,
   );
