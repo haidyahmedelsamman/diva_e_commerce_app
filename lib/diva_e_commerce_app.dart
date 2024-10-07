@@ -44,7 +44,7 @@ class AppWithThemeSwitcher extends StatelessWidget {
           theme: AppThemeData.lightTheme,
           darkTheme: AppThemeData.darkTheme,
           onGenerateRoute: AppRouter.generateRoute,
-          initialRoute: AppRoutes.profileScreenRoute,
+          initialRoute: AppRoutes.animatedSplashScreenRoute,
         );
       },
     );

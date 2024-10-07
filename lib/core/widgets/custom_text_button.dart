@@ -1,5 +1,6 @@
 import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
 import 'package:diva_e_commerce_app/core/theme/text_style_manager.dart';
+import 'package:diva_e_commerce_app/core/widgets/custom_button_inkwell.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextButton extends StatelessWidget {
@@ -22,11 +23,10 @@ class CustomTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onPressed,
-      borderRadius: getBorderRadius(),
+    return CustomButtonInkWell(
+      onPressed: onPressed,
+      borderRadius: borderRadius ?? 20,
       child: Container(
-        margin: const EdgeInsets.all(5),
         padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 10),
         decoration: BoxDecoration(
           borderRadius: getBorderRadius(),

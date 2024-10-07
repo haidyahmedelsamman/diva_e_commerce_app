@@ -21,7 +21,7 @@ class AnimatedSplashScreenState extends State<AnimatedSplashScreen>
     Timer(
       const Duration(seconds: 3),
       () {
-        context.pushReplacementNamed(AppRoutes.profileScreenRoute);
+        context.pushReplacementNamed(AppRoutes.homeScreenRoute);
       },
     );
   }
