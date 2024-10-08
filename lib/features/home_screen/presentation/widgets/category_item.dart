@@ -4,6 +4,7 @@ import 'package:diva_e_commerce_app/core/theme/text_style_manager.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
+  final String categoryName;
   final int itemIndex;
   final bool isSelected;
 
@@ -11,6 +12,7 @@ class CategoryItem extends StatelessWidget {
     super.key,
     required this.itemIndex,
     required this.isSelected,
+    required this.categoryName,
   });
 
   @override
@@ -33,7 +35,7 @@ class CategoryItem extends StatelessWidget {
       ),
       child: Text(
         textAlign: TextAlign.center,
-        'New in',
+        categoryName,
         style: isSelected
             ? TextStyleManager.font14LightPrimaryRegular
             : TextStyleManager.font14PrimaryRegular,

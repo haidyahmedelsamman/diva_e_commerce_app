@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoriesListView extends StatelessWidget {
-  const CategoriesListView({super.key});
+  final List<String> categoriesList;
+  const CategoriesListView({super.key, required this.categoriesList});
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +12,10 @@ class CategoriesListView extends StatelessWidget {
       height: 30.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 10,
+        itemCount: categoriesList.length,
         itemBuilder: (context, index) {
           return CategoryItem(
+            categoryName: categoriesList[index],
             isSelected: index == 1 ? true : false,
             itemIndex: index,
           );
