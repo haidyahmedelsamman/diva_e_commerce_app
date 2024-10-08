@@ -23,4 +23,9 @@ class HomeState with _$HomeState {
   /// [errorMessage] contains the details of what went wrong.
   const factory HomeState.categoriesError(String errorMessage) =
       CategoriesError;
+
+  /// Represents the state when a category is clicked.
+  /// [indexOfCategory] holds the index of the selected category.
+  const factory HomeState.onCategoryClick(int indexOfCategory) =
+      OnCategoryClick;
 }

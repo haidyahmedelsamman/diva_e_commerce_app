@@ -1,7 +1,6 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
 import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
 import 'package:diva_e_commerce_app/core/theme/text_style_manager.dart';
-import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
   final String categoryName;
@@ -10,9 +9,9 @@ class CategoryItem extends StatelessWidget {
 
   const CategoryItem({
     super.key,
+    required this.categoryName,
     required this.itemIndex,
     required this.isSelected,
-    required this.categoryName,
   });
 
   @override

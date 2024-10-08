@@ -1,6 +1,5 @@
 import 'package:diva_e_commerce_app/features/home_screen/logic/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../data/repos/home_repo.dart';
 
 /// The HomeCubit class is responsible for managing the state of the home feature.
@@ -12,6 +11,19 @@ class HomeCubit extends Cubit<HomeState> {
 
   // A list to hold the fetched categories.
   List<String?> categoriesList = [];
+
+  // Flags and variables to handle category selection.
+  bool isCategorySelected = false;
+  var selectedCategoriesIndex = 0;
+
+  /// Handles the logic for when a category is clicked.
+  /// Updates the selected category index and emits the [OnCategoryClick] state.
+  /// [index] is the index of the category that was clicked.
+  void onCategoryClick(int index) {
+    selectedCategoriesIndex = index;
+    isCategorySelected = true;
+    emit(HomeState.onCategoryClick(index));
+  }
 
   /// Fetches categories from the repository and emits appropriate states.
   void getCategories() async {
