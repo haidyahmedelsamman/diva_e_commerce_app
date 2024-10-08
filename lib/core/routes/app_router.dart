@@ -1,8 +1,8 @@
 import 'package:diva_e_commerce_app/features/animated_splash/animated_splash_screen.dart';
 import 'package:diva_e_commerce_app/features/home_screen/presentation/screens/home_screen.dart';
+import 'package:diva_e_commerce_app/features/sign_in/ui/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import '../../features/sign_up/ui/sign_up_screen.dart';
-
 
 class AppRouter {
   static Route? generateRoute(RouteSettings settings) {
@@ -19,6 +19,13 @@ class AppRouter {
           pageBuilder: (context, animation1, animation2) => const HomeScreen(),
           transitionDuration: Duration.zero,
         );
+      case AppRoutes.signInScreenRoute:
+        return PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) =>
+              const SignInScreen(),
+          transitionDuration: Duration.zero,
+        );
+
       case AppRoutes.signUpScreenRoute:
         return PageRouteBuilder(
           pageBuilder: (context, animation1, animation2) =>
@@ -34,5 +41,6 @@ class AppRouter {
 class AppRoutes {
   static const String animatedSplashScreenRoute = '/animatedSplashScreenRoute ';
   static const String signUpScreenRoute = '/signUpScreenRoute ';
+  static const String signInScreenRoute = '/signInScreenRoute ';
   static const String homeScreenRoute = '/homeScreenRoute ';
 }
