@@ -1,3 +1,4 @@
+import 'package:diva_e_commerce_app/features/home_screen/data/models/category_products_response_model.dart';
 import 'package:diva_e_commerce_app/features/home_screen/logic/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../data/repos/home_repo.dart';
@@ -37,11 +38,35 @@ class HomeCubit extends Cubit<HomeState> {
       // On success, update the categories list and emit success state.
       success: (categoriesResponse) {
         categoriesList = categoriesResponse;
+        getCategoryProducts(categoriesList[selectedCategoriesIndex] ?? '');
         emit(HomeState.categoriesSuccess(categoriesResponse));
       },
       // On failure, emit error state with the error message.
       failure: (errorMessage) {
         emit(HomeState.categoriesError(errorMessage));
+      },
+    );
+  }
+
+  List<ProductModel> productsList = [];
+
+  /// Fetches products of each category from the repository and emits appropriate states.
+  void getCategoryProducts(String categoryName) async {
+    // Emit loading state
+    emit(const HomeState.categoryProductsLoading());
+
+    // Fetch products of each cayegory from the repository
+    final response = await _homeRepo.getCategoryProducts(categoryName);
+
+    response.when(
+      // On success, update the products list and emit success state.
+      success: (categoryProductsResponseModel) {
+        productsList = categoryProductsResponseModel;
+        emit(HomeState.categoryProductsSuccess(productsList));
+      },
+      // On failure, emit error state with the error message.
+      failure: (errorMessage) {
+        emit(HomeState.categoryProductsError(errorMessage));
       },
     );
   }

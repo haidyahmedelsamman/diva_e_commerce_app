@@ -1,14 +1,12 @@
+import 'package:diva_e_commerce_app/features/home_screen/logic/home_cubit.dart';
 import 'package:diva_e_commerce_app/features/home_screen/logic/home_state.dart';
-import 'package:diva_e_commerce_app/features/home_screen/presentation/widgets/category_item.dart';
+import 'package:diva_e_commerce_app/features/home_screen/presentation/widgets/categories_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../logic/home_cubit.dart';
+import '../../../../core/theme/colors_manager.dart';
 
 class CategoriesListViewBuilder extends StatelessWidget {
-  final List<String> categoriesList;
-  const CategoriesListViewBuilder({super.key, required this.categoriesList});
+  const CategoriesListViewBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,29 +14,26 @@ class CategoriesListViewBuilder extends StatelessWidget {
       buildWhen: (previous, current) =>
           current is CategoriesLoading ||
           current is CategoriesSuccess ||
-          current is CategoriesError ||
-          current is OnCategoryClick,
+          current is CategoriesError,
       builder: (context, state) {
-        return SizedBox(
-          height: 30.h,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: categoriesList.length,
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                onTap: () {
-                  context.read<HomeCubit>().onCategoryClick(index);
-                },
-                child: CategoryItem(
-                  categoryName: categoriesList[index],
-                  isSelected:
-                      context.read<HomeCubit>().selectedCategoriesIndex ==
-                          index,
-                  itemIndex: context.read<HomeCubit>().selectedCategoriesIndex,
+        return state.maybeWhen(
+          categoriesLoading: () {
+            return Expanded(
+              child: Center(
+                child: CircularProgressIndicator(
+                  color: ColorsManager.primary,
                 ),
-              );
-            },
-          ),
+              ),
+            );
+          },
+          categoriesSuccess: (categoriesDataList) {
+            var categoriesList = categoriesDataList;
+            return CategoriesListView(categoriesList: categoriesList);
+          },
+          categoriesError: (errorHandler) => const SizedBox.shrink(),
+          orElse: () {
+            return const SizedBox.shrink();
+          },
         );
       },
     );

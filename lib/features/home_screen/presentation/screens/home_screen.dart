@@ -1,9 +1,11 @@
-import 'package:diva_e_commerce_app/features/home_screen/presentation/widgets/home_body.dart';
+import 'package:diva_e_commerce_app/features/home_screen/presentation/widgets/categories_list_view_builder.dart';
+import 'package:diva_e_commerce_app/features/home_screen/presentation/widgets/outfits_list_view_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../widgets/ads_list_view.dart';
+import '../widgets/bottom_nav_bar.dart';
 import '../widgets/home_top_bar.dart';
 import '../widgets/search_text_field_and_filter.dart';
 
@@ -41,7 +43,11 @@ class HomeScreen extends StatelessWidget {
               ),
               const AdsListView(),
               verticalSpace(18),
-              const HomeBody(),
+              const CategoriesListViewBuilder(),
+              verticalSpace(18),
+              const OutfitsListViewBuilder(),
+              verticalSpace(10),
+              const BottomNavBar(),
             ],
           ),
         ),

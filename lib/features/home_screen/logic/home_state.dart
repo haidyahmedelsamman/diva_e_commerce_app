@@ -1,3 +1,4 @@
+import 'package:diva_e_commerce_app/features/home_screen/data/models/category_products_response_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'home_state.freezed.dart';
@@ -28,4 +29,17 @@ class HomeState with _$HomeState {
   /// [indexOfCategory] holds the index of the selected category.
   const factory HomeState.onCategoryClick(int indexOfCategory) =
       OnCategoryClick;
+
+  /// Represents the loading state when products of a specific category are being fetched.
+  const factory HomeState.categoryProductsLoading() = CategoryProductsLoading;
+
+  /// Represents the success state when products of a specific category have been successfully fetched.
+  /// [categoryProductsResponseModel] contains the data of the fetched products.
+  const factory HomeState.categoryProductsSuccess(
+      List<ProductModel> productsDataList) = CategoryProductsSuccess;
+
+  /// Represents the error state when there is an issue fetching products for a specific category.
+  /// [errorMessage] contains the details of what went wrong.
+  const factory HomeState.categoryProductsError(String errorMessage) =
+      CategoryProductsError;
 }

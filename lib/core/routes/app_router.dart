@@ -21,7 +21,10 @@ class AppRouter {
       case AppRoutes.homeScreenRoute:
         return PageRouteBuilder(
           pageBuilder: (context, animation1, animation2) => BlocProvider(
-            create: (context) => getIt<HomeCubit>()..getCategories(),
+            create: (context) {
+              return getIt<HomeCubit>()
+                ..getCategories();
+            },
             child: const HomeScreen(),
           ),
           transitionDuration: Duration.zero,
