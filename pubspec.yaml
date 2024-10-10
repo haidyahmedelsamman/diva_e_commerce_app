@@ -34,7 +34,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   dio: ^5.7.0
   firebase_auth: ^4.19.6
-  firebase_core: ^2.31.1
+  firebase_core: ^2.32.0
   firebase_storage: ^11.6.11
   flutter:
     sdk: flutter
@@ -50,6 +50,7 @@ dependencies:
   json_annotation: ^4.9.0
   json_serializable: ^6.8.0
   lottie: ^3.1.2
+  pretty_dio_logger: ^1.4.0
   retrofit: ^4.4.1
   retrofit_generator: ^9.1.2
   shared_preferences: ^2.3.2
