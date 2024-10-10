@@ -1,18 +1,21 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:diva_e_commerce_app/core/helpers/spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'package:diva_e_commerce_app/core/helpers/spacing.dart';
 import 'package:diva_e_commerce_app/core/theme/text_style_manager.dart';
+import 'package:diva_e_commerce_app/features/home_screen/data/models/category_products_response_model.dart';
 
 class OutfitItem extends StatelessWidget {
   final int itemIndex;
   final bool isFavorite;
+  final ProductModel productModel;
   const OutfitItem({
     super.key,
     required this.itemIndex,
     required this.isFavorite,
+    required this.productModel,
   });
 
   @override
@@ -30,9 +33,11 @@ class OutfitItem extends StatelessWidget {
                   12.r,
                 ),
               ),
-              child: Image.asset(
-                'assets/images/outfit.png',
-                fit: BoxFit.contain,
+              child: SizedBox(
+                child: Image.network(
+                  productModel.image ?? '',
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             Align(
@@ -68,10 +73,15 @@ class OutfitItem extends StatelessWidget {
             right: 12.sp,
           ),
           child: Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                'Baby blue blouse',
-                style: TextStyleManager.font12GrayRegular,
+              SizedBox(
+                width: 90.w,
+                child: Text(
+                  productModel.title ?? 'Title',
+                  style: TextStyleManager.font12GrayRegular,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
               const Spacer(),
               Icon(
@@ -85,7 +95,7 @@ class OutfitItem extends StatelessWidget {
         verticalSpace(4),
         Padding(
           padding: EdgeInsets.only(left: 12.0.sp),
-          child: const Text('500 L.E'),
+          child: Text('${productModel.price} L.E'),
         ),
       ],
     );
