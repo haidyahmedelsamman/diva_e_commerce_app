@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
 import 'package:diva_e_commerce_app/core/routes/app_router.dart';
 import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
@@ -16,9 +18,12 @@ class AnimatedSplashScreenState extends State<AnimatedSplashScreen>
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
-      context.pushReplacementNamed(AppRoutes.signUpScreenRoute);
-    });
+    Timer(
+      const Duration(seconds: 3),
+      () {
+        context.pushReplacementNamed(AppRoutes.homeScreenRoute);
+      },
+    );
   }
 
   @override

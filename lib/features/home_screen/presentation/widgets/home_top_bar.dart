@@ -1,4 +1,7 @@
+import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
+import 'package:diva_e_commerce_app/core/routes/app_router.dart';
 import 'package:diva_e_commerce_app/core/theme/text_style_manager.dart';
+import 'package:diva_e_commerce_app/core/widgets/custom_button_inkwell.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -12,11 +15,16 @@ class HomeTopBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Image.asset(
-          'assets/images/profile.png',
-          height: 50.h,
-          width: 50.w,
-        ),
+        CustomButtonInkWell(
+            borderRadius: 100,
+            onPressed: () {
+              context.pushNamed(AppRoutes.profileScreenRoute);
+            },
+            child: Image.asset(
+              'assets/images/profile.png',
+              width: 50.r,
+              height: 50.r,
+            )),
         horizontalSpace(8),
         Text(
           'Welcome, Haidy',

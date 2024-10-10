@@ -1,12 +1,10 @@
 flutter_native_splash:
-  color: "#FEEAF6"  
-  color_dark: "#FEEAF6"  
+  color: "#FEEAF6"  # Light mode background color
+  color_dark: "#FEEAF6"  # Ensure the same color is used for dark mode
   image: assets/images/splash.png
   android_12:
     image: assets/images/splash.png
-    color: "#FEEAF6"
-    color_dark: "#FEEAF6"  
-    icon_background_color: "#FEEAF6"
-    icon_background_color_dark: "#FEEAF6"
+    color: "#FEEAF6"  # Ensure the color is set for Android 12
+    icon_background_color: "#FEEAF6"  # Optional: Set to ensure icon matches the splash color
   android: true
   fullscreen: true
