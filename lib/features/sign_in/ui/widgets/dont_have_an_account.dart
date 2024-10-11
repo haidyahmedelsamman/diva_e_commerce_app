@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class DontHaveAnAccount extends StatelessWidget {
   const DontHaveAnAccount({super.key});
-//  LoginScreen
+
   @override
   Widget build(BuildContext context) {
     return RichText(

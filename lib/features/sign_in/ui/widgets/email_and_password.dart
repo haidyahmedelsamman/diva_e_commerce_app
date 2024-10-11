@@ -15,7 +15,6 @@ class EmailAndPassword extends StatelessWidget {
         const AppTextFormField(hintText: StringManager.email),
         verticalSpace(10),
         AppTextFormField(
-          onchanged: (data) {},
           hintText: StringManager.password,
           suffixIcon: Icon(
             Icons.visibility,

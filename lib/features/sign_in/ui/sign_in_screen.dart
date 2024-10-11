@@ -40,7 +40,17 @@ class SignInScreen extends StatelessWidget {
                 buttonText: StringManager.signIn,
                 onPressed: () {},
                 textStyle: TextStyleManager.font18WhiteRegular,
+
               ),
+               Align(
+                      alignment: Alignment.topRight,
+                      child: GestureDetector(
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyleManager.font18PrimaryRegular,
+                        ),
+                      ),
+                    ),
               const OrDivider(),
               const RowCricleAvatarIcon(),
               verticalSpace(20),
