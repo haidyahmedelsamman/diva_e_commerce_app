@@ -1,8 +1,10 @@
 import 'package:diva_e_commerce_app/features/animated_splash/animated_splash_screen.dart';
 import 'package:diva_e_commerce_app/features/home_screen/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../features/sign_up/logic/sign_up_cubit.dart';
 import '../../features/sign_up/ui/sign_up_screen.dart';
-
+import '../di/dependency_injection.dart';
 
 class AppRouter {
   static Route? generateRoute(RouteSettings settings) {
@@ -21,8 +23,10 @@ class AppRouter {
         );
       case AppRoutes.signUpScreenRoute:
         return PageRouteBuilder(
-          pageBuilder: (context, animation1, animation2) =>
-              const SignUpScreen(),
+          pageBuilder: (context, animation1, animation2) => BlocProvider(
+            create: (context) => getIt<SignUpCubit>(),
+            child: const SignUpScreen(),
+          ),
           transitionDuration: Duration.zero,
         );
       default:

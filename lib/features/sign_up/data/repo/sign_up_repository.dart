@@ -7,11 +7,12 @@ class SignUpRepository {
 
   SignUpRepository(this._firebaseAuth);
 
-  Future<UserModel?> signUp(String email, String password) async {
+  Future<UserModel?> signUp(String email, String password,  ) async {
     try {
       final userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
+      
       );
       return UserModel(
         uid: userCredential.user!.uid,
