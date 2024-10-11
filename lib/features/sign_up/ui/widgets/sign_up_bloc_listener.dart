@@ -58,10 +58,11 @@ class SignupBlocListener extends StatelessWidget {
             TextButton(
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white,
-                backgroundColor: Colors.orange,
+                backgroundColor: ColorsManager.primary,
                 disabledForegroundColor: Colors.grey.withOpacity(0.38),
               ),
               onPressed: () {
+                // I will let him go to Screen Login, but after merging the brunchs
                 context.pushNamed(AppRoutes.homeScreenRoute);
               },
               child: const Text('Continue'),
