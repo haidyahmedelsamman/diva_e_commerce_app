@@ -1,5 +1,6 @@
 class StringManager {
   static const String signUp = 'Sign UP';
+    static const String signIn = 'Sign In';
   static const String email = 'E-mail';
   static const String alreadyHaveAnAcount = 'Already have an account? ';
   static const String password = 'Password';

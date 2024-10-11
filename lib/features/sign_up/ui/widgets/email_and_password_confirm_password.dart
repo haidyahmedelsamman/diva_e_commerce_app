@@ -10,27 +10,29 @@ class EmailAndPasswordConfirmPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const AppTextFormField(hintText: StringManager.email),
-        verticalSpace(10),
-        AppTextFormField(
-          hintText: StringManager.password,
-          suffixIcon: Icon(
-            Icons.visibility,
-            size: 24.sp,
+    return Form(
+      child: Column(
+        children: [
+          const AppTextFormField(hintText: StringManager.email),
+          verticalSpace(10),
+          AppTextFormField(
+            hintText: StringManager.password,
+            suffixIcon: Icon(
+              Icons.visibility,
+              size: 24.sp,
+            ),
           ),
-        ),
-        verticalSpace(10),
-        AppTextFormField(
-          hintText: StringManager.confirmPassword,
-          suffixIcon: Icon(
-            Icons.visibility,
-            size: 24.sp,
+          verticalSpace(10),
+          AppTextFormField(
+            hintText: StringManager.confirmPassword,
+            suffixIcon: Icon(
+              Icons.visibility,
+              size: 24.sp,
+            ),
           ),
-        ),
-        verticalSpace(10),
-      ],
+          verticalSpace(10),
+        ],
+      ),
     );
   }
 }
