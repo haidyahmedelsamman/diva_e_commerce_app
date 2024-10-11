@@ -1,3 +1,5 @@
+import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
+import 'package:diva_e_commerce_app/core/routes/app_router.dart';
 import 'package:diva_e_commerce_app/features/sign_in/ui/widgets/dont_have_an_account.dart';
 import 'package:diva_e_commerce_app/features/sign_in/ui/widgets/email_and_password.dart';
 import 'package:flutter/material.dart';
@@ -40,21 +42,25 @@ class SignInScreen extends StatelessWidget {
                 buttonText: StringManager.signIn,
                 onPressed: () {},
                 textStyle: TextStyleManager.font18WhiteRegular,
-
               ),
-               Align(
-                      alignment: Alignment.topRight,
-                      child: GestureDetector(
-                        child: Text(
-                          'Forgot Password?',
-                          style: TextStyleManager.font18PrimaryRegular,
-                        ),
-                      ),
-                    ),
+              verticalSpace(10),
+              Align(
+                alignment: Alignment.topRight,
+                child: GestureDetector(
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyleManager.font18PrimaryRegular,
+                  ),
+                ),
+              ),
               const OrDivider(),
               const RowCricleAvatarIcon(),
               verticalSpace(20),
-              const DontHaveAnAccount(),
+              GestureDetector(
+                  onTap: () {
+                    context.pushNamed(AppRoutes.signUpScreenRoute);
+                  },
+                  child: const DontHaveAnAccount()),
             ],
           ),
         ),

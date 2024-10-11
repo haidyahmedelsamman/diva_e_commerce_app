@@ -14,9 +14,7 @@ class EmailAndPasswordConfirmPassword extends StatelessWidget {
       children: [
         const AppTextFormField(hintText: StringManager.email),
         verticalSpace(10),
-        AppTextFormField(
-          onchanged: (data) {},
-          hintText: StringManager.password,
+        AppTextFormField(  hintText: StringManager.password,
           suffixIcon: Icon(
             Icons.visibility,
             size: 24.sp,

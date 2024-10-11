@@ -13,7 +13,7 @@ class AlreadyHaveAccount extends StatelessWidget {
           text: StringManager.alreadyHaveAnAcount,
           style: TextStyleManager.font18BlackRegular),
       TextSpan(
-          text: StringManager.signUp,
+          text: StringManager.signIn,
           style: TextStyleManager.font18PrimaryRegular),
     ]));
   }

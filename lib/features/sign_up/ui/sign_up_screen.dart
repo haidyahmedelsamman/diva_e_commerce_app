@@ -1,3 +1,5 @@
+import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
+import 'package:diva_e_commerce_app/core/routes/app_router.dart';
 import 'package:diva_e_commerce_app/core/widgets/or_divider.dart';
 import 'package:diva_e_commerce_app/features/sign_up/ui/widgets/already_have_account.dart';
 import 'package:diva_e_commerce_app/features/sign_up/ui/widgets/email_and_password_confirm_password.dart';
@@ -43,7 +45,11 @@ class SignUpScreen extends StatelessWidget {
               const OrDivider(),
               const RowCricleAvatarIcon(),
               verticalSpace(20),
-              const AlreadyHaveAccount(),
+              GestureDetector(
+                  onTap: () {
+                    context.pushNamed(AppRoutes.signInScreenRoute);
+                  },
+                  child: const AlreadyHaveAccount()),
             ],
           ),
         ),
