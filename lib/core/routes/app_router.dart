@@ -2,6 +2,7 @@ import 'package:diva_e_commerce_app/core/di/dependency_injection.dart';
 import 'package:diva_e_commerce_app/features/animated_splash/animated_splash_screen.dart';
 import 'package:diva_e_commerce_app/features/home_screen/logic/home_cubit.dart';
 import 'package:diva_e_commerce_app/features/home_screen/presentation/screens/home_screen.dart';
+import 'package:diva_e_commerce_app/features/sign_in/ui/sign_in_screen.dart';
 import 'package:diva_e_commerce_app/features/profile/ui/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,6 +33,12 @@ class AppRouter {
           ),
           transitionDuration: Duration.zero,
         );
+      case AppRoutes.signInScreenRoute:
+        return PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) =>
+              const SignInScreen(),
+          transitionDuration: Duration.zero,
+        );
 
       case AppRoutes.signUpScreenRoute:
         return PageRouteBuilder(
@@ -59,6 +66,7 @@ class AppRouter {
 class AppRoutes {
   static const String animatedSplashScreenRoute = '/animatedSplashScreenRoute ';
   static const String signUpScreenRoute = '/signUpScreenRoute ';
+  static const String signInScreenRoute = '/signInScreenRoute ';
   static const String homeScreenRoute = '/homeScreenRoute ';
   static const String profileScreenRoute = '/profileScreenRoute ';
 }

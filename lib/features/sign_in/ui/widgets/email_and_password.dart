@@ -5,8 +5,8 @@ import '../../../../core/constants/string_manager.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
 
-class EmailAndPasswordConfirmPassword extends StatelessWidget {
-  const EmailAndPasswordConfirmPassword({super.key});
+class EmailAndPassword extends StatelessWidget {
+  const EmailAndPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,15 +14,8 @@ class EmailAndPasswordConfirmPassword extends StatelessWidget {
       children: [
         const AppTextFormField(hintText: StringManager.email),
         verticalSpace(10),
-        AppTextFormField(  hintText: StringManager.password,
-          suffixIcon: Icon(
-            Icons.visibility,
-            size: 24.sp,
-          ),
-        ),
-        verticalSpace(10),
         AppTextFormField(
-          hintText: StringManager.confirmPassword,
+          hintText: StringManager.password,
           suffixIcon: Icon(
             Icons.visibility,
             size: 24.sp,
