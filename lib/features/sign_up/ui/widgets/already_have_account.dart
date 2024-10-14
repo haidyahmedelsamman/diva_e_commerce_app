@@ -11,7 +11,7 @@ class AlreadyHaveAccount extends StatelessWidget {
         text: TextSpan(children: [
       TextSpan(
           text: StringManager.alreadyHaveAnAcount,
-          style: TextStyleManager.font18BlackRegular),
+          style: TextStyleManager.font18DynamicRegular),
       TextSpan(
           text: StringManager.signIn,
           style: TextStyleManager.font18PrimaryRegular),

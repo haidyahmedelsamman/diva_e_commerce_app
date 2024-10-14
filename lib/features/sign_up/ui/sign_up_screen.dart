@@ -51,9 +51,41 @@ class SignUpScreen extends StatelessWidget {
                   },
                   child: const AlreadyHaveAccount()),
             ],
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 22.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                verticalSpace(20),
+                Text(
+                  StringManager.signUp,
+                  style: TextStyleManager.font24BlackRegular,
+                ),
+                verticalSpace(10),
+                Image.asset(
+                  StringManager.signUpImagePath,
+                  width: 230,
+                  height: 230,
+                ),
+                verticalSpace(10),
+                const EmailAndPasswordConfirmPassword(),
+                AppTextButton(
+                  buttonText: StringManager.signUp,
+                  onPressed: () {
+                    context.pushReplacementNamed(AppRoutes.homeScreenRoute);
+                  },
+                  textStyle: TextStyleManager.font18WhiteRegular,
+                ),
+                const OrDivider(),
+                const RowCricleAvatarIcon(),
+                verticalSpace(20),
+                const AlreadyHaveAccount(),
+              ],
+            ),
           ),
         ),
-      )),
+      ),
     );
   }
 }
