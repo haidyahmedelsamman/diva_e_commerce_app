@@ -6,8 +6,10 @@ import 'package:diva_e_commerce_app/features/sign_in/ui/sign_in_screen.dart';
 import 'package:diva_e_commerce_app/features/profile/ui/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../features/sign_up/ui/sign_up_screen.dart';
+import '../../features/sign_up/logic/sign_up_cubit.dart';
 
+import '../../features/sign_up/ui/sign_up_screen.dart';
+import '../di/dependency_injection.dart';
 
 /// The AppRouter class manages the application's route generation.
 class AppRouter {
@@ -42,8 +44,10 @@ class AppRouter {
 
       case AppRoutes.signUpScreenRoute:
         return PageRouteBuilder(
-          pageBuilder: (context, animation1, animation2) =>
-              const SignUpScreen(),
+          pageBuilder: (context, animation1, animation2) => BlocProvider(
+            create: (context) => getIt<SignUpCubit>(),
+            child: const SignUpScreen(),
+          ),
           transitionDuration: Duration.zero,
         );
       case AppRoutes.homeScreenRoute:

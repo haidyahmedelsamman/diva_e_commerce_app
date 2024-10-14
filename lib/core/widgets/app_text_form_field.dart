@@ -17,7 +17,8 @@ class AppTextFormField extends StatelessWidget {
       required this.hintText,
       this.focusedBorder,
       this.enabledBorder,
-      this.validator});
+      this.validator,
+      this.onchanged});
   final EdgeInsetsGeometry? contentPadding;
   final Color? fillColorBackground;
   final Widget? suffixIcon;
@@ -29,9 +30,11 @@ class AppTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final TextEditingController? controller;
   final Function(String?)? validator;
+  final Function(String)? onchanged;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onchanged,
       controller: controller,
       validator: (value) {
         return validator!(value);
@@ -41,11 +44,11 @@ class AppTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         isDense: true,
         contentPadding: contentPadding ??
-            EdgeInsets.symmetric(vertical: 14.h, horizontal: 28.w),
+            EdgeInsets.symmetric(vertical: 12.h, horizontal: 28.w),
         filled: true,
         fillColor: fillColorBackground ?? ColorsManager.white,
         focusedErrorBorder: OutlineInputBorder(
-          borderSide:  BorderSide(
+          borderSide: BorderSide(
             color: ColorsManager.error,
             width: 1.3,
           ),
@@ -58,11 +61,10 @@ class AppTextFormField extends StatelessWidget {
         focusedBorder: focusedBorder ??
             OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30.0),
-                borderSide:  BorderSide(color: ColorsManager.primary)),
+                borderSide: BorderSide(color: ColorsManager.primary)),
         errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30.0),
-            borderSide:
-                 BorderSide(color: ColorsManager.error, width: 1.3)),
+            borderSide: BorderSide(color: ColorsManager.error, width: 1.3)),
         hintText: hintText,
         hintStyle: TextStyleManager.font18GreyRegular,
         suffixIcon: suffixIcon,
