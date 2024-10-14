@@ -1,3 +1,4 @@
+import 'package:diva_e_commerce_app/core/di/dependency_injection.dart';
 import 'package:diva_e_commerce_app/core/di/injectable_package_configuration.dart';
 import 'package:diva_e_commerce_app/core/shared_preferences/shared_preferences_service.dart';
 import 'package:diva_e_commerce_app/diva_e_commerce_app.dart';
@@ -9,6 +10,7 @@ import 'core/di/dependency_injection.dart';
 void main() async {
   setupGetIt();
   WidgetsFlutterBinding.ensureInitialized();
+  setupGetIt();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

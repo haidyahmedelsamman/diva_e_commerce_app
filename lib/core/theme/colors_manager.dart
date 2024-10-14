@@ -8,12 +8,12 @@ class ColorsManager {
   static Color error = const Color(0xffDD2222);
   static Color rad = Colors.red;
   static Color black = Colors.black;
+  static Color green = Colors.green;
   static const Color gray = Color(0xFF757575);
   static const Color lightGray = Color(0xFFC2C2C2);
   static const Color yellow = Color(0xFFFBE942);
   static const Color darkGray = Color(0xFF555555);
   static const Color lightGrey = Color(0xffD9D9D9);
   static const Color extraLightGrey = Color.fromARGB(255, 234, 234, 234);
-
   static const Color splashBackgroundColor = Color(0xFFFEEAF6);
 }

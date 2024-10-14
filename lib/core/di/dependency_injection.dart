@@ -1,5 +1,8 @@
-import 'package:dio/dio.dart';
+import 'package:diva_e_commerce_app/features/sign_up/data/repo/sign_up_repository.dart';
+import 'package:diva_e_commerce_app/features/sign_up/logic/sign_up_cubit.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
+import 'package:dio/dio.dart';
 import '../../features/home_screen/data/apis/home_api_service.dart';
 import '../../features/home_screen/data/repos/home_repo.dart';
 import '../../features/home_screen/logic/home_cubit.dart';
@@ -10,6 +13,12 @@ final getIt = GetIt.instance;
 
 /// Sets up the service locator for dependency injection.
 Future<void> setupGetIt() async {
+  getIt.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
+
+  getIt
+      .registerLazySingleton<SignUpRepository>(() => SignUpRepository(getIt()));
+
+  getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
   // Dio is an HTTP client for making API calls.
   // The DioFactory is assumed to provide a preconfigured Dio instance.
   Dio dio = DioFactory.getDio();
