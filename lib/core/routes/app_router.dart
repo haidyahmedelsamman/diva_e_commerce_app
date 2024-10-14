@@ -9,7 +9,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/sign_up/logic/sign_up_cubit.dart';
 
 import '../../features/sign_up/ui/sign_up_screen.dart';
-import '../di/dependency_injection.dart';
 
 /// The AppRouter class manages the application's route generation.
 class AppRouter {
@@ -23,13 +22,11 @@ class AppRouter {
           transitionDuration: Duration.zero,
         );
 
-
       case AppRoutes.homeScreenRoute:
         return PageRouteBuilder(
           pageBuilder: (context, animation1, animation2) => BlocProvider(
             create: (context) {
-              return getIt<HomeCubit>()
-                ..getCategories();
+              return getIt<HomeCubit>()..getCategories();
             },
             child: const HomeScreen(),
           ),
@@ -48,11 +45,6 @@ class AppRouter {
             create: (context) => getIt<SignUpCubit>(),
             child: const SignUpScreen(),
           ),
-          transitionDuration: Duration.zero,
-        );
-      case AppRoutes.homeScreenRoute:
-        return PageRouteBuilder(
-          pageBuilder: (context, animation1, animation2) => const HomeScreen(),
           transitionDuration: Duration.zero,
         );
 
