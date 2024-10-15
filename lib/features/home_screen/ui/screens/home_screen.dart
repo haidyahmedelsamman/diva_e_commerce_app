@@ -1,5 +1,5 @@
-import 'package:diva_e_commerce_app/features/home_screen/presentation/widgets/categories_list_view_builder.dart';
-import 'package:diva_e_commerce_app/features/home_screen/presentation/widgets/outfits_list_view_builder.dart';
+import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/categories_list_view_builder.dart';
+import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/outfits_list_view_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';

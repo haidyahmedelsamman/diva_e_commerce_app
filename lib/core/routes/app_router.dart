@@ -1,7 +1,7 @@
 import 'package:diva_e_commerce_app/core/di/dependency_injection.dart';
 import 'package:diva_e_commerce_app/features/animated_splash/animated_splash_screen.dart';
 import 'package:diva_e_commerce_app/features/home_screen/logic/home_cubit.dart';
-import 'package:diva_e_commerce_app/features/home_screen/presentation/screens/home_screen.dart';
+import 'package:diva_e_commerce_app/features/home_screen/ui/screens/home_screen.dart';
 import 'package:diva_e_commerce_app/features/sign_in/ui/sign_in_screen.dart';
 import 'package:diva_e_commerce_app/features/profile/ui/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
