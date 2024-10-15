@@ -27,16 +27,16 @@ class OutfitItem extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              height: 200.h,
+              height: 220.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(
-                  12.r,
+                  25.r,
                 ),
               ),
               child: SizedBox(
                 child: Image.network(
                   productModel.image ?? '',
-                  fit: BoxFit.contain,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -56,7 +56,7 @@ class OutfitItem extends StatelessWidget {
               alignment: Alignment.bottomRight,
               child: Padding(
                 padding: EdgeInsets.only(
-                  top: 155.sp,
+                  top: 165.sp,
                   right: 14.sp,
                 ),
                 child: SvgPicture.asset(
