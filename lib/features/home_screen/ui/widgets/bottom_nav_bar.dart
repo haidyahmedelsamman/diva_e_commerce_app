@@ -1,4 +1,4 @@
-import 'package:diva_e_commerce_app/features/home_screen/presentation/widgets/bottom_nav_item.dart';
+import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/bottom_nav_item.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatelessWidget {

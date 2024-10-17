@@ -16,4 +16,10 @@ class ColorsManager {
   static const Color lightGrey = Color(0xffD9D9D9);
   static const Color extraLightGrey = Color.fromARGB(255, 234, 234, 234);
   static const Color splashBackgroundColor = Color(0xFFFEEAF6);
+  static const Color brown = Color(0xFF5C362B);
+  static const Color lightPink = Color(0xFFCB848C);
+  static const Color purple = Color(0xFF934A5B);
+  static const Color lightPurple = Color.fromRGBO(150, 119, 240, 0.64);
+  static const Color mintGreen = Color(0xFF9CBBA7);
+  static const Color red = Color(0xFFD10101);
 }
