@@ -28,7 +28,7 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.singleton<_i510.ThemeModePrefRepository>(
         () => _i510.ThemeModePrefRepository());
-    gh.singleton<_i345.ThemeSwitchingCubit>(
+    gh.lazySingleton<_i345.ThemeSwitchingCubit>(
         () => _i345.ThemeSwitchingCubit(gh<_i510.ThemeModePrefRepository>()));
     return this;
   }

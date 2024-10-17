@@ -21,7 +21,7 @@ class AdsItem extends StatelessWidget {
                 color: ColorsManager.yellow,
                 borderRadius: BorderRadius.circular(16.r)),
             child: Container(
-              padding: const EdgeInsets.only(bottom: 8, top: 6),
+              padding: EdgeInsets.only(bottom: 6.sp, top: 4.sp, left: 22.sp),
               child: Image.asset(
                 alignment: Alignment.bottomRight,
                 'assets/images/ad_group.png',
@@ -33,6 +33,7 @@ class AdsItem extends StatelessWidget {
             width: 220.w,
             'assets/images/ad_woman.png',
             alignment: Alignment.bottomLeft,
+            fit: BoxFit.fitHeight,
           ),
         ],
       ),

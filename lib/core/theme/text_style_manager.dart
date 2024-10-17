@@ -19,6 +19,12 @@ class TextStyleManager {
     fontWeight: FontWeightManager.medium,
     color: ColorsManager.primary,
   );
+  //Font Size 20
+  static TextStyle font20BlackSemiBold = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightManager.semiBold,
+    color: ColorsManager.black,
+  );
 
   // Font Size 18
   static TextStyle font18GreyRegular = TextStyle(
@@ -69,6 +75,11 @@ class TextStyleManager {
     fontSize: 16.sp,
     fontWeight: FontWeightManager.regular,
     color: ColorsManager.lightGray,
+  );
+   static TextStyle font16GreyRegular = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightManager.regular,
+    color: ColorsManager.grey,
   );
   static TextStyle font16BlackRegular = TextStyle(
     fontSize: 16.sp,
@@ -124,6 +135,11 @@ class TextStyleManager {
     fontSize: 14.sp,
     fontWeight: FontWeightManager.regular,
     color: ColorsManager.black,
+  );
+   static TextStyle font14GreykRegular = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightManager.regular,
+    color: ColorsManager.grey,
   );
   static TextStyle font14DynamicRegular = TextStyle(
     fontSize: 14.sp,

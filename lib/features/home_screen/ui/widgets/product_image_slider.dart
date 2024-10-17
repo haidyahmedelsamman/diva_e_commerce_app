@@ -5,9 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ProductImageSlider extends StatelessWidget {
+class ProductImageSlider extends StatefulWidget {
   final ProductModel productModell;
   const ProductImageSlider({super.key, required this.productModell});
+
+  @override
+  State<ProductImageSlider> createState() => _ProductImageSliderState();
+}
+
+class _ProductImageSliderState extends State<ProductImageSlider> {
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +23,16 @@ class ProductImageSlider extends StatelessWidget {
       child: Stack(
         children: [
           PageView.builder(
-            itemCount: 4,
+            onPageChanged: (value) {
+              setState(() {
+                currentIndex = value;
+              });
+            },
+            itemCount: 3,
             itemBuilder: (context, index) {
+              currentIndex = index;
               return Image.network(
-                productModell.image ?? '',
+                widget.productModell.image ?? '',
                 fit: BoxFit.fill,
               );
             },
@@ -62,16 +75,17 @@ class ProductImageSlider extends StatelessWidget {
               width: 150.w,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 4,
+                  itemCount: 3,
                   itemBuilder: (context, index) {
                     return AnimatedContainer(
                       margin: const EdgeInsets.only(left: 7),
-                      duration: const Duration(milliseconds: 700),
+                      duration: const Duration(milliseconds: 800),
                       height: 10.h,
-                      width: 10.h,
+                      width: index == currentIndex ? 20.w : 10.w,
                       decoration: BoxDecoration(
-                        color:
-                            index == 2 ? ColorsManager.primary : Colors.white,
+                        color: index == currentIndex
+                            ? ColorsManager.primary
+                            : Colors.white,
                         borderRadius: BorderRadius.circular(50),
                       ),
                     );
