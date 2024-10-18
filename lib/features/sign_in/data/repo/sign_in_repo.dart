@@ -2,12 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import '../user_sign_in_model.dart';
 
-class SignUpRepository {
+class SignInRepository {
   final FirebaseAuth _firebaseAuth;
 
-  SignUpRepository(this._firebaseAuth);
+  SignInRepository(this._firebaseAuth);
 
-  Future<UserSignInModel?> signUp(
+  Future<UserSignInModel?> signIn(
     String email,
     String password,
   ) async {
