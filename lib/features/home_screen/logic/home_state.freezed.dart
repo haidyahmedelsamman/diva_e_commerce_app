@@ -27,6 +27,8 @@ mixin _$HomeState {
     required TResult Function(List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
+    required TResult Function(List<ProductModel> categoryDataList)
+        onProductDetailsScreenClick,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,6 +42,8 @@ mixin _$HomeState {
     TResult? Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
+    TResult? Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +57,8 @@ mixin _$HomeState {
     TResult Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
+    TResult Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,6 +75,8 @@ mixin _$HomeState {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
+    required TResult Function(OnProductDetailsScreenClick value)
+        onProductDetailsScreenClick,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +89,8 @@ mixin _$HomeState {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
+    TResult? Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,6 +103,8 @@ mixin _$HomeState {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
+    TResult Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -168,6 +180,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
+    required TResult Function(List<ProductModel> categoryDataList)
+        onProductDetailsScreenClick,
   }) {
     return initial();
   }
@@ -184,6 +198,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
+    TResult? Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
   }) {
     return initial?.call();
   }
@@ -200,6 +216,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
+    TResult Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -222,6 +240,8 @@ class _$InitialImpl implements _Initial {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
+    required TResult Function(OnProductDetailsScreenClick value)
+        onProductDetailsScreenClick,
   }) {
     return initial(this);
   }
@@ -237,6 +257,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
+    TResult? Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
   }) {
     return initial?.call(this);
   }
@@ -252,6 +274,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
+    TResult Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -315,6 +339,8 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     required TResult Function(List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
+    required TResult Function(List<ProductModel> categoryDataList)
+        onProductDetailsScreenClick,
   }) {
     return categoriesLoading();
   }
@@ -331,6 +357,8 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult? Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
+    TResult? Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
   }) {
     return categoriesLoading?.call();
   }
@@ -347,6 +375,8 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
+    TResult Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (categoriesLoading != null) {
@@ -369,6 +399,8 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
+    required TResult Function(OnProductDetailsScreenClick value)
+        onProductDetailsScreenClick,
   }) {
     return categoriesLoading(this);
   }
@@ -384,6 +416,8 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
+    TResult? Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
   }) {
     return categoriesLoading?.call(this);
   }
@@ -399,6 +433,8 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
+    TResult Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (categoriesLoading != null) {
@@ -499,6 +535,8 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     required TResult Function(List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
+    required TResult Function(List<ProductModel> categoryDataList)
+        onProductDetailsScreenClick,
   }) {
     return categoriesSuccess(categoryDataList);
   }
@@ -515,6 +553,8 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult? Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
+    TResult? Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
   }) {
     return categoriesSuccess?.call(categoryDataList);
   }
@@ -531,6 +571,8 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
+    TResult Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (categoriesSuccess != null) {
@@ -553,6 +595,8 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
+    required TResult Function(OnProductDetailsScreenClick value)
+        onProductDetailsScreenClick,
   }) {
     return categoriesSuccess(this);
   }
@@ -568,6 +612,8 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
+    TResult? Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
   }) {
     return categoriesSuccess?.call(this);
   }
@@ -583,6 +629,8 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
+    TResult Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (categoriesSuccess != null) {
@@ -684,6 +732,8 @@ class _$CategoriesErrorImpl implements CategoriesError {
     required TResult Function(List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
+    required TResult Function(List<ProductModel> categoryDataList)
+        onProductDetailsScreenClick,
   }) {
     return categoriesError(errorMessage);
   }
@@ -700,6 +750,8 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult? Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
+    TResult? Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
   }) {
     return categoriesError?.call(errorMessage);
   }
@@ -716,6 +768,8 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
+    TResult Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (categoriesError != null) {
@@ -738,6 +792,8 @@ class _$CategoriesErrorImpl implements CategoriesError {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
+    required TResult Function(OnProductDetailsScreenClick value)
+        onProductDetailsScreenClick,
   }) {
     return categoriesError(this);
   }
@@ -753,6 +809,8 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
+    TResult? Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
   }) {
     return categoriesError?.call(this);
   }
@@ -768,6 +826,8 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
+    TResult Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (categoriesError != null) {
@@ -869,6 +929,8 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
     required TResult Function(List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
+    required TResult Function(List<ProductModel> categoryDataList)
+        onProductDetailsScreenClick,
   }) {
     return onCategoryClick(indexOfCategory);
   }
@@ -885,6 +947,8 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
     TResult? Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
+    TResult? Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
   }) {
     return onCategoryClick?.call(indexOfCategory);
   }
@@ -901,6 +965,8 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
     TResult Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
+    TResult Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (onCategoryClick != null) {
@@ -923,6 +989,8 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
+    required TResult Function(OnProductDetailsScreenClick value)
+        onProductDetailsScreenClick,
   }) {
     return onCategoryClick(this);
   }
@@ -938,6 +1006,8 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
+    TResult? Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
   }) {
     return onCategoryClick?.call(this);
   }
@@ -953,6 +1023,8 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
+    TResult Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (onCategoryClick != null) {
@@ -1028,6 +1100,8 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     required TResult Function(List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
+    required TResult Function(List<ProductModel> categoryDataList)
+        onProductDetailsScreenClick,
   }) {
     return categoryProductsLoading();
   }
@@ -1044,6 +1118,8 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     TResult? Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
+    TResult? Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
   }) {
     return categoryProductsLoading?.call();
   }
@@ -1060,6 +1136,8 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     TResult Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
+    TResult Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (categoryProductsLoading != null) {
@@ -1082,6 +1160,8 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
+    required TResult Function(OnProductDetailsScreenClick value)
+        onProductDetailsScreenClick,
   }) {
     return categoryProductsLoading(this);
   }
@@ -1097,6 +1177,8 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
+    TResult? Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
   }) {
     return categoryProductsLoading?.call(this);
   }
@@ -1112,6 +1194,8 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
+    TResult Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (categoryProductsLoading != null) {
@@ -1214,6 +1298,8 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     required TResult Function(List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
+    required TResult Function(List<ProductModel> categoryDataList)
+        onProductDetailsScreenClick,
   }) {
     return categoryProductsSuccess(productsDataList);
   }
@@ -1230,6 +1316,8 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     TResult? Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
+    TResult? Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
   }) {
     return categoryProductsSuccess?.call(productsDataList);
   }
@@ -1246,6 +1334,8 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     TResult Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
+    TResult Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (categoryProductsSuccess != null) {
@@ -1268,6 +1358,8 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
+    required TResult Function(OnProductDetailsScreenClick value)
+        onProductDetailsScreenClick,
   }) {
     return categoryProductsSuccess(this);
   }
@@ -1283,6 +1375,8 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
+    TResult? Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
   }) {
     return categoryProductsSuccess?.call(this);
   }
@@ -1298,6 +1392,8 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
+    TResult Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (categoryProductsSuccess != null) {
@@ -1401,6 +1497,8 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     required TResult Function(List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
+    required TResult Function(List<ProductModel> categoryDataList)
+        onProductDetailsScreenClick,
   }) {
     return categoryProductsError(errorMessage);
   }
@@ -1417,6 +1515,8 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     TResult? Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
+    TResult? Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
   }) {
     return categoryProductsError?.call(errorMessage);
   }
@@ -1433,6 +1533,8 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     TResult Function(List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
+    TResult Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (categoryProductsError != null) {
@@ -1455,6 +1557,8 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
+    required TResult Function(OnProductDetailsScreenClick value)
+        onProductDetailsScreenClick,
   }) {
     return categoryProductsError(this);
   }
@@ -1470,6 +1574,8 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
+    TResult? Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
   }) {
     return categoryProductsError?.call(this);
   }
@@ -1485,6 +1591,8 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
+    TResult Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
     required TResult orElse(),
   }) {
     if (categoryProductsError != null) {
@@ -1504,5 +1612,214 @@ abstract class CategoryProductsError implements HomeState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CategoryProductsErrorImplCopyWith<_$CategoryProductsErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnProductDetailsScreenClickImplCopyWith<$Res> {
+  factory _$$OnProductDetailsScreenClickImplCopyWith(
+          _$OnProductDetailsScreenClickImpl value,
+          $Res Function(_$OnProductDetailsScreenClickImpl) then) =
+      __$$OnProductDetailsScreenClickImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<ProductModel> categoryDataList});
+}
+
+/// @nodoc
+class __$$OnProductDetailsScreenClickImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$OnProductDetailsScreenClickImpl>
+    implements _$$OnProductDetailsScreenClickImplCopyWith<$Res> {
+  __$$OnProductDetailsScreenClickImplCopyWithImpl(
+      _$OnProductDetailsScreenClickImpl _value,
+      $Res Function(_$OnProductDetailsScreenClickImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? categoryDataList = null,
+  }) {
+    return _then(_$OnProductDetailsScreenClickImpl(
+      null == categoryDataList
+          ? _value._categoryDataList
+          : categoryDataList // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnProductDetailsScreenClickImpl implements OnProductDetailsScreenClick {
+  const _$OnProductDetailsScreenClickImpl(
+      final List<ProductModel> categoryDataList)
+      : _categoryDataList = categoryDataList;
+
+  final List<ProductModel> _categoryDataList;
+  @override
+  List<ProductModel> get categoryDataList {
+    if (_categoryDataList is EqualUnmodifiableListView)
+      return _categoryDataList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categoryDataList);
+  }
+
+  @override
+  String toString() {
+    return 'HomeState.onProductDetailsScreenClick(categoryDataList: $categoryDataList)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnProductDetailsScreenClickImpl &&
+            const DeepCollectionEquality()
+                .equals(other._categoryDataList, _categoryDataList));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_categoryDataList));
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnProductDetailsScreenClickImplCopyWith<_$OnProductDetailsScreenClickImpl>
+      get copyWith => __$$OnProductDetailsScreenClickImplCopyWithImpl<
+          _$OnProductDetailsScreenClickImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() categoriesLoading,
+    required TResult Function(List<String> categoryDataList) categoriesSuccess,
+    required TResult Function(String errorMessage) categoriesError,
+    required TResult Function(int indexOfCategory) onCategoryClick,
+    required TResult Function() categoryProductsLoading,
+    required TResult Function(List<ProductModel> productsDataList)
+        categoryProductsSuccess,
+    required TResult Function(String errorMessage) categoryProductsError,
+    required TResult Function(List<ProductModel> categoryDataList)
+        onProductDetailsScreenClick,
+  }) {
+    return onProductDetailsScreenClick(categoryDataList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? categoriesLoading,
+    TResult? Function(List<String> categoryDataList)? categoriesSuccess,
+    TResult? Function(String errorMessage)? categoriesError,
+    TResult? Function(int indexOfCategory)? onCategoryClick,
+    TResult? Function()? categoryProductsLoading,
+    TResult? Function(List<ProductModel> productsDataList)?
+        categoryProductsSuccess,
+    TResult? Function(String errorMessage)? categoryProductsError,
+    TResult? Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
+  }) {
+    return onProductDetailsScreenClick?.call(categoryDataList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? categoriesLoading,
+    TResult Function(List<String> categoryDataList)? categoriesSuccess,
+    TResult Function(String errorMessage)? categoriesError,
+    TResult Function(int indexOfCategory)? onCategoryClick,
+    TResult Function()? categoryProductsLoading,
+    TResult Function(List<ProductModel> productsDataList)?
+        categoryProductsSuccess,
+    TResult Function(String errorMessage)? categoryProductsError,
+    TResult Function(List<ProductModel> categoryDataList)?
+        onProductDetailsScreenClick,
+    required TResult orElse(),
+  }) {
+    if (onProductDetailsScreenClick != null) {
+      return onProductDetailsScreenClick(categoryDataList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CategoriesLoading value) categoriesLoading,
+    required TResult Function(CategoriesSuccess value) categoriesSuccess,
+    required TResult Function(CategoriesError value) categoriesError,
+    required TResult Function(OnCategoryClick value) onCategoryClick,
+    required TResult Function(CategoryProductsLoading value)
+        categoryProductsLoading,
+    required TResult Function(CategoryProductsSuccess value)
+        categoryProductsSuccess,
+    required TResult Function(CategoryProductsError value)
+        categoryProductsError,
+    required TResult Function(OnProductDetailsScreenClick value)
+        onProductDetailsScreenClick,
+  }) {
+    return onProductDetailsScreenClick(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CategoriesLoading value)? categoriesLoading,
+    TResult? Function(CategoriesSuccess value)? categoriesSuccess,
+    TResult? Function(CategoriesError value)? categoriesError,
+    TResult? Function(OnCategoryClick value)? onCategoryClick,
+    TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
+    TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
+    TResult? Function(CategoryProductsError value)? categoryProductsError,
+    TResult? Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
+  }) {
+    return onProductDetailsScreenClick?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CategoriesLoading value)? categoriesLoading,
+    TResult Function(CategoriesSuccess value)? categoriesSuccess,
+    TResult Function(CategoriesError value)? categoriesError,
+    TResult Function(OnCategoryClick value)? onCategoryClick,
+    TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
+    TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
+    TResult Function(CategoryProductsError value)? categoryProductsError,
+    TResult Function(OnProductDetailsScreenClick value)?
+        onProductDetailsScreenClick,
+    required TResult orElse(),
+  }) {
+    if (onProductDetailsScreenClick != null) {
+      return onProductDetailsScreenClick(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnProductDetailsScreenClick implements HomeState {
+  const factory OnProductDetailsScreenClick(
+          final List<ProductModel> categoryDataList) =
+      _$OnProductDetailsScreenClickImpl;
+
+  List<ProductModel> get categoryDataList;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OnProductDetailsScreenClickImplCopyWith<_$OnProductDetailsScreenClickImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
