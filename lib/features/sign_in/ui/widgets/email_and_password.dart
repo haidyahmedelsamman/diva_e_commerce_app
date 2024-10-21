@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/constants/string_manager.dart';
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/helpers/spacing.dart';
@@ -12,7 +10,7 @@ import '../../logic/sign_in_cubit.dart';
 class EmailAndPassword extends StatefulWidget {
   const EmailAndPassword({super.key});
 
-  @override
+  @override                                                                                                     
   State<EmailAndPassword> createState() => _EmailAndPasswordState();
 }
 

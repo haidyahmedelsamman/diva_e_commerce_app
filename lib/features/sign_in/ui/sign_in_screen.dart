@@ -41,6 +41,7 @@ class SignInScreen extends StatelessWidget {
               ),
               verticalSpace(10),
               const EmailAndPassword(),
+              verticalSpace(10),
               AppTextButton(
                 buttonText: StringManager.signIn,
                 onPressed: () {
@@ -54,12 +55,12 @@ class SignInScreen extends StatelessWidget {
                 child: GestureDetector(
                   child: Text(
                     'Forgot Password?',
-                    style: TextStyleManager.font18PrimaryRegular,
+                    style: TextStyleManager.font15PrimaryRegular,
                   ),
                 ),
               ),
-              const OrDivider(),
-              const RowCricleAvatarIcon(),
+              // const OrDivider(),
+              // const RowCricleAvatarIcon(),
               verticalSpace(20),
               GestureDetector(
                   onTap: () {

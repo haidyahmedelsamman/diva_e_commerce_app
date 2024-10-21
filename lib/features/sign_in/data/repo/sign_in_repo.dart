@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../user_sign_in_model.dart';
+import '../models/user_sign_in_model.dart';
 
 class SignInRepository {
-  final FirebaseAuth _firebaseAuth;
+  final FirebaseAuth _firebaseAuth ;
 
   SignInRepository(this._firebaseAuth);
 
