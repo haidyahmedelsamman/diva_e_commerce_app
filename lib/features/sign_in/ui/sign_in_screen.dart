@@ -63,11 +63,19 @@ class SignInScreen extends StatelessWidget {
               // const RowCricleAvatarIcon(),
               verticalSpace(20),
               GestureDetector(
+<<<<<<< Updated upstream
                   onTap: () {
                     context.pushNamed(AppRoutes.signUpScreenRoute);
                   },
                   child: const DontHaveAnAccount()),
               const SignInBlocListener(),
+=======
+                onTap: () {
+                  context.pushNamed(AppRoutes.signUpScreenRoute);
+                },
+                child: const DontHaveAnAccount(),
+              ),
+>>>>>>> Stashed changes
             ],
           ),
         ),
