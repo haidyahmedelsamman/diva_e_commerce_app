@@ -1,3 +1,4 @@
+import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
 import 'package:diva_e_commerce_app/core/widgets/or_divider.dart';
 import 'package:diva_e_commerce_app/features/sign_up/ui/widgets/already_have_account.dart';
 import 'package:diva_e_commerce_app/features/sign_up/ui/widgets/email_and_password_confirm_password.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/constants/string_manager.dart';
 import '../../../core/helpers/spacing.dart';
+import '../../../core/routes/app_router.dart';
 import '../../../core/theme/text_style_manager.dart';
 import '../../../core/widgets/app_text_button.dart';
 import '../../../core/widgets/row_cricle_avatar_icon.dart';
@@ -48,7 +50,11 @@ class SignUpScreen extends StatelessWidget {
                 const OrDivider(),
                 const RowCricleAvatarIcon(),
                 verticalSpace(10),
-                const AlreadyHaveAccount(),
+                GestureDetector(
+                    onTap: () {
+                      context.pushNamed(AppRoutes.signInScreenRoute);
+                    },
+                    child: const AlreadyHaveAccount()),
                 const SignupBlocListener(),
               ],
             ),
