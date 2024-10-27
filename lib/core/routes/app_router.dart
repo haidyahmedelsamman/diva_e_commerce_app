@@ -4,6 +4,8 @@ import 'package:diva_e_commerce_app/features/home_screen/data/models/category_pr
 import 'package:diva_e_commerce_app/features/home_screen/logic/home_cubit.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/screens/home_screen.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/screens/product_details_screen.dart';
+import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_cubit.dart';
+import 'package:diva_e_commerce_app/features/profile/ui/screens/edit_user_account_screen.dart';
 import 'package:diva_e_commerce_app/features/sign_in/ui/sign_in_screen.dart';
 import 'package:diva_e_commerce_app/features/profile/ui/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +22,17 @@ class AppRouter {
     switch (settings.name) {
       case AppRoutes.animatedSplashScreenRoute:
         return PageRouteBuilder(
-          pageBuilder: (context, animation1, animation2) =>
-              const AnimatedSplashScreen(),
+          pageBuilder: (context, animation1, animation2) => MultiBlocProvider(
+            providers: [
+              BlocProvider<SignInCubit>(
+                create: (BuildContext context) => getIt<SignInCubit>(),
+              ),
+              BlocProvider<UserDataCubit>(
+                create: (BuildContext context) => getIt<UserDataCubit>(),
+              ),
+            ],
+            child: const AnimatedSplashScreen(),
+          ),
           transitionDuration: Duration.zero,
         );
 
@@ -54,13 +65,25 @@ class AppRouter {
         );
 
       case AppRoutes.profileScreenRoute:
-        return MaterialPageRoute(builder: (_) {
-          return const ProfileScreen();
-        });
+        return MaterialPageRoute(
+          builder: (_) {
+            return BlocProvider(
+              create: (context) => getIt<UserDataCubit>(),
+              child: const ProfileScreen(),
+            );
+          },
+        );
+      case AppRoutes.editUserAccountScreenRoute:
+        return MaterialPageRoute(
+          builder: (_) {
+            return const EditUserAccountScreen();
+          },
+        );
+
       case AppRoutes.productDetailsScreenRoute:
-       final productItem = settings.arguments as ProductModel;
+        final productItem = settings.arguments as ProductModel;
         return MaterialPageRoute(builder: (_) {
-          return  ProductDetailsScreen(productModel:productItem);
+          return ProductDetailsScreen(productModel: productItem);
         });
       default:
         return null;
@@ -74,5 +97,8 @@ class AppRoutes {
   static const String signInScreenRoute = '/signInScreenRoute ';
   static const String homeScreenRoute = '/homeScreenRoute ';
   static const String profileScreenRoute = '/profileScreenRoute ';
+  static const String editUserAccountScreenRoute =
+      '/editUserAccountScreenRoute ';
+
   static const String productDetailsScreenRoute = '/productDetailsScreenRoute';
 }

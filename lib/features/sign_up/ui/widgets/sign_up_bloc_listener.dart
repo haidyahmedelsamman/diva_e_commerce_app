@@ -28,8 +28,9 @@ class SignupBlocListener extends StatelessWidget {
               ),
             );
           },
-          success: (signupResponse) {
+          success: (user) {
             context.pop();
+            context.read<UserDataCubit>();
             showSuccessDialog(context);
           },
           error: (error) {

@@ -2,16 +2,18 @@ import 'package:diva_e_commerce_app/features/sign_in/logic/sign_in_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../data/repo/sign_in_repo.dart';
+import '../data/repo/sign_in_repository.dart';
 
 class SignInCubit extends Cubit<SignInState> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
- final SignInRepository _signInRepository;
+  final SignInRepository _signInRepository;
 
-  SignInCubit(this._signInRepository) : super(const SignInState.initial());
+  SignInCubit(this._signInRepository) : super(const SignInState.initial()) {
+    checkIfUserAuthenticated();
+  }
 
   Future<void> signIn() async {
     emit(const SignInState.loading());
@@ -23,10 +25,23 @@ class SignInCubit extends Cubit<SignInState> {
       if (user != null) {
         emit(SignInState.success(user));
       } else {
-        emit(const SignInState.error(error: 'Sign In failed'));
+        emit(
+          const SignInState.error(error: 'Sign In failed'),
+        );
       }
     } catch (e) {
-      emit(SignInState.error(error: e.toString()));
+      emit(
+        SignInState.error(error: e.toString()),
+      );
+    }
+  }
+
+  void checkIfUserAuthenticated() async {
+    emit(const SignInState.loading());
+
+    final currentUser = _signInRepository.checkIfUserAuthenticated();
+    if (currentUser != null) {
+      emit(SignInState.success(currentUser));
     }
   }
 }

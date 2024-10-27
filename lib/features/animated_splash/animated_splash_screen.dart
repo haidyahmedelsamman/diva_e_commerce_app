@@ -3,7 +3,10 @@ import 'dart:async';
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
 import 'package:diva_e_commerce_app/core/routes/app_router.dart';
 import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
+import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_cubit.dart';
+import 'package:diva_e_commerce_app/features/sign_in/logic/sign_in_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 
 class AnimatedSplashScreen extends StatefulWidget {
@@ -21,7 +24,15 @@ class AnimatedSplashScreenState extends State<AnimatedSplashScreen>
     Timer(
       const Duration(seconds: 3),
       () {
-        context.pushReplacementNamed(AppRoutes.signInScreenRoute);
+        context.read<SignInCubit>().state.maybeWhen(
+          success: (user) {
+            context.read<UserDataCubit>().updateUserData(user);
+            context.pushReplacementNamed(AppRoutes.homeScreenRoute);
+          },
+          orElse: () {
+            context.pushReplacementNamed(AppRoutes.signInScreenRoute);
+          },
+        );
       },
     );
   }

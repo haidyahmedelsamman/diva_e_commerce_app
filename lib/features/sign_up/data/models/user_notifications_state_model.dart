@@ -1,0 +1,4 @@
+enum UserNotificationsStateModel {
+  on,
+  off,
+}
