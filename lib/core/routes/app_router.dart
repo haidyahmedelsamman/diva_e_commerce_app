@@ -1,5 +1,6 @@
 import 'package:diva_e_commerce_app/core/di/dependency_injection.dart';
 import 'package:diva_e_commerce_app/features/animated_splash/animated_splash_screen.dart';
+import 'package:diva_e_commerce_app/features/cart/ui/cart_screen.dart';
 import 'package:diva_e_commerce_app/features/home_screen/data/models/category_products_response_model.dart';
 import 'package:diva_e_commerce_app/features/home_screen/logic/home_cubit.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/screens/home_screen.dart';
@@ -52,11 +53,15 @@ class AppRouter {
           ),
           transitionDuration: Duration.zero,
         );
-
-      case AppRoutes.profileScreenRoute:
+   case AppRoutes.profileScreenRoute:
         return MaterialPageRoute(builder: (_) {
           return const ProfileScreen();
         });
+           case AppRoutes.cartScreenRoute:
+        return MaterialPageRoute(builder: (_) {
+          return const CartScreen();
+        });
+   
       case AppRoutes.productDetailsScreenRoute:
        final productItem = settings.arguments as ProductModel;
         return MaterialPageRoute(builder: (_) {
@@ -75,4 +80,5 @@ class AppRoutes {
   static const String homeScreenRoute = '/homeScreenRoute ';
   static const String profileScreenRoute = '/profileScreenRoute ';
   static const String productDetailsScreenRoute = '/productDetailsScreenRoute';
+    static const String cartScreenRoute = '/cartScreenRoute';
 }

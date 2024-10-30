@@ -152,4 +152,9 @@ class TextStyleManager {
     fontWeight: FontWeightManager.regular,
     color: ColorsManager.gray,
   );
+   static TextStyle font12WhiteRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightManager.regular,
+    color: ColorsManager.white,
+  );
 }

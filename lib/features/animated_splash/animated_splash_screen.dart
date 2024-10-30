@@ -21,7 +21,7 @@ class AnimatedSplashScreenState extends State<AnimatedSplashScreen>
     Timer(
       const Duration(seconds: 3),
       () {
-        context.pushReplacementNamed(AppRoutes.signInScreenRoute);
+        context.pushReplacementNamed(AppRoutes.cartScreenRoute);
       },
     );
   }
