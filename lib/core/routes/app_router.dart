@@ -10,6 +10,7 @@ import 'package:diva_e_commerce_app/features/profile/ui/screens/profile_screen.d
 import 'package:diva_e_commerce_app/features/wish_list/wish_list_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../features/sign_in/logic/sign_in_cubit.dart';
 import '../../features/sign_up/logic/sign_up_cubit.dart';
 import '../../features/sign_up/ui/sign_up_screen.dart';
 import '../models/category_products_response_model.dart';
@@ -38,8 +39,10 @@ class AppRouter {
         );
       case AppRoutes.signInScreenRoute:
         return PageRouteBuilder(
-          pageBuilder: (context, animation1, animation2) =>
-              const SignInScreen(),
+          pageBuilder: (context, animation1, animation2) => BlocProvider(
+            create: (context) => getIt<SignInCubit>(),
+            child: const SignInScreen(),
+          ),
           transitionDuration: Duration.zero,
         );
 

@@ -1,6 +1,7 @@
 import 'package:diva_e_commerce_app/core/widgets/custom_svg_icon.dart';
 import 'package:diva_e_commerce_app/core/widgets/secondary_screen_custom_scaffold.dart';
 import 'package:diva_e_commerce_app/core/widgets/spacing/vertical_space.dart';
+import 'package:diva_e_commerce_app/features/profile/ui/widgets/payment_method_selection_dialog.dart';
 import 'package:diva_e_commerce_app/features/profile/ui/widgets/profile_item_card.dart';
 import 'package:diva_e_commerce_app/features/profile/ui/widgets/section_title_widget.dart.dart';
 import 'package:diva_e_commerce_app/features/profile/ui/widgets/theme_mode_dialog.dart';
@@ -64,11 +65,18 @@ class AccountSection extends StatelessWidget {
             );
           },
         ),
-        const ProfileItemCard(
-          icon: CustomSVGIcon(
-            path: 'assets/svgs/profile/payment_method.svg',
-          ),
+        ProfileItemCard(
+          icon: const CustomSVGIcon(
+              path: 'assets/svgs/profile/payment_method.svg'),
           label: 'Payment method',
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return const PaymentMethodSelectionDialog();
+              },
+            );
+          },
         ),
         const ProfileItemCard(
           icon: CustomSVGIcon(

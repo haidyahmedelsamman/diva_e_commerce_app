@@ -1,0 +1,4 @@
+enum UserPaymentMethod {
+  cash,
+  credtCard,
+}
