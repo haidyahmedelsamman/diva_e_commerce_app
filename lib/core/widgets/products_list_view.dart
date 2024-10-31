@@ -9,8 +9,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/logic/categories_cubit.dart';
 import '../../../../core/theme/colors_manager.dart';
 
-class OutfitsListViewBuilder extends StatelessWidget {
-  const OutfitsListViewBuilder({
+class ProductsListView extends StatelessWidget {
+  const ProductsListView({
     super.key,
   });
 

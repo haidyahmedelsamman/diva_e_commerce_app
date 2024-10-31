@@ -1,10 +1,10 @@
 import 'package:diva_e_commerce_app/core/theme/text_style_manager.dart';
 import 'package:diva_e_commerce_app/core/widgets/spacing/vertical_space.dart';
-import 'package:diva_e_commerce_app/features/home_screen/data/models/category_products_response_model.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/product_image_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/models/category_products_response_model.dart';
 import '../widgets/product_color_selector.dart';
 import '../widgets/product_name_and_price.dart';
 import '../widgets/product_size_selector.dart';

@@ -3,7 +3,8 @@ import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/product_name
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:diva_e_commerce_app/features/home_screen/data/models/category_products_response_model.dart';
+
+import '../../../../core/models/category_products_response_model.dart';
 
 class OutfitItem extends StatelessWidget {
   final int itemIndex;

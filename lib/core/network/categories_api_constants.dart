@@ -1,5 +1,4 @@
-/// A class that holds the API constants for the home feature.
-class HomeApiConstants {
+class CategoriesApiConstants {
   /// The base URL for the API.
   static const String apiBaseUrl = 'https://fakestoreapi.com/';
 
