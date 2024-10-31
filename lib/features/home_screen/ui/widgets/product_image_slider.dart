@@ -1,9 +1,10 @@
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
 import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
-import 'package:diva_e_commerce_app/features/home_screen/data/models/category_products_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../core/models/category_products_response_model.dart';
 
 class ProductImageSlider extends StatefulWidget {
   final ProductModel productModell;

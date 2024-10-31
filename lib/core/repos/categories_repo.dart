@@ -1,18 +1,17 @@
-import 'package:diva_e_commerce_app/features/home_screen/data/models/category_products_response_model.dart';
-
+import 'package:diva_e_commerce_app/core/network/categories_api_service.dart';
 import '../../../../core/network/api_result.dart';
-import '../apis/home_api_service.dart';
+import '../models/category_products_response_model.dart';
 
-/// The HomeRepo class handles the data operations for the home feature.
-class HomeRepo {
-  final HomeApiService _homeApiService;
+/// The CategoriesRepo class handles the data operations for the Category and home features.
+class CategoriesRepo {
+  final CategoriesApiService _categoriesApiService;
 
-  HomeRepo(this._homeApiService);
+  CategoriesRepo(this._categoriesApiService);
 
   Future<ApiResult<List<String>>> getCategories() async {
     try {
       // Attempt to get categories from the API service.
-      final response = await _homeApiService.getCategories();
+      final response = await _categoriesApiService.getCategories();
       return ApiResult.success(response); // On success, return the data.
     } catch (error) {
       // On failure, catch the error and return the failure result.
@@ -25,7 +24,7 @@ class HomeRepo {
     try {
       // Attempt to get products of each category from the API service.
       final response =
-          await _homeApiService.getCategoryProducts(categoryName: categoryName);
+          await _categoriesApiService.getCategoryProducts(categoryName: categoryName);
       return ApiResult.success(response); // On success, return the data.
     } catch (error) {
       // On failure, catch the error and return the failure result.
