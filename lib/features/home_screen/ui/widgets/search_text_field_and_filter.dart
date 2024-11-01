@@ -50,7 +50,7 @@ class SearchTextFieldAndFilter extends StatelessWidget {
                     EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
                 focusedBorder: focusedBorder ??
                     OutlineInputBorder(
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: ColorsManager.primary,
                         width: 1.5,
                       ),

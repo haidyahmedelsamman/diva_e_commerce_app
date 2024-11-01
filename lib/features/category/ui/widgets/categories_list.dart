@@ -57,7 +57,7 @@ class CategoriesList extends StatelessWidget {
             );
           },
           categoriesLoading: () {
-            return Expanded(
+            return const Expanded(
               child: Center(
                 child: CircularProgressIndicator(
                   color: ColorsManager.primary,
@@ -67,7 +67,7 @@ class CategoriesList extends StatelessWidget {
           },
           categoriesError: (errorHandler) => const SizedBox.shrink(),
           orElse: () {
-            return Expanded(
+            return const Expanded(
               child: Center(
                 child: CircularProgressIndicator(
                   color: ColorsManager.primary,

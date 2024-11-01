@@ -24,7 +24,7 @@ class OutfitsListViewBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
             categoryProductsLoading: () {
-              return Expanded(
+              return const Expanded(
                 child: Center(
                   child: CircularProgressIndicator(
                     color: ColorsManager.primary,

@@ -133,7 +133,7 @@ class AccountSection extends StatelessWidget {
           },
         ),
         ProfileItemCard(
-          icon: CustomSVGIcon(
+          icon: const CustomSVGIcon(
             path: 'assets/svgs/profile/measurment.svg',
           ),
           label: 'Measurments',

@@ -7,7 +7,7 @@ class AppThemeData {
         color: ColorsManager.darkGray,
       ),
       appBarTheme: _appBarTheme,
-      colorScheme: ColorScheme.dark(
+      colorScheme: const ColorScheme.dark(
         primary: ColorsManager.primary,
         secondary: ColorsManager.lightPrimary,
       ));
@@ -16,7 +16,7 @@ class AppThemeData {
     return ThemeData.light().copyWith(
       dividerTheme: _dividerThemeData,
       appBarTheme: _appBarTheme,
-      colorScheme: ColorScheme.light(
+      colorScheme: const ColorScheme.light(
         primary: ColorsManager.primary,
         secondary: ColorsManager.lightPrimary,
       ),
