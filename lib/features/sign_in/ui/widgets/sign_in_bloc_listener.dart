@@ -1,12 +1,13 @@
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
+import 'package:diva_e_commerce_app/core/widgets/error_dialog.dart';
+import 'package:diva_e_commerce_app/core/widgets/loading_indicator.dart';
+import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_cubit.dart';
 import 'package:diva_e_commerce_app/features/sign_in/logic/sign_in_cubit.dart';
 import 'package:diva_e_commerce_app/features/sign_in/logic/sign_in_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/routes/app_router.dart';
-import '../../../../core/theme/colors_manager.dart';
-import '../../../../core/theme/text_style_manager.dart';
 
 class SignInBlocListener extends StatelessWidget {
   const SignInBlocListener({super.key});
@@ -15,25 +16,22 @@ class SignInBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<SignInCubit, SignInState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Success || current is Error,
+          current is Loading || current is Signedin || current is Signedout,
       listener: (context, state) {
         state.whenOrNull(
           loading: () {
             showDialog(
               context: context,
-              builder: (context) => Center(
-                child: CircularProgressIndicator(
-                  color: ColorsManager.primary,
-                ),
-              ),
+              builder: (context) => const LoadingIndicator(),
             );
           },
-          success: (loginResponse) {
+          signedin: (user) {
+            context.read<UserDataCubit>().updateUserData(user);
             context.pop();
             context.pushNamed(AppRoutes.homeScreenRoute);
           },
-          error: (error) {
-            setupErrorState(context, error);
+          signedout: (error) {
+            setupErrorState(context, error ?? '');
           },
         );
       },
@@ -45,28 +43,7 @@ class SignInBlocListener extends StatelessWidget {
     context.pop();
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        icon: const Icon(
-          Icons.error,
-          color: Colors.red,
-          size: 32,
-        ),
-        content: Text(
-          error,
-          style: TextStyleManager.font16GreyBold,
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              context.pop();
-            },
-            child: Text(
-              'Got it',
-              style: TextStyleManager.font14PrimaryRegular,
-            ),
-          ),
-        ],
-      ),
+      builder: (context) => ErrorDialog(error: error),
     );
   }
 }

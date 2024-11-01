@@ -1,4 +1,4 @@
-enum UserNotificationsStateModel {
+enum UserNotificationsState {
   on,
   off,
 }

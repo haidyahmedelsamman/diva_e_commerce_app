@@ -20,12 +20,14 @@ class AnimatedSplashScreenState extends State<AnimatedSplashScreen>
     with TickerProviderStateMixin {
   @override
   void initState() {
+    context.read<SignInCubit>().checkIfUserAuthenticated();
+
     super.initState();
     Timer(
       const Duration(seconds: 3),
       () {
         context.read<SignInCubit>().state.maybeWhen(
-          success: (user) {
+          signedin: (user) {
             context.read<UserDataCubit>().updateUserData(user);
             context.pushReplacementNamed(AppRoutes.homeScreenRoute);
           },
@@ -40,7 +42,9 @@ class AnimatedSplashScreenState extends State<AnimatedSplashScreen>
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ColorsManager.splashBackgroundColor,
+      color: context.appTheme.brightness == Brightness.light
+          ? ColorsManager.splashBackgroundColor
+          : context.appTheme.canvasColor,
       child: Center(
         child: Lottie.asset(
           'assets/lottie/splash.json',

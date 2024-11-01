@@ -1,7 +1,7 @@
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
 import 'package:diva_e_commerce_app/core/routes/app_router.dart';
 import 'package:diva_e_commerce_app/features/sign_in/ui/widgets/dont_have_an_account.dart';
-import 'package:diva_e_commerce_app/features/sign_in/ui/widgets/email_and_password.dart';
+import 'package:diva_e_commerce_app/features/sign_in/ui/widgets/signin_form.dart';
 import 'package:diva_e_commerce_app/features/sign_in/ui/widgets/sign_in_bloc_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,7 +29,7 @@ class SignInScreen extends StatelessWidget {
                 verticalSpace(20),
                 Text(
                   StringManager.signIn,
-                  style: TextStyleManager.font24BlackRegular,
+                  style: TextStyleManager.font24DynamicMedium,
                 ),
                 verticalSpace(10),
                 Image.asset(
@@ -38,7 +38,7 @@ class SignInScreen extends StatelessWidget {
                   height: 230,
                 ),
                 verticalSpace(10),
-                const EmailAndPassword(),
+                const SigninForm(),
                 verticalSpace(10),
                 AppTextButton(
                   buttonText: StringManager.signIn,

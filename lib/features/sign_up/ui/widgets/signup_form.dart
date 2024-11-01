@@ -1,4 +1,6 @@
 import 'package:diva_e_commerce_app/core/helpers/app_regex.dart';
+import 'package:diva_e_commerce_app/core/widgets/custom_password_text_field.dart';
+import 'package:diva_e_commerce_app/core/widgets/spacing/horizontal_space.dart';
 import 'package:diva_e_commerce_app/features/sign_up/logic/sign_up_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,16 +9,14 @@ import '../../../../core/helpers/spacing.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
 import '../../../../core/widgets/password_validations.dart';
 
-class EmailAndPasswordConfirmPassword extends StatefulWidget {
-  const EmailAndPasswordConfirmPassword({super.key});
+class SignupForm extends StatefulWidget {
+  const SignupForm({super.key});
 
   @override
-  State<EmailAndPasswordConfirmPassword> createState() =>
-      _EmailAndPasswordConfirmPasswordState();
+  State<SignupForm> createState() => _SignupFormState();
 }
 
-class _EmailAndPasswordConfirmPasswordState
-    extends State<EmailAndPasswordConfirmPassword> {
+class _SignupFormState extends State<SignupForm> {
   bool isPasswordObscureText = true;
   bool isPasswordConfirmationObscureText = true;
 
@@ -55,6 +55,10 @@ class _EmailAndPasswordConfirmPasswordState
           AppTextFormField(
             hintText: StringManager.email,
             controller: context.read<SignUpCubit>().emailController,
+            suffixIcon: const Icon(
+              color: Colors.black,
+              Icons.email_outlined,
+            ),
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
@@ -65,8 +69,52 @@ class _EmailAndPasswordConfirmPasswordState
             keyboardType: TextInputType.emailAddress,
           ),
           verticalSpace(10),
+          Row(
+            children: [
+              Expanded(
+                child: AppTextFormField(
+                  controller: context.read<SignUpCubit>().firstNameController,
+                  hintText: 'First name',
+                  keyboardType: TextInputType.name,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "First name can't be empty ";
+                    }
+                  },
+                ),
+              ),
+              const HorizontalSpace(space: 10),
+              Expanded(
+                child: AppTextFormField(
+                  controller: context.read<SignUpCubit>().lastNameController,
+                  hintText: 'Last name',
+                  keyboardType: TextInputType.name,
+                  validator: (value) {},
+                ),
+              ),
+            ],
+          ),
+          verticalSpace(10),
           AppTextFormField(
+            hintText: 'Phone number',
+            suffixIcon: const Icon(
+              color: Colors.black,
+              Icons.phone,
+            ),
+            controller: context.read<SignUpCubit>().phoneNumberController,
+            validator: (value) {
+              if (value == null ||
+                  value.isEmpty ||
+                  !AppRegex.isPhoneNumberValid(value)) {
+                return 'Please enter a valid phone number ';
+              }
+            },
+            keyboardType: TextInputType.phone,
+          ),
+          verticalSpace(10),
+          CustomPasswordTextField(
             controller: context.read<SignUpCubit>().passwordController,
+            hintText: 'Password',
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
@@ -74,22 +122,11 @@ class _EmailAndPasswordConfirmPasswordState
                 return 'Please enter a valid password ';
               }
             },
-            keyboardType: TextInputType.visiblePassword,
-            hintText: StringManager.password,
-            suffixIcon: IconButton(
-              onPressed: () {
-                setState(() {
-                  isPasswordObscureText = !isPasswordObscureText;
-                });
-              },
-              icon: Icon(
-                isPasswordObscureText ? Icons.visibility_off : Icons.visibility,
-              ),
-            ),
           ),
           verticalSpace(10),
-          AppTextFormField(
+          CustomPasswordTextField(
             controller: context.read<SignUpCubit>().passwordConfirmController,
+            hintText: 'Confirm Password',
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
@@ -98,22 +135,6 @@ class _EmailAndPasswordConfirmPasswordState
                 return 'Please enter a valid password ';
               }
             },
-            keyboardType: TextInputType.visiblePassword,
-            obscureText: isPasswordConfirmationObscureText,
-            hintText: StringManager.confirmPassword,
-            suffixIcon: IconButton(
-              onPressed: () {
-                setState(() {
-                  isPasswordConfirmationObscureText =
-                      !isPasswordConfirmationObscureText;
-                });
-              },
-              icon: Icon(
-                isPasswordConfirmationObscureText
-                    ? Icons.visibility_off
-                    : Icons.visibility,
-              ),
-            ),
           ),
           verticalSpace(10),
           PasswordValidations(
@@ -123,6 +144,7 @@ class _EmailAndPasswordConfirmPasswordState
             hasNumber: hasNumber,
             hasMinLength: hasMinLength,
           ),
+          verticalSpace(10),
         ],
       ),
     );

@@ -1,3 +1,7 @@
+import 'package:diva_e_commerce_app/core/network/user_firestore_service.dart';
+import 'package:diva_e_commerce_app/core/secure_storage/current_user_secure_storage_repository.dart';
+import 'package:diva_e_commerce_app/core/secure_storage/secure_storage_service.dart';
+import 'package:diva_e_commerce_app/features/profile/data/repositories/user_data_repository.dart';
 import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_cubit.dart';
 import 'package:diva_e_commerce_app/features/sign_up/data/repo/sign_up_repository.dart';
 import 'package:diva_e_commerce_app/features/sign_up/logic/sign_up_cubit.dart';
@@ -18,17 +22,55 @@ final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
   getIt.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
 
+  getIt.registerLazySingleton<UserFirestoreService>(
+    () => UserFirestoreService(),
+  );
+
+  getIt.registerLazySingleton<SecureStorageService>(
+    () => SecureStorageService(),
+  );
+
+  getIt.registerLazySingleton<CurrentUserSecureStorageRepository>(
+    () => CurrentUserSecureStorageRepository(getIt()),
+  );
+
+  getIt.registerLazySingleton<UserDataRepository>(
+    () => UserDataRepository(
+      getIt(),
+      getIt(),
+    ),
+  );
+
   getIt.registerLazySingleton<SignUpRepository>(
       () => SignUpRepository(getIt(), getIt()));
 
-  getIt.registerLazySingleton<SignUpCubit>(() => SignUpCubit(getIt()));
+  getIt.registerFactory<SignUpCubit>(
+    () => SignUpCubit(
+      getIt(),
+      getIt(),
+    ),
+  );
 
-  getIt
-      .registerLazySingleton<SignInRepository>(() => SignInRepository(getIt()));
+  getIt.registerLazySingleton<SignInRepository>(
+    () => SignInRepository(
+      getIt(),
+      getIt(),
+    ),
+  );
 
-  getIt.registerLazySingleton<SignInCubit>(() => SignInCubit(getIt()));
+  getIt.registerFactory<SignInCubit>(
+    () => SignInCubit(
+      getIt(),
+      getIt(),
+    ),
+  );
 
-  getIt.registerLazySingleton<UserDataCubit>(() => UserDataCubit());
+  getIt.registerLazySingleton<UserDataCubit>(
+    () => UserDataCubit(
+      getIt(),
+      getIt(),
+    ),
+  );
 
   // Dio is an HTTP client for making API calls.
   // The DioFactory is assumed to provide a preconfigured Dio instance.

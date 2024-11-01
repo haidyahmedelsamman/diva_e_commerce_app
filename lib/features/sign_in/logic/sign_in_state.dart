@@ -7,6 +7,6 @@ part 'sign_in_state.freezed.dart';
 class SignInState with _$SignInState {
   const factory SignInState.initial() = _Initial;
   const factory SignInState.loading() = Loading;
-  const factory SignInState.success(UserModel user) = Success;
-  const factory SignInState.error({required String error}) = Error;
+  const factory SignInState.signedin(UserModel user) = Signedin;
+  const factory SignInState.signedout({String? error}) = Signedout;
 }

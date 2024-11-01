@@ -1,3 +1,4 @@
+import 'package:diva_e_commerce_app/core/widgets/custom_password_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/constants/string_manager.dart';
@@ -7,14 +8,14 @@ import '../../../../core/widgets/app_text_form_field.dart';
 import '../../../../core/widgets/password_validations.dart';
 import '../../logic/sign_in_cubit.dart';
 
-class EmailAndPassword extends StatefulWidget {
-  const EmailAndPassword({super.key});
+class SigninForm extends StatefulWidget {
+  const SigninForm({super.key});
 
-  @override                                                                                                     
-  State<EmailAndPassword> createState() => _EmailAndPasswordState();
+  @override
+  State<SigninForm> createState() => _SigninFormState();
 }
 
-class _EmailAndPasswordState extends State<EmailAndPassword> {
+class _SigninFormState extends State<SigninForm> {
   bool isPasswordObscureText = true;
   bool isPasswordConfirmationObscureText = true;
 
@@ -52,6 +53,10 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
         children: [
           AppTextFormField(
             hintText: StringManager.email,
+            suffixIcon: const Icon(
+              color: Colors.black,
+              Icons.email_outlined,
+            ),
             controller: context.read<SignInCubit>().emailController,
             validator: (value) {
               if (value == null ||
@@ -63,8 +68,9 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             keyboardType: TextInputType.emailAddress,
           ),
           verticalSpace(10),
-          AppTextFormField(
+          CustomPasswordTextField(
             controller: context.read<SignInCubit>().passwordController,
+            hintText: 'Password',
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
@@ -72,18 +78,6 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                 return 'Please enter a valid password ';
               }
             },
-            keyboardType: TextInputType.visiblePassword,
-            hintText: StringManager.password,
-            suffixIcon: IconButton(
-              onPressed: () {
-                setState(() {
-                  isPasswordObscureText = !isPasswordObscureText;
-                });
-              },
-              icon: Icon(
-                isPasswordObscureText ? Icons.visibility_off : Icons.visibility,
-              ),
-            ),
           ),
           verticalSpace(10),
           PasswordValidations(

@@ -19,7 +19,8 @@ class SignUpRepository {
         password: signupRequest.password,
       );
       await userCredential.user!.updateDisplayName(signupRequest.displayName);
-      final user = UserModel.fromFirebaseUser(userCredential.user!);
+      final user =
+          UserModel.fromFirebaseUser(userCredential.user!, signupRequest);
       await _userFirestoreService.addUser(user);
       return user;
     } catch (e) {

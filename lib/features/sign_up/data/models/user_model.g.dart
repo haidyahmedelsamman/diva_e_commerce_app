@@ -13,7 +13,7 @@ abstract class _$UserModelCWProxy {
 
   UserModel measurements(UserMeasurementsModel measurements);
 
-  UserModel notificationsState(UserNotificationsStateModel notificationsState);
+  UserModel notificationsState(UserNotificationsState notificationsState);
 
   UserModel paymentMethod(UserPaymentMethod paymentMethod);
 
@@ -27,7 +27,7 @@ abstract class _$UserModelCWProxy {
     String? profileImage,
     UserPersonalInfoModel? personalInfo,
     UserMeasurementsModel? measurements,
-    UserNotificationsStateModel? notificationsState,
+    UserNotificationsState? notificationsState,
     UserPaymentMethod? paymentMethod,
   });
 }
@@ -51,8 +51,7 @@ class _$UserModelCWProxyImpl implements _$UserModelCWProxy {
       this(measurements: measurements);
 
   @override
-  UserModel notificationsState(
-          UserNotificationsStateModel notificationsState) =>
+  UserModel notificationsState(UserNotificationsState notificationsState) =>
       this(notificationsState: notificationsState);
 
   @override
@@ -96,7 +95,7 @@ class _$UserModelCWProxyImpl implements _$UserModelCWProxy {
               notificationsState == null
           ? _value.notificationsState
           // ignore: cast_nullable_to_non_nullable
-          : notificationsState as UserNotificationsStateModel,
+          : notificationsState as UserNotificationsState,
       paymentMethod:
           paymentMethod == const $CopyWithPlaceholder() || paymentMethod == null
               ? _value.paymentMethod
@@ -126,9 +125,8 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) => UserModel(
       measurements: UserMeasurementsModel.fromJson(
           json['measurements'] as Map<String, dynamic>),
       notificationsState: $enumDecodeNullable(
-              _$UserNotificationsStateModelEnumMap,
-              json['notificationsState']) ??
-          UserNotificationsStateModel.on,
+              _$UserNotificationsStateEnumMap, json['notificationsState']) ??
+          UserNotificationsState.on,
       paymentMethod: $enumDecodeNullable(
               _$UserPaymentMethodEnumMap, json['paymentMethod']) ??
           UserPaymentMethod.cash,
@@ -141,14 +139,14 @@ Map<String, dynamic> _$UserModelToJson(UserModel instance) => <String, dynamic>{
       'profileImage': instance.profileImage,
       'personalInfo': instance.personalInfo,
       'notificationsState':
-          _$UserNotificationsStateModelEnumMap[instance.notificationsState]!,
+          _$UserNotificationsStateEnumMap[instance.notificationsState]!,
       'measurements': instance.measurements,
       'paymentMethod': _$UserPaymentMethodEnumMap[instance.paymentMethod]!,
     };
 
-const _$UserNotificationsStateModelEnumMap = {
-  UserNotificationsStateModel.on: 'on',
-  UserNotificationsStateModel.off: 'off',
+const _$UserNotificationsStateEnumMap = {
+  UserNotificationsState.on: 'on',
+  UserNotificationsState.off: 'off',
 };
 
 const _$UserPaymentMethodEnumMap = {

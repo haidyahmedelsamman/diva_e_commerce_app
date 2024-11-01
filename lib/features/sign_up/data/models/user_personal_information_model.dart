@@ -1,8 +1,11 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:diva_e_commerce_app/features/sign_up/data/models/gender.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user_personal_information_model.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class UserPersonalInfoModel {
   final String? firstName;
   final String? lastName;
@@ -13,7 +16,7 @@ class UserPersonalInfoModel {
   final String? country;
   final String? postalCode;
   final DateTime? dateOfBirth;
-  final String? gender;
+  final Gender? gender;
   final String? preferredLanguage;
   final String? nationality;
 

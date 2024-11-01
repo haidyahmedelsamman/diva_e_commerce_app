@@ -47,7 +47,7 @@ class UserAccountDetailsRow extends StatelessWidget {
                     style: TextStyleManager.font16DynamicRegular,
                   ),
                   Text(
-                    user.displayName ?? '',
+                    user.personalInfo.firstName ?? '',
                     style: TextStyleManager.font16DynamicSemiBold,
                   ),
                 ],

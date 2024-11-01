@@ -25,10 +25,15 @@ class SignInRepository {
     }
   }
 
-  UserModel? checkIfUserAuthenticated() {
+  Future<void> signout() {
+    return _firebaseAuth.signOut();
+  }
+
+  Future<UserModel?> checkIfUserAuthenticated() async {
     final currentUser = _firebaseAuth.currentUser;
     if (currentUser != null) {
-      return UserModel.fromFirebaseUser(currentUser);
+      final user = await _userFirestoreService.getUserById(currentUser.uid);
+      return user;
     }
     return null;
   }

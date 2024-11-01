@@ -1,3 +1,4 @@
+import 'package:diva_e_commerce_app/core/secure_storage/current_user_secure_storage_repository.dart';
 import 'package:diva_e_commerce_app/features/sign_in/logic/sign_in_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,11 +11,12 @@ class SignInCubit extends Cubit<SignInState> {
 
   final formKey = GlobalKey<FormState>();
   final SignInRepository _signInRepository;
+  final CurrentUserSecureStorageRepository _currentUserSecureStorageRepository;
 
-  SignInCubit(this._signInRepository) : super(const SignInState.initial()) {
-    checkIfUserAuthenticated();
-  }
-
+  SignInCubit(
+    this._signInRepository,
+    this._currentUserSecureStorageRepository,
+  ) : super(const SignInState.initial());
   Future<void> signIn() async {
     emit(const SignInState.loading());
 
@@ -23,25 +25,33 @@ class SignInCubit extends Cubit<SignInState> {
           emailController.text, passwordController.text);
 
       if (user != null) {
-        emit(SignInState.success(user));
+        await _currentUserSecureStorageRepository
+            .savePassword(passwordController.text);
+        emit(SignInState.signedin(user));
       } else {
         emit(
-          const SignInState.error(error: 'Sign In failed'),
+          const SignInState.signedout(error: 'Sign In failed'),
         );
       }
     } catch (e) {
       emit(
-        SignInState.error(error: e.toString()),
+        SignInState.signedout(error: e.toString()),
       );
     }
+  }
+
+  Future<void> signout() async {
+    await _signInRepository.signout();
+    await _currentUserSecureStorageRepository.deletePassword();
+    emit(const SignInState.signedout());
   }
 
   void checkIfUserAuthenticated() async {
     emit(const SignInState.loading());
 
-    final currentUser = _signInRepository.checkIfUserAuthenticated();
+    final currentUser = await _signInRepository.checkIfUserAuthenticated();
     if (currentUser != null) {
-      emit(SignInState.success(currentUser));
+      emit(SignInState.signedin(currentUser));
     }
   }
 }
