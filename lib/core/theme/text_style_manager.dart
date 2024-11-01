@@ -76,7 +76,7 @@ class TextStyleManager {
     fontWeight: FontWeightManager.regular,
     color: ColorsManager.lightGray,
   );
-   static TextStyle font16GreyRegular = TextStyle(
+  static TextStyle font16GreyRegular = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeightManager.regular,
     color: ColorsManager.grey,
@@ -126,6 +126,11 @@ class TextStyleManager {
     fontWeight: FontWeightManager.regular,
     color: ColorsManager.primary,
   );
+  static TextStyle font14PrimaryBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightManager.bold,
+    color: ColorsManager.primary,
+  );
   static TextStyle font14LightPrimaryRegular = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightManager.regular,
@@ -136,7 +141,7 @@ class TextStyleManager {
     fontWeight: FontWeightManager.regular,
     color: ColorsManager.black,
   );
-   static TextStyle font14GreykRegular = TextStyle(
+  static TextStyle font14GreykRegular = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightManager.regular,
     color: ColorsManager.grey,

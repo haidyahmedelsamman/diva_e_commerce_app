@@ -1,6 +1,7 @@
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
 import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
 import 'package:diva_e_commerce_app/core/theme/text_style_manager.dart';
+import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,15 +22,16 @@ class SignupBlocListener extends StatelessWidget {
           loading: () {
             showDialog(
               context: context,
-              builder: (context) => Center(
+              builder: (context) => const Center(
                 child: CircularProgressIndicator(
                   color: ColorsManager.primary,
                 ),
               ),
             );
           },
-          success: (signupResponse) {
+          success: (user) {
             context.pop();
+            context.read<UserDataCubit>().updateUserData(user);
             showSuccessDialog(context);
           },
           error: (error) {
@@ -62,8 +64,7 @@ class SignupBlocListener extends StatelessWidget {
                 disabledForegroundColor: Colors.grey.withOpacity(0.38),
               ),
               onPressed: () {
-                // I will let him go to Screen Login, but after merging the brunchs
-                context.pushNamed(AppRoutes.signInScreenRoute);
+                context.pushNamed(AppRoutes.homeScreenRoute);
               },
               child: const Text('Continue'),
             ),

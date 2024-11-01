@@ -20,24 +20,24 @@ mixin _$SignInState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserSignInModel user) success,
-    required TResult Function(String error) error,
+    required TResult Function(UserModel user) signedin,
+    required TResult Function(String? error) signedout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserSignInModel user)? success,
-    TResult? Function(String error)? error,
+    TResult? Function(UserModel user)? signedin,
+    TResult? Function(String? error)? signedout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserSignInModel user)? success,
-    TResult Function(String error)? error,
+    TResult Function(UserModel user)? signedin,
+    TResult Function(String? error)? signedout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,24 +45,24 @@ mixin _$SignInState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Error value) error,
+    required TResult Function(Signedin value) signedin,
+    required TResult Function(Signedout value) signedout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Error value)? error,
+    TResult? Function(Signedin value)? signedin,
+    TResult? Function(Signedout value)? signedout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Error value)? error,
+    TResult Function(Signedin value)? signedin,
+    TResult Function(Signedout value)? signedout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -132,8 +132,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserSignInModel user) success,
-    required TResult Function(String error) error,
+    required TResult Function(UserModel user) signedin,
+    required TResult Function(String? error) signedout,
   }) {
     return initial();
   }
@@ -143,8 +143,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserSignInModel user)? success,
-    TResult? Function(String error)? error,
+    TResult? Function(UserModel user)? signedin,
+    TResult? Function(String? error)? signedout,
   }) {
     return initial?.call();
   }
@@ -154,8 +154,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserSignInModel user)? success,
-    TResult Function(String error)? error,
+    TResult Function(UserModel user)? signedin,
+    TResult Function(String? error)? signedout,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -169,8 +169,8 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Error value) error,
+    required TResult Function(Signedin value) signedin,
+    required TResult Function(Signedout value) signedout,
   }) {
     return initial(this);
   }
@@ -180,8 +180,8 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Error value)? error,
+    TResult? Function(Signedin value)? signedin,
+    TResult? Function(Signedout value)? signedout,
   }) {
     return initial?.call(this);
   }
@@ -191,8 +191,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Error value)? error,
+    TResult Function(Signedin value)? signedin,
+    TResult Function(Signedout value)? signedout,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -249,8 +249,8 @@ class _$LoadingImpl implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserSignInModel user) success,
-    required TResult Function(String error) error,
+    required TResult Function(UserModel user) signedin,
+    required TResult Function(String? error) signedout,
   }) {
     return loading();
   }
@@ -260,8 +260,8 @@ class _$LoadingImpl implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserSignInModel user)? success,
-    TResult? Function(String error)? error,
+    TResult? Function(UserModel user)? signedin,
+    TResult? Function(String? error)? signedout,
   }) {
     return loading?.call();
   }
@@ -271,8 +271,8 @@ class _$LoadingImpl implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserSignInModel user)? success,
-    TResult Function(String error)? error,
+    TResult Function(UserModel user)? signedin,
+    TResult Function(String? error)? signedout,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -286,8 +286,8 @@ class _$LoadingImpl implements Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Error value) error,
+    required TResult Function(Signedin value) signedin,
+    required TResult Function(Signedout value) signedout,
   }) {
     return loading(this);
   }
@@ -297,8 +297,8 @@ class _$LoadingImpl implements Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Error value)? error,
+    TResult? Function(Signedin value)? signedin,
+    TResult? Function(Signedout value)? signedout,
   }) {
     return loading?.call(this);
   }
@@ -308,8 +308,8 @@ class _$LoadingImpl implements Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Error value)? error,
+    TResult Function(Signedin value)? signedin,
+    TResult Function(Signedout value)? signedout,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -324,20 +324,20 @@ abstract class Loading implements SignInState {
 }
 
 /// @nodoc
-abstract class _$$SuccessImplCopyWith<$Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
-      __$$SuccessImplCopyWithImpl<$Res>;
+abstract class _$$SignedinImplCopyWith<$Res> {
+  factory _$$SignedinImplCopyWith(
+          _$SignedinImpl value, $Res Function(_$SignedinImpl) then) =
+      __$$SignedinImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UserSignInModel user});
+  $Res call({UserModel user});
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res, _$SuccessImpl>
-    implements _$$SuccessImplCopyWith<$Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+class __$$SignedinImplCopyWithImpl<$Res>
+    extends _$SignInStateCopyWithImpl<$Res, _$SignedinImpl>
+    implements _$$SignedinImplCopyWith<$Res> {
+  __$$SignedinImplCopyWithImpl(
+      _$SignedinImpl _value, $Res Function(_$SignedinImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of SignInState
@@ -347,33 +347,33 @@ class __$$SuccessImplCopyWithImpl<$Res>
   $Res call({
     Object? user = null,
   }) {
-    return _then(_$SuccessImpl(
+    return _then(_$SignedinImpl(
       null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserSignInModel,
+              as UserModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SuccessImpl implements Success {
-  const _$SuccessImpl(this.user);
+class _$SignedinImpl implements Signedin {
+  const _$SignedinImpl(this.user);
 
   @override
-  final UserSignInModel user;
+  final UserModel user;
 
   @override
   String toString() {
-    return 'SignInState.success(user: $user)';
+    return 'SignInState.signedin(user: $user)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl &&
+            other is _$SignedinImpl &&
             (identical(other.user, user) || other.user == user));
   }
 
@@ -385,18 +385,18 @@ class _$SuccessImpl implements Success {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
+  _$$SignedinImplCopyWith<_$SignedinImpl> get copyWith =>
+      __$$SignedinImplCopyWithImpl<_$SignedinImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserSignInModel user) success,
-    required TResult Function(String error) error,
+    required TResult Function(UserModel user) signedin,
+    required TResult Function(String? error) signedout,
   }) {
-    return success(user);
+    return signedin(user);
   }
 
   @override
@@ -404,10 +404,10 @@ class _$SuccessImpl implements Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserSignInModel user)? success,
-    TResult? Function(String error)? error,
+    TResult? Function(UserModel user)? signedin,
+    TResult? Function(String? error)? signedout,
   }) {
-    return success?.call(user);
+    return signedin?.call(user);
   }
 
   @override
@@ -415,12 +415,12 @@ class _$SuccessImpl implements Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserSignInModel user)? success,
-    TResult Function(String error)? error,
+    TResult Function(UserModel user)? signedin,
+    TResult Function(String? error)? signedout,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(user);
+    if (signedin != null) {
+      return signedin(user);
     }
     return orElse();
   }
@@ -430,10 +430,10 @@ class _$SuccessImpl implements Success {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Error value) error,
+    required TResult Function(Signedin value) signedin,
+    required TResult Function(Signedout value) signedout,
   }) {
-    return success(this);
+    return signedin(this);
   }
 
   @override
@@ -441,10 +441,10 @@ class _$SuccessImpl implements Success {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Error value)? error,
+    TResult? Function(Signedin value)? signedin,
+    TResult? Function(Signedout value)? signedout,
   }) {
-    return success?.call(this);
+    return signedin?.call(this);
   }
 
   @override
@@ -452,44 +452,44 @@ class _$SuccessImpl implements Success {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Error value)? error,
+    TResult Function(Signedin value)? signedin,
+    TResult Function(Signedout value)? signedout,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (signedin != null) {
+      return signedin(this);
     }
     return orElse();
   }
 }
 
-abstract class Success implements SignInState {
-  const factory Success(final UserSignInModel user) = _$SuccessImpl;
+abstract class Signedin implements SignInState {
+  const factory Signedin(final UserModel user) = _$SignedinImpl;
 
-  UserSignInModel get user;
+  UserModel get user;
 
   /// Create a copy of SignInState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+  _$$SignedinImplCopyWith<_$SignedinImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorImplCopyWith<$Res> {
-  factory _$$ErrorImplCopyWith(
-          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
-      __$$ErrorImplCopyWithImpl<$Res>;
+abstract class _$$SignedoutImplCopyWith<$Res> {
+  factory _$$SignedoutImplCopyWith(
+          _$SignedoutImpl value, $Res Function(_$SignedoutImpl) then) =
+      __$$SignedoutImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String error});
+  $Res call({String? error});
 }
 
 /// @nodoc
-class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res, _$ErrorImpl>
-    implements _$$ErrorImplCopyWith<$Res> {
-  __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
+class __$$SignedoutImplCopyWithImpl<$Res>
+    extends _$SignInStateCopyWithImpl<$Res, _$SignedoutImpl>
+    implements _$$SignedoutImplCopyWith<$Res> {
+  __$$SignedoutImplCopyWithImpl(
+      _$SignedoutImpl _value, $Res Function(_$SignedoutImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of SignInState
@@ -497,35 +497,35 @@ class __$$ErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = null,
+    Object? error = freezed,
   }) {
-    return _then(_$ErrorImpl(
-      error: null == error
+    return _then(_$SignedoutImpl(
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ErrorImpl implements Error {
-  const _$ErrorImpl({required this.error});
+class _$SignedoutImpl implements Signedout {
+  const _$SignedoutImpl({this.error});
 
   @override
-  final String error;
+  final String? error;
 
   @override
   String toString() {
-    return 'SignInState.error(error: $error)';
+    return 'SignInState.signedout(error: $error)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorImpl &&
+            other is _$SignedoutImpl &&
             (identical(other.error, error) || other.error == error));
   }
 
@@ -537,18 +537,18 @@ class _$ErrorImpl implements Error {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
-      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
+  _$$SignedoutImplCopyWith<_$SignedoutImpl> get copyWith =>
+      __$$SignedoutImplCopyWithImpl<_$SignedoutImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserSignInModel user) success,
-    required TResult Function(String error) error,
+    required TResult Function(UserModel user) signedin,
+    required TResult Function(String? error) signedout,
   }) {
-    return error(this.error);
+    return signedout(error);
   }
 
   @override
@@ -556,10 +556,10 @@ class _$ErrorImpl implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserSignInModel user)? success,
-    TResult? Function(String error)? error,
+    TResult? Function(UserModel user)? signedin,
+    TResult? Function(String? error)? signedout,
   }) {
-    return error?.call(this.error);
+    return signedout?.call(error);
   }
 
   @override
@@ -567,12 +567,12 @@ class _$ErrorImpl implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserSignInModel user)? success,
-    TResult Function(String error)? error,
+    TResult Function(UserModel user)? signedin,
+    TResult Function(String? error)? signedout,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this.error);
+    if (signedout != null) {
+      return signedout(error);
     }
     return orElse();
   }
@@ -582,10 +582,10 @@ class _$ErrorImpl implements Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Error value) error,
+    required TResult Function(Signedin value) signedin,
+    required TResult Function(Signedout value) signedout,
   }) {
-    return error(this);
+    return signedout(this);
   }
 
   @override
@@ -593,10 +593,10 @@ class _$ErrorImpl implements Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Error value)? error,
+    TResult? Function(Signedin value)? signedin,
+    TResult? Function(Signedout value)? signedout,
   }) {
-    return error?.call(this);
+    return signedout?.call(this);
   }
 
   @override
@@ -604,25 +604,25 @@ class _$ErrorImpl implements Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Error value)? error,
+    TResult Function(Signedin value)? signedin,
+    TResult Function(Signedout value)? signedout,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (signedout != null) {
+      return signedout(this);
     }
     return orElse();
   }
 }
 
-abstract class Error implements SignInState {
-  const factory Error({required final String error}) = _$ErrorImpl;
+abstract class Signedout implements SignInState {
+  const factory Signedout({final String? error}) = _$SignedoutImpl;
 
-  String get error;
+  String? get error;
 
   /// Create a copy of SignInState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+  _$$SignedoutImplCopyWith<_$SignedoutImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
 import 'package:diva_e_commerce_app/core/widgets/or_divider.dart';
 import 'package:diva_e_commerce_app/features/sign_up/ui/widgets/already_have_account.dart';
-import 'package:diva_e_commerce_app/features/sign_up/ui/widgets/email_and_password_confirm_password.dart';
+import 'package:diva_e_commerce_app/features/sign_up/ui/widgets/signup_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,7 +30,7 @@ class SignUpScreen extends StatelessWidget {
                 verticalSpace(20),
                 Text(
                   StringManager.signUp,
-                  style: TextStyleManager.font24BlackRegular,
+                  style: TextStyleManager.font24DynamicMedium,
                 ),
                 verticalSpace(8),
                 Image.asset(
@@ -39,7 +39,7 @@ class SignUpScreen extends StatelessWidget {
                   height: 230,
                 ),
                 verticalSpace(8),
-                const EmailAndPasswordConfirmPassword(),
+                const SignupForm(),
                 AppTextButton(
                   buttonText: StringManager.signUp,
                   onPressed: () {

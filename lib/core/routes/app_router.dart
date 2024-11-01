@@ -5,6 +5,10 @@ import 'package:diva_e_commerce_app/features/cart/cart_tab.dart';
 import 'package:diva_e_commerce_app/features/category/ui/categories_tab.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/screens/home_screen.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/screens/product_details_screen.dart';
+import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_cubit.dart';
+import 'package:diva_e_commerce_app/features/profile/ui/screens/edit_user_account_screen.dart';
+import 'package:diva_e_commerce_app/features/profile/ui/screens/measurments_screen.dart';
+import 'package:diva_e_commerce_app/features/profile/ui/screens/personal_information_screen.dart';
 import 'package:diva_e_commerce_app/features/sign_in/ui/sign_in_screen.dart';
 import 'package:diva_e_commerce_app/features/profile/ui/screens/profile_screen.dart';
 import 'package:diva_e_commerce_app/features/wish_list/wish_list_tab.dart';
@@ -22,8 +26,17 @@ class AppRouter {
     switch (settings.name) {
       case AppRoutes.animatedSplashScreenRoute:
         return PageRouteBuilder(
-          pageBuilder: (context, animation1, animation2) =>
-              const AnimatedSplashScreen(),
+          pageBuilder: (context, animation1, animation2) => MultiBlocProvider(
+            providers: [
+              BlocProvider<SignInCubit>(
+                create: (BuildContext context) => getIt<SignInCubit>(),
+              ),
+              BlocProvider<UserDataCubit>(
+                create: (BuildContext context) => getIt<UserDataCubit>(),
+              ),
+            ],
+            child: const AnimatedSplashScreen(),
+          ),
           transitionDuration: Duration.zero,
         );
 
@@ -39,8 +52,15 @@ class AppRouter {
         );
       case AppRoutes.signInScreenRoute:
         return PageRouteBuilder(
-          pageBuilder: (context, animation1, animation2) => BlocProvider(
-            create: (context) => getIt<SignInCubit>(),
+          pageBuilder: (context, animation1, animation2) => MultiBlocProvider(
+            providers: [
+              BlocProvider<SignInCubit>(
+                create: (BuildContext context) => getIt<SignInCubit>(),
+              ),
+              BlocProvider<UserDataCubit>(
+                create: (BuildContext context) => getIt<UserDataCubit>(),
+              ),
+            ],
             child: const SignInScreen(),
           ),
           transitionDuration: Duration.zero,
@@ -48,17 +68,51 @@ class AppRouter {
 
       case AppRoutes.signUpScreenRoute:
         return PageRouteBuilder(
-          pageBuilder: (context, animation1, animation2) => BlocProvider(
-            create: (context) => getIt<SignUpCubit>(),
-            child: const SignUpScreen(),
-          ),
-          transitionDuration: Duration.zero,
-        );
+            pageBuilder: (context, animation1, animation2) => BlocProvider(
+                  create: (context) => getIt<SignUpCubit>(),
+                  child: BlocProvider(
+                    create: (context) => getIt<UserDataCubit>(),
+                    child: const SignUpScreen(),
+                  ),
+                ),
+            transitionDuration: Duration.zero);
 
       case AppRoutes.profileScreenRoute:
-        return MaterialPageRoute(builder: (_) {
-          return const ProfileScreen();
-        });
+        return MaterialPageRoute(
+          builder: (_) {
+            return BlocProvider(
+              create: (context) => getIt<UserDataCubit>(),
+              child: const ProfileScreen(),
+            );
+          },
+        );
+      case AppRoutes.editUserAccountScreenRoute:
+        return MaterialPageRoute(
+          builder: (_) {
+            return BlocProvider(
+              create: (context) => getIt<UserDataCubit>(),
+              child: const EditUserAccountScreen(),
+            );
+          },
+        );
+      case AppRoutes.personalInfoScreen:
+        return MaterialPageRoute(
+          builder: (_) {
+            return BlocProvider(
+              create: (context) => getIt<UserDataCubit>(),
+              child: const PersonalInformationScreen(),
+            );
+          },
+        );
+      case AppRoutes.measurmentsScreen:
+        return MaterialPageRoute(
+          builder: (_) {
+            return BlocProvider(
+              create: (context) => getIt<UserDataCubit>(),
+              child: const MeasurmentsScreen(),
+            );
+          },
+        );
       case AppRoutes.productDetailsScreenRoute:
         final productItem = settings.arguments as ProductModel;
         return MaterialPageRoute(builder: (_) {
@@ -100,6 +154,11 @@ class AppRoutes {
   static const String signInScreenRoute = '/signInScreenRoute ';
   static const String homeScreenRoute = '/homeScreenRoute ';
   static const String profileScreenRoute = '/profileScreenRoute ';
+  static const String editUserAccountScreenRoute =
+      '/editUserAccountScreenRoute ';
+  static const String personalInfoScreen = '/personalInfoScreen ';
+  static const String measurmentsScreen = '/measurmentsScreen ';
+
   static const String productDetailsScreenRoute = '/productDetailsScreenRoute';
   static const String categoriesTabRoute = '/categoriesTabRoute';
   static const String cartTabRoute = '/cartTabRoute';

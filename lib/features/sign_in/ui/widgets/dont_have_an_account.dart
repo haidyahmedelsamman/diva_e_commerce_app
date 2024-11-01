@@ -9,8 +9,9 @@ class DontHaveAnAccount extends StatelessWidget {
     return RichText(
         text: TextSpan(children: [
       TextSpan(
-          text: "Don't have an account",
-          style: TextStyleManager.font18BlackRegular),
+        text: "Don't have an account",
+        style: TextStyleManager.font18DynamicRegular,
+      ),
       TextSpan(text: ' Sign Up', style: TextStyleManager.font18PrimaryRegular),
     ]));
   }
