@@ -24,7 +24,7 @@ class ProductsListView extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
             categoryProductsLoading: () {
-              return Expanded(
+              return const Expanded(
                 child: Center(
                   child: CircularProgressIndicator(
                     color: ColorsManager.primary,
@@ -32,7 +32,7 @@ class ProductsListView extends StatelessWidget {
                 ),
               );
             },
-            categoryProductsSuccess: (categoryDataList,productsDataList) {
+            categoryProductsSuccess: (categoryDataList, productsDataList) {
               return Expanded(
                 child: GridView.builder(
                   itemCount: productsDataList.length,

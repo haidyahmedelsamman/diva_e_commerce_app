@@ -7,6 +7,8 @@ part of 'user_model.dart';
 // **************************************************************************
 
 abstract class _$UserModelCWProxy {
+  UserModel displayName(String? displayName);
+
   UserModel profileImage(String? profileImage);
 
   UserModel personalInfo(UserPersonalInfoModel personalInfo);
@@ -24,6 +26,7 @@ abstract class _$UserModelCWProxy {
   /// UserModel(...).copyWith(id: 12, name: "My name")
   /// ````
   UserModel call({
+    String? displayName,
     String? profileImage,
     UserPersonalInfoModel? personalInfo,
     UserMeasurementsModel? measurements,
@@ -37,6 +40,9 @@ class _$UserModelCWProxyImpl implements _$UserModelCWProxy {
   const _$UserModelCWProxyImpl(this._value);
 
   final UserModel _value;
+
+  @override
+  UserModel displayName(String? displayName) => this(displayName: displayName);
 
   @override
   UserModel profileImage(String? profileImage) =>
@@ -67,6 +73,7 @@ class _$UserModelCWProxyImpl implements _$UserModelCWProxy {
   /// UserModel(...).copyWith(id: 12, name: "My name")
   /// ````
   UserModel call({
+    Object? displayName = const $CopyWithPlaceholder(),
     Object? profileImage = const $CopyWithPlaceholder(),
     Object? personalInfo = const $CopyWithPlaceholder(),
     Object? measurements = const $CopyWithPlaceholder(),
@@ -76,7 +83,10 @@ class _$UserModelCWProxyImpl implements _$UserModelCWProxy {
     return UserModel(
       uid: _value.uid,
       email: _value.email,
-      displayName: _value.displayName,
+      displayName: displayName == const $CopyWithPlaceholder()
+          ? _value.displayName
+          // ignore: cast_nullable_to_non_nullable
+          : displayName as String?,
       profileImage: profileImage == const $CopyWithPlaceholder()
           ? _value.profileImage
           // ignore: cast_nullable_to_non_nullable

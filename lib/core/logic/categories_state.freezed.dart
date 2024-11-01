@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'home_state.dart';
+part of 'categories_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$HomeState {
+mixin _$CategoriesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -24,11 +24,11 @@ mixin _$HomeState {
     required TResult Function(String errorMessage) categoriesError,
     required TResult Function(int indexOfCategory) onCategoryClick,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<ProductModel> productsDataList)
+    required TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
-    required TResult Function(List<ProductModel> categoryDataList)
-        onProductDetailsScreenClick,
+    required TResult Function(int indexCategoryTab) onCategoriesTabClick,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,11 +39,11 @@ mixin _$HomeState {
     TResult? Function(String errorMessage)? categoriesError,
     TResult? Function(int indexOfCategory)? onCategoryClick,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<ProductModel> productsDataList)?
+    TResult? Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
-    TResult? Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult? Function(int indexCategoryTab)? onCategoriesTabClick,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,11 +54,11 @@ mixin _$HomeState {
     TResult Function(String errorMessage)? categoriesError,
     TResult Function(int indexOfCategory)? onCategoryClick,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<ProductModel> productsDataList)?
+    TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
-    TResult Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult Function(int indexCategoryTab)? onCategoriesTabClick,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,8 +75,7 @@ mixin _$HomeState {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
-    required TResult Function(OnProductDetailsScreenClick value)
-        onProductDetailsScreenClick,
+    required TResult Function(OnCategoriesTabClick value) onCategoriesTabClick,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,8 +88,7 @@ mixin _$HomeState {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
-    TResult? Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult? Function(OnCategoriesTabClick value)? onCategoriesTabClick,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -103,30 +101,30 @@ mixin _$HomeState {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
-    TResult Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult Function(OnCategoriesTabClick value)? onCategoriesTabClick,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomeStateCopyWith<$Res> {
-  factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res, HomeState>;
+abstract class $CategoriesStateCopyWith<$Res> {
+  factory $CategoriesStateCopyWith(
+          CategoriesState value, $Res Function(CategoriesState) then) =
+      _$CategoriesStateCopyWithImpl<$Res, CategoriesState>;
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
-    implements $HomeStateCopyWith<$Res> {
-  _$HomeStateCopyWithImpl(this._value, this._then);
+class _$CategoriesStateCopyWithImpl<$Res, $Val extends CategoriesState>
+    implements $CategoriesStateCopyWith<$Res> {
+  _$CategoriesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -139,13 +137,13 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -156,7 +154,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'HomeState.initial()';
+    return 'CategoriesState.initial()';
   }
 
   @override
@@ -177,11 +175,11 @@ class _$InitialImpl implements _Initial {
     required TResult Function(String errorMessage) categoriesError,
     required TResult Function(int indexOfCategory) onCategoryClick,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<ProductModel> productsDataList)
+    required TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
-    required TResult Function(List<ProductModel> categoryDataList)
-        onProductDetailsScreenClick,
+    required TResult Function(int indexCategoryTab) onCategoriesTabClick,
   }) {
     return initial();
   }
@@ -195,11 +193,11 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String errorMessage)? categoriesError,
     TResult? Function(int indexOfCategory)? onCategoryClick,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<ProductModel> productsDataList)?
+    TResult? Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
-    TResult? Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult? Function(int indexCategoryTab)? onCategoriesTabClick,
   }) {
     return initial?.call();
   }
@@ -213,11 +211,11 @@ class _$InitialImpl implements _Initial {
     TResult Function(String errorMessage)? categoriesError,
     TResult Function(int indexOfCategory)? onCategoryClick,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<ProductModel> productsDataList)?
+    TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
-    TResult Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult Function(int indexCategoryTab)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -240,8 +238,7 @@ class _$InitialImpl implements _Initial {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
-    required TResult Function(OnProductDetailsScreenClick value)
-        onProductDetailsScreenClick,
+    required TResult Function(OnCategoriesTabClick value) onCategoriesTabClick,
   }) {
     return initial(this);
   }
@@ -257,8 +254,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
-    TResult? Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult? Function(OnCategoriesTabClick value)? onCategoriesTabClick,
   }) {
     return initial?.call(this);
   }
@@ -274,8 +270,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
-    TResult Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult Function(OnCategoriesTabClick value)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -285,7 +280,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements HomeState {
+abstract class _Initial implements CategoriesState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -298,13 +293,13 @@ abstract class _$$CategoriesLoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$CategoriesLoadingImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$CategoriesLoadingImpl>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$CategoriesLoadingImpl>
     implements _$$CategoriesLoadingImplCopyWith<$Res> {
   __$$CategoriesLoadingImplCopyWithImpl(_$CategoriesLoadingImpl _value,
       $Res Function(_$CategoriesLoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -315,7 +310,7 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
 
   @override
   String toString() {
-    return 'HomeState.categoriesLoading()';
+    return 'CategoriesState.categoriesLoading()';
   }
 
   @override
@@ -336,11 +331,11 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     required TResult Function(String errorMessage) categoriesError,
     required TResult Function(int indexOfCategory) onCategoryClick,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<ProductModel> productsDataList)
+    required TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
-    required TResult Function(List<ProductModel> categoryDataList)
-        onProductDetailsScreenClick,
+    required TResult Function(int indexCategoryTab) onCategoriesTabClick,
   }) {
     return categoriesLoading();
   }
@@ -354,11 +349,11 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult? Function(String errorMessage)? categoriesError,
     TResult? Function(int indexOfCategory)? onCategoryClick,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<ProductModel> productsDataList)?
+    TResult? Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
-    TResult? Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult? Function(int indexCategoryTab)? onCategoriesTabClick,
   }) {
     return categoriesLoading?.call();
   }
@@ -372,11 +367,11 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult Function(String errorMessage)? categoriesError,
     TResult Function(int indexOfCategory)? onCategoryClick,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<ProductModel> productsDataList)?
+    TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
-    TResult Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult Function(int indexCategoryTab)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (categoriesLoading != null) {
@@ -399,8 +394,7 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
-    required TResult Function(OnProductDetailsScreenClick value)
-        onProductDetailsScreenClick,
+    required TResult Function(OnCategoriesTabClick value) onCategoriesTabClick,
   }) {
     return categoriesLoading(this);
   }
@@ -416,8 +410,7 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
-    TResult? Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult? Function(OnCategoriesTabClick value)? onCategoriesTabClick,
   }) {
     return categoriesLoading?.call(this);
   }
@@ -433,8 +426,7 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
-    TResult Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult Function(OnCategoriesTabClick value)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (categoriesLoading != null) {
@@ -444,7 +436,7 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
   }
 }
 
-abstract class CategoriesLoading implements HomeState {
+abstract class CategoriesLoading implements CategoriesState {
   const factory CategoriesLoading() = _$CategoriesLoadingImpl;
 }
 
@@ -459,13 +451,13 @@ abstract class _$$CategoriesSuccessImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$CategoriesSuccessImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$CategoriesSuccessImpl>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$CategoriesSuccessImpl>
     implements _$$CategoriesSuccessImplCopyWith<$Res> {
   __$$CategoriesSuccessImplCopyWithImpl(_$CategoriesSuccessImpl _value,
       $Res Function(_$CategoriesSuccessImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -498,7 +490,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
 
   @override
   String toString() {
-    return 'HomeState.categoriesSuccess(categoryDataList: $categoryDataList)';
+    return 'CategoriesState.categoriesSuccess(categoryDataList: $categoryDataList)';
   }
 
   @override
@@ -514,7 +506,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_categoryDataList));
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -532,11 +524,11 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     required TResult Function(String errorMessage) categoriesError,
     required TResult Function(int indexOfCategory) onCategoryClick,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<ProductModel> productsDataList)
+    required TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
-    required TResult Function(List<ProductModel> categoryDataList)
-        onProductDetailsScreenClick,
+    required TResult Function(int indexCategoryTab) onCategoriesTabClick,
   }) {
     return categoriesSuccess(categoryDataList);
   }
@@ -550,11 +542,11 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult? Function(String errorMessage)? categoriesError,
     TResult? Function(int indexOfCategory)? onCategoryClick,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<ProductModel> productsDataList)?
+    TResult? Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
-    TResult? Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult? Function(int indexCategoryTab)? onCategoriesTabClick,
   }) {
     return categoriesSuccess?.call(categoryDataList);
   }
@@ -568,11 +560,11 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult Function(String errorMessage)? categoriesError,
     TResult Function(int indexOfCategory)? onCategoryClick,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<ProductModel> productsDataList)?
+    TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
-    TResult Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult Function(int indexCategoryTab)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (categoriesSuccess != null) {
@@ -595,8 +587,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
-    required TResult Function(OnProductDetailsScreenClick value)
-        onProductDetailsScreenClick,
+    required TResult Function(OnCategoriesTabClick value) onCategoriesTabClick,
   }) {
     return categoriesSuccess(this);
   }
@@ -612,8 +603,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
-    TResult? Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult? Function(OnCategoriesTabClick value)? onCategoriesTabClick,
   }) {
     return categoriesSuccess?.call(this);
   }
@@ -629,8 +619,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
-    TResult Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult Function(OnCategoriesTabClick value)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (categoriesSuccess != null) {
@@ -640,13 +629,13 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
   }
 }
 
-abstract class CategoriesSuccess implements HomeState {
+abstract class CategoriesSuccess implements CategoriesState {
   const factory CategoriesSuccess(final List<String> categoryDataList) =
       _$CategoriesSuccessImpl;
 
   List<String> get categoryDataList;
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CategoriesSuccessImplCopyWith<_$CategoriesSuccessImpl> get copyWith =>
@@ -664,13 +653,13 @@ abstract class _$$CategoriesErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$CategoriesErrorImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$CategoriesErrorImpl>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$CategoriesErrorImpl>
     implements _$$CategoriesErrorImplCopyWith<$Res> {
   __$$CategoriesErrorImplCopyWithImpl(
       _$CategoriesErrorImpl _value, $Res Function(_$CategoriesErrorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -696,7 +685,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
 
   @override
   String toString() {
-    return 'HomeState.categoriesError(errorMessage: $errorMessage)';
+    return 'CategoriesState.categoriesError(errorMessage: $errorMessage)';
   }
 
   @override
@@ -711,7 +700,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -729,11 +718,11 @@ class _$CategoriesErrorImpl implements CategoriesError {
     required TResult Function(String errorMessage) categoriesError,
     required TResult Function(int indexOfCategory) onCategoryClick,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<ProductModel> productsDataList)
+    required TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
-    required TResult Function(List<ProductModel> categoryDataList)
-        onProductDetailsScreenClick,
+    required TResult Function(int indexCategoryTab) onCategoriesTabClick,
   }) {
     return categoriesError(errorMessage);
   }
@@ -747,11 +736,11 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult? Function(String errorMessage)? categoriesError,
     TResult? Function(int indexOfCategory)? onCategoryClick,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<ProductModel> productsDataList)?
+    TResult? Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
-    TResult? Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult? Function(int indexCategoryTab)? onCategoriesTabClick,
   }) {
     return categoriesError?.call(errorMessage);
   }
@@ -765,11 +754,11 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult Function(String errorMessage)? categoriesError,
     TResult Function(int indexOfCategory)? onCategoryClick,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<ProductModel> productsDataList)?
+    TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
-    TResult Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult Function(int indexCategoryTab)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (categoriesError != null) {
@@ -792,8 +781,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
-    required TResult Function(OnProductDetailsScreenClick value)
-        onProductDetailsScreenClick,
+    required TResult Function(OnCategoriesTabClick value) onCategoriesTabClick,
   }) {
     return categoriesError(this);
   }
@@ -809,8 +797,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
-    TResult? Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult? Function(OnCategoriesTabClick value)? onCategoriesTabClick,
   }) {
     return categoriesError?.call(this);
   }
@@ -826,8 +813,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
-    TResult Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult Function(OnCategoriesTabClick value)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (categoriesError != null) {
@@ -837,13 +823,13 @@ class _$CategoriesErrorImpl implements CategoriesError {
   }
 }
 
-abstract class CategoriesError implements HomeState {
+abstract class CategoriesError implements CategoriesState {
   const factory CategoriesError(final String errorMessage) =
       _$CategoriesErrorImpl;
 
   String get errorMessage;
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CategoriesErrorImplCopyWith<_$CategoriesErrorImpl> get copyWith =>
@@ -861,13 +847,13 @@ abstract class _$$OnCategoryClickImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$OnCategoryClickImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$OnCategoryClickImpl>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$OnCategoryClickImpl>
     implements _$$OnCategoryClickImplCopyWith<$Res> {
   __$$OnCategoryClickImplCopyWithImpl(
       _$OnCategoryClickImpl _value, $Res Function(_$OnCategoryClickImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -893,7 +879,7 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
 
   @override
   String toString() {
-    return 'HomeState.onCategoryClick(indexOfCategory: $indexOfCategory)';
+    return 'CategoriesState.onCategoryClick(indexOfCategory: $indexOfCategory)';
   }
 
   @override
@@ -908,7 +894,7 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
   @override
   int get hashCode => Object.hash(runtimeType, indexOfCategory);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -926,11 +912,11 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
     required TResult Function(String errorMessage) categoriesError,
     required TResult Function(int indexOfCategory) onCategoryClick,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<ProductModel> productsDataList)
+    required TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
-    required TResult Function(List<ProductModel> categoryDataList)
-        onProductDetailsScreenClick,
+    required TResult Function(int indexCategoryTab) onCategoriesTabClick,
   }) {
     return onCategoryClick(indexOfCategory);
   }
@@ -944,11 +930,11 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
     TResult? Function(String errorMessage)? categoriesError,
     TResult? Function(int indexOfCategory)? onCategoryClick,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<ProductModel> productsDataList)?
+    TResult? Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
-    TResult? Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult? Function(int indexCategoryTab)? onCategoriesTabClick,
   }) {
     return onCategoryClick?.call(indexOfCategory);
   }
@@ -962,11 +948,11 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
     TResult Function(String errorMessage)? categoriesError,
     TResult Function(int indexOfCategory)? onCategoryClick,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<ProductModel> productsDataList)?
+    TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
-    TResult Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult Function(int indexCategoryTab)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (onCategoryClick != null) {
@@ -989,8 +975,7 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
-    required TResult Function(OnProductDetailsScreenClick value)
-        onProductDetailsScreenClick,
+    required TResult Function(OnCategoriesTabClick value) onCategoriesTabClick,
   }) {
     return onCategoryClick(this);
   }
@@ -1006,8 +991,7 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
-    TResult? Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult? Function(OnCategoriesTabClick value)? onCategoriesTabClick,
   }) {
     return onCategoryClick?.call(this);
   }
@@ -1023,8 +1007,7 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
-    TResult Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult Function(OnCategoriesTabClick value)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (onCategoryClick != null) {
@@ -1034,13 +1017,13 @@ class _$OnCategoryClickImpl implements OnCategoryClick {
   }
 }
 
-abstract class OnCategoryClick implements HomeState {
+abstract class OnCategoryClick implements CategoriesState {
   const factory OnCategoryClick(final int indexOfCategory) =
       _$OnCategoryClickImpl;
 
   int get indexOfCategory;
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OnCategoryClickImplCopyWith<_$OnCategoryClickImpl> get copyWith =>
@@ -1057,14 +1040,14 @@ abstract class _$$CategoryProductsLoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$CategoryProductsLoadingImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$CategoryProductsLoadingImpl>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$CategoryProductsLoadingImpl>
     implements _$$CategoryProductsLoadingImplCopyWith<$Res> {
   __$$CategoryProductsLoadingImplCopyWithImpl(
       _$CategoryProductsLoadingImpl _value,
       $Res Function(_$CategoryProductsLoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -1075,7 +1058,7 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
 
   @override
   String toString() {
-    return 'HomeState.categoryProductsLoading()';
+    return 'CategoriesState.categoryProductsLoading()';
   }
 
   @override
@@ -1097,11 +1080,11 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     required TResult Function(String errorMessage) categoriesError,
     required TResult Function(int indexOfCategory) onCategoryClick,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<ProductModel> productsDataList)
+    required TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
-    required TResult Function(List<ProductModel> categoryDataList)
-        onProductDetailsScreenClick,
+    required TResult Function(int indexCategoryTab) onCategoriesTabClick,
   }) {
     return categoryProductsLoading();
   }
@@ -1115,11 +1098,11 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     TResult? Function(String errorMessage)? categoriesError,
     TResult? Function(int indexOfCategory)? onCategoryClick,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<ProductModel> productsDataList)?
+    TResult? Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
-    TResult? Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult? Function(int indexCategoryTab)? onCategoriesTabClick,
   }) {
     return categoryProductsLoading?.call();
   }
@@ -1133,11 +1116,11 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     TResult Function(String errorMessage)? categoriesError,
     TResult Function(int indexOfCategory)? onCategoryClick,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<ProductModel> productsDataList)?
+    TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
-    TResult Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult Function(int indexCategoryTab)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (categoryProductsLoading != null) {
@@ -1160,8 +1143,7 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
-    required TResult Function(OnProductDetailsScreenClick value)
-        onProductDetailsScreenClick,
+    required TResult Function(OnCategoriesTabClick value) onCategoriesTabClick,
   }) {
     return categoryProductsLoading(this);
   }
@@ -1177,8 +1159,7 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
-    TResult? Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult? Function(OnCategoriesTabClick value)? onCategoriesTabClick,
   }) {
     return categoryProductsLoading?.call(this);
   }
@@ -1194,8 +1175,7 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
-    TResult Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult Function(OnCategoriesTabClick value)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (categoryProductsLoading != null) {
@@ -1205,7 +1185,7 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
   }
 }
 
-abstract class CategoryProductsLoading implements HomeState {
+abstract class CategoryProductsLoading implements CategoriesState {
   const factory CategoryProductsLoading() = _$CategoryProductsLoadingImpl;
 }
 
@@ -1216,26 +1196,32 @@ abstract class _$$CategoryProductsSuccessImplCopyWith<$Res> {
           $Res Function(_$CategoryProductsSuccessImpl) then) =
       __$$CategoryProductsSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<ProductModel> productsDataList});
+  $Res call(
+      {List<String> categoryDataList, List<ProductModel> productsDataList});
 }
 
 /// @nodoc
 class __$$CategoryProductsSuccessImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$CategoryProductsSuccessImpl>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$CategoryProductsSuccessImpl>
     implements _$$CategoryProductsSuccessImplCopyWith<$Res> {
   __$$CategoryProductsSuccessImplCopyWithImpl(
       _$CategoryProductsSuccessImpl _value,
       $Res Function(_$CategoryProductsSuccessImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? categoryDataList = null,
     Object? productsDataList = null,
   }) {
     return _then(_$CategoryProductsSuccessImpl(
+      null == categoryDataList
+          ? _value._categoryDataList
+          : categoryDataList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       null == productsDataList
           ? _value._productsDataList
           : productsDataList // ignore: cast_nullable_to_non_nullable
@@ -1247,8 +1233,19 @@ class __$$CategoryProductsSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
-  const _$CategoryProductsSuccessImpl(final List<ProductModel> productsDataList)
-      : _productsDataList = productsDataList;
+  const _$CategoryProductsSuccessImpl(final List<String> categoryDataList,
+      final List<ProductModel> productsDataList)
+      : _categoryDataList = categoryDataList,
+        _productsDataList = productsDataList;
+
+  final List<String> _categoryDataList;
+  @override
+  List<String> get categoryDataList {
+    if (_categoryDataList is EqualUnmodifiableListView)
+      return _categoryDataList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categoryDataList);
+  }
 
   final List<ProductModel> _productsDataList;
   @override
@@ -1261,7 +1258,7 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
 
   @override
   String toString() {
-    return 'HomeState.categoryProductsSuccess(productsDataList: $productsDataList)';
+    return 'CategoriesState.categoryProductsSuccess(categoryDataList: $categoryDataList, productsDataList: $productsDataList)';
   }
 
   @override
@@ -1270,14 +1267,18 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
         (other.runtimeType == runtimeType &&
             other is _$CategoryProductsSuccessImpl &&
             const DeepCollectionEquality()
+                .equals(other._categoryDataList, _categoryDataList) &&
+            const DeepCollectionEquality()
                 .equals(other._productsDataList, _productsDataList));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_productsDataList));
+      runtimeType,
+      const DeepCollectionEquality().hash(_categoryDataList),
+      const DeepCollectionEquality().hash(_productsDataList));
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -1295,13 +1296,13 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     required TResult Function(String errorMessage) categoriesError,
     required TResult Function(int indexOfCategory) onCategoryClick,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<ProductModel> productsDataList)
+    required TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
-    required TResult Function(List<ProductModel> categoryDataList)
-        onProductDetailsScreenClick,
+    required TResult Function(int indexCategoryTab) onCategoriesTabClick,
   }) {
-    return categoryProductsSuccess(productsDataList);
+    return categoryProductsSuccess(categoryDataList, productsDataList);
   }
 
   @override
@@ -1313,13 +1314,13 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     TResult? Function(String errorMessage)? categoriesError,
     TResult? Function(int indexOfCategory)? onCategoryClick,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<ProductModel> productsDataList)?
+    TResult? Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
-    TResult? Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult? Function(int indexCategoryTab)? onCategoriesTabClick,
   }) {
-    return categoryProductsSuccess?.call(productsDataList);
+    return categoryProductsSuccess?.call(categoryDataList, productsDataList);
   }
 
   @override
@@ -1331,15 +1332,15 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     TResult Function(String errorMessage)? categoriesError,
     TResult Function(int indexOfCategory)? onCategoryClick,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<ProductModel> productsDataList)?
+    TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
-    TResult Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult Function(int indexCategoryTab)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (categoryProductsSuccess != null) {
-      return categoryProductsSuccess(productsDataList);
+      return categoryProductsSuccess(categoryDataList, productsDataList);
     }
     return orElse();
   }
@@ -1358,8 +1359,7 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
-    required TResult Function(OnProductDetailsScreenClick value)
-        onProductDetailsScreenClick,
+    required TResult Function(OnCategoriesTabClick value) onCategoriesTabClick,
   }) {
     return categoryProductsSuccess(this);
   }
@@ -1375,8 +1375,7 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
-    TResult? Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult? Function(OnCategoriesTabClick value)? onCategoriesTabClick,
   }) {
     return categoryProductsSuccess?.call(this);
   }
@@ -1392,8 +1391,7 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
-    TResult Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult Function(OnCategoriesTabClick value)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (categoryProductsSuccess != null) {
@@ -1403,14 +1401,15 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
   }
 }
 
-abstract class CategoryProductsSuccess implements HomeState {
-  const factory CategoryProductsSuccess(
+abstract class CategoryProductsSuccess implements CategoriesState {
+  const factory CategoryProductsSuccess(final List<String> categoryDataList,
           final List<ProductModel> productsDataList) =
       _$CategoryProductsSuccessImpl;
 
+  List<String> get categoryDataList;
   List<ProductModel> get productsDataList;
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CategoryProductsSuccessImplCopyWith<_$CategoryProductsSuccessImpl>
@@ -1429,13 +1428,13 @@ abstract class _$$CategoryProductsErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$CategoryProductsErrorImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$CategoryProductsErrorImpl>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$CategoryProductsErrorImpl>
     implements _$$CategoryProductsErrorImplCopyWith<$Res> {
   __$$CategoryProductsErrorImplCopyWithImpl(_$CategoryProductsErrorImpl _value,
       $Res Function(_$CategoryProductsErrorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -1461,7 +1460,7 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
 
   @override
   String toString() {
-    return 'HomeState.categoryProductsError(errorMessage: $errorMessage)';
+    return 'CategoriesState.categoryProductsError(errorMessage: $errorMessage)';
   }
 
   @override
@@ -1476,7 +1475,7 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -1494,11 +1493,11 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     required TResult Function(String errorMessage) categoriesError,
     required TResult Function(int indexOfCategory) onCategoryClick,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<ProductModel> productsDataList)
+    required TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
-    required TResult Function(List<ProductModel> categoryDataList)
-        onProductDetailsScreenClick,
+    required TResult Function(int indexCategoryTab) onCategoriesTabClick,
   }) {
     return categoryProductsError(errorMessage);
   }
@@ -1512,11 +1511,11 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     TResult? Function(String errorMessage)? categoriesError,
     TResult? Function(int indexOfCategory)? onCategoryClick,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<ProductModel> productsDataList)?
+    TResult? Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
-    TResult? Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult? Function(int indexCategoryTab)? onCategoriesTabClick,
   }) {
     return categoryProductsError?.call(errorMessage);
   }
@@ -1530,11 +1529,11 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     TResult Function(String errorMessage)? categoriesError,
     TResult Function(int indexOfCategory)? onCategoryClick,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<ProductModel> productsDataList)?
+    TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
-    TResult Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult Function(int indexCategoryTab)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (categoryProductsError != null) {
@@ -1557,8 +1556,7 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
-    required TResult Function(OnProductDetailsScreenClick value)
-        onProductDetailsScreenClick,
+    required TResult Function(OnCategoriesTabClick value) onCategoriesTabClick,
   }) {
     return categoryProductsError(this);
   }
@@ -1574,8 +1572,7 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
-    TResult? Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult? Function(OnCategoriesTabClick value)? onCategoriesTabClick,
   }) {
     return categoryProductsError?.call(this);
   }
@@ -1591,8 +1588,7 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
-    TResult Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult Function(OnCategoriesTabClick value)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
     if (categoryProductsError != null) {
@@ -1602,13 +1598,13 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
   }
 }
 
-abstract class CategoryProductsError implements HomeState {
+abstract class CategoryProductsError implements CategoriesState {
   const factory CategoryProductsError(final String errorMessage) =
       _$CategoryProductsErrorImpl;
 
   String get errorMessage;
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CategoryProductsErrorImplCopyWith<_$CategoryProductsErrorImpl>
@@ -1616,82 +1612,72 @@ abstract class CategoryProductsError implements HomeState {
 }
 
 /// @nodoc
-abstract class _$$OnProductDetailsScreenClickImplCopyWith<$Res> {
-  factory _$$OnProductDetailsScreenClickImplCopyWith(
-          _$OnProductDetailsScreenClickImpl value,
-          $Res Function(_$OnProductDetailsScreenClickImpl) then) =
-      __$$OnProductDetailsScreenClickImplCopyWithImpl<$Res>;
+abstract class _$$OnCategoriesTabClickImplCopyWith<$Res> {
+  factory _$$OnCategoriesTabClickImplCopyWith(_$OnCategoriesTabClickImpl value,
+          $Res Function(_$OnCategoriesTabClickImpl) then) =
+      __$$OnCategoriesTabClickImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<ProductModel> categoryDataList});
+  $Res call({int indexCategoryTab});
 }
 
 /// @nodoc
-class __$$OnProductDetailsScreenClickImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$OnProductDetailsScreenClickImpl>
-    implements _$$OnProductDetailsScreenClickImplCopyWith<$Res> {
-  __$$OnProductDetailsScreenClickImplCopyWithImpl(
-      _$OnProductDetailsScreenClickImpl _value,
-      $Res Function(_$OnProductDetailsScreenClickImpl) _then)
+class __$$OnCategoriesTabClickImplCopyWithImpl<$Res>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$OnCategoriesTabClickImpl>
+    implements _$$OnCategoriesTabClickImplCopyWith<$Res> {
+  __$$OnCategoriesTabClickImplCopyWithImpl(_$OnCategoriesTabClickImpl _value,
+      $Res Function(_$OnCategoriesTabClickImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categoryDataList = null,
+    Object? indexCategoryTab = null,
   }) {
-    return _then(_$OnProductDetailsScreenClickImpl(
-      null == categoryDataList
-          ? _value._categoryDataList
-          : categoryDataList // ignore: cast_nullable_to_non_nullable
-              as List<ProductModel>,
+    return _then(_$OnCategoriesTabClickImpl(
+      null == indexCategoryTab
+          ? _value.indexCategoryTab
+          : indexCategoryTab // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$OnProductDetailsScreenClickImpl implements OnProductDetailsScreenClick {
-  const _$OnProductDetailsScreenClickImpl(
-      final List<ProductModel> categoryDataList)
-      : _categoryDataList = categoryDataList;
+class _$OnCategoriesTabClickImpl implements OnCategoriesTabClick {
+  const _$OnCategoriesTabClickImpl(this.indexCategoryTab);
 
-  final List<ProductModel> _categoryDataList;
   @override
-  List<ProductModel> get categoryDataList {
-    if (_categoryDataList is EqualUnmodifiableListView)
-      return _categoryDataList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_categoryDataList);
-  }
+  final int indexCategoryTab;
 
   @override
   String toString() {
-    return 'HomeState.onProductDetailsScreenClick(categoryDataList: $categoryDataList)';
+    return 'CategoriesState.onCategoriesTabClick(indexCategoryTab: $indexCategoryTab)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnProductDetailsScreenClickImpl &&
-            const DeepCollectionEquality()
-                .equals(other._categoryDataList, _categoryDataList));
+            other is _$OnCategoriesTabClickImpl &&
+            (identical(other.indexCategoryTab, indexCategoryTab) ||
+                other.indexCategoryTab == indexCategoryTab));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_categoryDataList));
+  int get hashCode => Object.hash(runtimeType, indexCategoryTab);
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnProductDetailsScreenClickImplCopyWith<_$OnProductDetailsScreenClickImpl>
-      get copyWith => __$$OnProductDetailsScreenClickImplCopyWithImpl<
-          _$OnProductDetailsScreenClickImpl>(this, _$identity);
+  _$$OnCategoriesTabClickImplCopyWith<_$OnCategoriesTabClickImpl>
+      get copyWith =>
+          __$$OnCategoriesTabClickImplCopyWithImpl<_$OnCategoriesTabClickImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1702,13 +1688,13 @@ class _$OnProductDetailsScreenClickImpl implements OnProductDetailsScreenClick {
     required TResult Function(String errorMessage) categoriesError,
     required TResult Function(int indexOfCategory) onCategoryClick,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<ProductModel> productsDataList)
+    required TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)
         categoryProductsSuccess,
     required TResult Function(String errorMessage) categoryProductsError,
-    required TResult Function(List<ProductModel> categoryDataList)
-        onProductDetailsScreenClick,
+    required TResult Function(int indexCategoryTab) onCategoriesTabClick,
   }) {
-    return onProductDetailsScreenClick(categoryDataList);
+    return onCategoriesTabClick(indexCategoryTab);
   }
 
   @override
@@ -1720,13 +1706,13 @@ class _$OnProductDetailsScreenClickImpl implements OnProductDetailsScreenClick {
     TResult? Function(String errorMessage)? categoriesError,
     TResult? Function(int indexOfCategory)? onCategoryClick,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<ProductModel> productsDataList)?
+    TResult? Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult? Function(String errorMessage)? categoryProductsError,
-    TResult? Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult? Function(int indexCategoryTab)? onCategoriesTabClick,
   }) {
-    return onProductDetailsScreenClick?.call(categoryDataList);
+    return onCategoriesTabClick?.call(indexCategoryTab);
   }
 
   @override
@@ -1738,15 +1724,15 @@ class _$OnProductDetailsScreenClickImpl implements OnProductDetailsScreenClick {
     TResult Function(String errorMessage)? categoriesError,
     TResult Function(int indexOfCategory)? onCategoryClick,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<ProductModel> productsDataList)?
+    TResult Function(
+            List<String> categoryDataList, List<ProductModel> productsDataList)?
         categoryProductsSuccess,
     TResult Function(String errorMessage)? categoryProductsError,
-    TResult Function(List<ProductModel> categoryDataList)?
-        onProductDetailsScreenClick,
+    TResult Function(int indexCategoryTab)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
-    if (onProductDetailsScreenClick != null) {
-      return onProductDetailsScreenClick(categoryDataList);
+    if (onCategoriesTabClick != null) {
+      return onCategoriesTabClick(indexCategoryTab);
     }
     return orElse();
   }
@@ -1765,10 +1751,9 @@ class _$OnProductDetailsScreenClickImpl implements OnProductDetailsScreenClick {
         categoryProductsSuccess,
     required TResult Function(CategoryProductsError value)
         categoryProductsError,
-    required TResult Function(OnProductDetailsScreenClick value)
-        onProductDetailsScreenClick,
+    required TResult Function(OnCategoriesTabClick value) onCategoriesTabClick,
   }) {
-    return onProductDetailsScreenClick(this);
+    return onCategoriesTabClick(this);
   }
 
   @override
@@ -1782,10 +1767,9 @@ class _$OnProductDetailsScreenClickImpl implements OnProductDetailsScreenClick {
     TResult? Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult? Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult? Function(CategoryProductsError value)? categoryProductsError,
-    TResult? Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult? Function(OnCategoriesTabClick value)? onCategoriesTabClick,
   }) {
-    return onProductDetailsScreenClick?.call(this);
+    return onCategoriesTabClick?.call(this);
   }
 
   @override
@@ -1799,27 +1783,25 @@ class _$OnProductDetailsScreenClickImpl implements OnProductDetailsScreenClick {
     TResult Function(CategoryProductsLoading value)? categoryProductsLoading,
     TResult Function(CategoryProductsSuccess value)? categoryProductsSuccess,
     TResult Function(CategoryProductsError value)? categoryProductsError,
-    TResult Function(OnProductDetailsScreenClick value)?
-        onProductDetailsScreenClick,
+    TResult Function(OnCategoriesTabClick value)? onCategoriesTabClick,
     required TResult orElse(),
   }) {
-    if (onProductDetailsScreenClick != null) {
-      return onProductDetailsScreenClick(this);
+    if (onCategoriesTabClick != null) {
+      return onCategoriesTabClick(this);
     }
     return orElse();
   }
 }
 
-abstract class OnProductDetailsScreenClick implements HomeState {
-  const factory OnProductDetailsScreenClick(
-          final List<ProductModel> categoryDataList) =
-      _$OnProductDetailsScreenClickImpl;
+abstract class OnCategoriesTabClick implements CategoriesState {
+  const factory OnCategoriesTabClick(final int indexCategoryTab) =
+      _$OnCategoriesTabClickImpl;
 
-  List<ProductModel> get categoryDataList;
+  int get indexCategoryTab;
 
-  /// Create a copy of HomeState
+  /// Create a copy of CategoriesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OnProductDetailsScreenClickImplCopyWith<_$OnProductDetailsScreenClickImpl>
+  _$$OnCategoriesTabClickImplCopyWith<_$OnCategoriesTabClickImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
