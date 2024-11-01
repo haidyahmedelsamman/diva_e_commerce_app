@@ -1,5 +1,5 @@
-import 'package:diva_e_commerce_app/features/home_screen/logic/home_cubit.dart';
-import 'package:diva_e_commerce_app/features/home_screen/logic/home_state.dart';
+import 'package:diva_e_commerce_app/core/logic/categories_cubit.dart';
+import 'package:diva_e_commerce_app/core/logic/categories_state.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/category_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,12 +11,13 @@ class CategoriesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeCubit, HomeState>(
+    return BlocBuilder<CategoriesCubit, CategoriesState>(
       buildWhen: (previous, current) =>
           current is CategoriesLoading ||
           current is CategoriesSuccess ||
           current is CategoriesError ||
-          current is OnCategoryClick,
+          current is OnCategoryClick ||
+          current is CategoryProductsSuccess,
       builder: (context, state) {
         return SizedBox(
           height: 30.h,
@@ -26,17 +27,18 @@ class CategoriesListView extends StatelessWidget {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
-                  context.read<HomeCubit>().onCategoryClick(index);
+                  context.read<CategoriesCubit>().onCategoryClick(index);
                   context
-                      .read<HomeCubit>()
+                      .read<CategoriesCubit>()
                       .getCategoryProducts(categoriesList[index]);
                 },
                 child: CategoryItem(
                   categoryName: categoriesList[index],
                   isSelected:
-                      context.read<HomeCubit>().selectedCategoriesIndex ==
+                      context.read<CategoriesCubit>().selectedCategoriesIndex ==
                           index,
-                  itemIndex: context.read<HomeCubit>().selectedCategoriesIndex,
+                  itemIndex:
+                      context.read<CategoriesCubit>().selectedCategoriesIndex,
                 ),
               );
             },

@@ -1,45 +1,44 @@
-import 'package:diva_e_commerce_app/features/home_screen/data/models/category_products_response_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'home_state.freezed.dart';
-
-/// The HomeState class represents the various states for the home feature.
-/// It is created using the `freezed` package, which generates immutable and
-/// union types for Dart classes, making it easier to manage state.
+import '../models/category_products_response_model.dart';
+part 'categories_state.freezed.dart';
 
 @freezed
-class HomeState with _$HomeState {
+class CategoriesState with _$CategoriesState {
   /// Represents the initial state before any categories are fetched.
-  const factory HomeState.initial() = _Initial;
+  const factory CategoriesState.initial() = _Initial;
 
   /// Represents the loading state when categories are being fetched from the API.
-  const factory HomeState.categoriesLoading() = CategoriesLoading;
+  const factory CategoriesState.categoriesLoading() = CategoriesLoading;
 
   /// Represents the success state when categories have been successfully fetched.
   /// [categoryDataList] contains the list of categories, which could be null or empty.
-  const factory HomeState.categoriesSuccess(List<String> categoryDataList) =
-      CategoriesSuccess;
+  const factory CategoriesState.categoriesSuccess(
+      List<String> categoryDataList) = CategoriesSuccess;
 
   /// Represents the error state when there is an issue fetching categories.
   /// [errorMessage] contains the details of what went wrong.
-  const factory HomeState.categoriesError(String errorMessage) =
+  const factory CategoriesState.categoriesError(String errorMessage) =
       CategoriesError;
 
   /// Represents the state when a category is clicked.
   /// [indexOfCategory] holds the index of the selected category.
-  const factory HomeState.onCategoryClick(int indexOfCategory) =
+  const factory CategoriesState.onCategoryClick(int indexOfCategory) =
       OnCategoryClick;
 
   /// Represents the loading state when products of a specific category are being fetched.
-  const factory HomeState.categoryProductsLoading() = CategoryProductsLoading;
+  const factory CategoriesState.categoryProductsLoading() =
+      CategoryProductsLoading;
 
   /// Represents the success state when products of a specific category have been successfully fetched.
   /// [categoryProductsResponseModel] contains the data of the fetched products.
-  const factory HomeState.categoryProductsSuccess(
-      List<ProductModel> productsDataList) = CategoryProductsSuccess;
+  const factory CategoriesState.categoryProductsSuccess(
+          List<String> categoryDataList, List<ProductModel> productsDataList) =
+      CategoryProductsSuccess;
 
   /// Represents the error state when there is an issue fetching products for a specific category.
   /// [errorMessage] contains the details of what went wrong.
-  const factory HomeState.categoryProductsError(String errorMessage) =
+  const factory CategoriesState.categoryProductsError(String errorMessage) =
       CategoryProductsError;
+  const factory CategoriesState.onCategoriesTabClick(int indexCategoryTab) =
+      OnCategoriesTabClick;
 }

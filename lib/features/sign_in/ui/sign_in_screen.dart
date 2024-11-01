@@ -20,57 +20,57 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 22.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                verticalSpace(20),
-                Text(
-                  StringManager.signIn,
-                  style: TextStyleManager.font24DynamicMedium,
-                ),
-                verticalSpace(10),
-                Image.asset(
-                  StringManager.signUpImagePath,
-                  width: 230,
-                  height: 230,
-                ),
-                verticalSpace(10),
-                const SigninForm(),
-                verticalSpace(10),
-                AppTextButton(
-                  buttonText: StringManager.signIn,
-                  onPressed: () {
-                    validateSignIn(context);
-                  },
-                  textStyle: TextStyleManager.font18WhiteRegular,
-                ),
-                verticalSpace(10),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: GestureDetector(
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyleManager.font15PrimaryRegular,
-                    ),
+          child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 22.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              verticalSpace(20),
+              Text(
+                StringManager.signIn,
+                style: TextStyleManager.font24DynamicMedium,
+              ),
+              verticalSpace(10),
+              Image.asset(
+                StringManager.signUpImagePath,
+                width: 230,
+                height: 230,
+              ),
+              verticalSpace(10),
+              const SigninForm(),
+              verticalSpace(10),
+              AppTextButton(
+                buttonText: StringManager.signIn,
+                onPressed: () {
+                  validateSignIn(context);
+                },
+                textStyle: TextStyleManager.font18WhiteRegular,
+              ),
+              verticalSpace(10),
+              Align(
+                alignment: Alignment.topRight,
+                child: GestureDetector(
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyleManager.font15PrimaryRegular,
                   ),
                 ),
-                // const OrDivider(),
-                // const RowCricleAvatarIcon(),
-                verticalSpace(20),
-                GestureDetector(
-                    onTap: () {
-                      context.pushNamed(AppRoutes.signUpScreenRoute);
-                    },
-                    child: const DontHaveAnAccount()),
-                const SignInBlocListener(),
-              ],
-            ),
+              ),
+
+              // const OrDivider(),
+              // const RowCricleAvatarIcon(),
+              verticalSpace(20),
+              GestureDetector(
+                  onTap: () {
+                    context.pushNamed(AppRoutes.signUpScreenRoute);
+                  },
+                  child: const DontHaveAnAccount()),
+              const SignInBlocListener(),
+            ],
           ),
         ),
-      ),
+      )),
     );
   }
 
