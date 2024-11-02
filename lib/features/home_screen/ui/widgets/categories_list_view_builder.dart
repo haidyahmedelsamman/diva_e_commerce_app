@@ -19,7 +19,7 @@ class CategoriesListViewBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           categoriesLoading: () {
-            return Expanded(
+            return const Expanded(
               child: Center(
                 child: CircularProgressIndicator(
                   color: ColorsManager.primary,

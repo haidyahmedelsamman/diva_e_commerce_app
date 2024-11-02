@@ -142,17 +142,6 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) => UserModel(
           UserPaymentMethod.cash,
     );
 
-Map<String, dynamic> _$UserModelToJson(UserModel instance) => <String, dynamic>{
-      'uid': instance.uid,
-      'email': instance.email,
-      'displayName': instance.displayName,
-      'profileImage': instance.profileImage,
-      'personalInfo': instance.personalInfo,
-      'notificationsState':
-          _$UserNotificationsStateEnumMap[instance.notificationsState]!,
-      'measurements': instance.measurements,
-      'paymentMethod': _$UserPaymentMethodEnumMap[instance.paymentMethod]!,
-    };
 
 const _$UserNotificationsStateEnumMap = {
   UserNotificationsState.on: 'on',
