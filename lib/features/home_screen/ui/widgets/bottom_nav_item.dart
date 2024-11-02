@@ -33,7 +33,10 @@ class BottomNavItem extends StatelessWidget {
         children: [
           SvgPicture.asset(
             imagePath,
-            color: ColorsManager.primary,
+            colorFilter: const ColorFilter.mode(
+              ColorsManager.primary,
+              BlendMode.srcIn,
+            ),
           ),
           horizontalSpace(6),
           Text(

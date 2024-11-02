@@ -1,5 +1,6 @@
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
 import 'package:diva_e_commerce_app/core/widgets/or_divider.dart';
+import 'package:diva_e_commerce_app/core/widgets/spacing/vertical_space.dart';
 import 'package:diva_e_commerce_app/features/sign_up/ui/widgets/already_have_account.dart';
 import 'package:diva_e_commerce_app/features/sign_up/ui/widgets/signup_form.dart';
 import 'package:flutter/material.dart';
@@ -51,10 +52,12 @@ class SignUpScreen extends StatelessWidget {
                 const RowCricleAvatarIcon(),
                 verticalSpace(10),
                 GestureDetector(
-                    onTap: () {
-                      context.pushNamed(AppRoutes.signInScreenRoute);
-                    },
-                    child: const AlreadyHaveAccount()),
+                  onTap: () {
+                    context.pushNamed(AppRoutes.signInScreenRoute);
+                  },
+                  child: const AlreadyHaveAccount(),
+                ),
+                const VerticalSpace(space: 15),
                 const SignupBlocListener(),
               ],
             ),
