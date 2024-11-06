@@ -139,7 +139,10 @@ class AppRouter {
       case AppRoutes.wishListTabRoute:
         return MaterialPageRoute(
           builder: (_) {
-            return const WishListTab();
+            return BlocProvider(
+              create: (context) => getIt<UserDataCubit>(),
+              child: const WishListTab(),
+            );
           },
         );
       default:

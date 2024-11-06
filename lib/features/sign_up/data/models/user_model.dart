@@ -1,4 +1,5 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:diva_e_commerce_app/core/models/category_products_response_model.dart';
 import 'package:diva_e_commerce_app/features/sign_up/data/models/siginup_request_body.dart';
 import 'package:diva_e_commerce_app/features/sign_up/data/models/user_measurements_model.dart';
 import 'package:diva_e_commerce_app/features/sign_up/data/models/user_notifications_state_model.dart';
@@ -22,6 +23,7 @@ class UserModel {
   final UserNotificationsState notificationsState;
   final UserMeasurementsModel measurements;
   final UserPaymentMethod paymentMethod;
+  List<ProductModel> wishList;
 
   UserModel({
     required this.uid,
@@ -32,6 +34,7 @@ class UserModel {
     required this.measurements,
     this.notificationsState = UserNotificationsState.on,
     this.paymentMethod = UserPaymentMethod.cash,
+    this.wishList = const [],
   });
 
   Map<String, dynamic> toMap() => <String, dynamic>{
@@ -44,6 +47,7 @@ class UserModel {
             _$UserNotificationsStateEnumMap[notificationsState]!,
         'measurements': measurements.toJson(),
         'paymentMethod': _$UserPaymentMethodEnumMap[paymentMethod]!,
+        'wishList': wishList.map((product) => product.toJson()).toList(),
       };
 
   factory UserModel.fromMap(Map<String, dynamic> map) =>

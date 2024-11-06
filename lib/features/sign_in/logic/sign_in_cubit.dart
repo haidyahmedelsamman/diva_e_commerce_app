@@ -54,4 +54,7 @@ class SignInCubit extends Cubit<SignInState> {
       emit(SignInState.signedin(currentUser));
     }
   }
+
+  @override
+  Future<void> close() async {}
 }

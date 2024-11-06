@@ -1,7 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
+import 'package:diva_e_commerce_app/core/widgets/favorite_button.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/product_name_and_price.dart';
+import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_cubit.dart';
+import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -27,38 +30,25 @@ class ProductItem extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              height: 220.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(
                   25.r,
                 ),
               ),
               child: SizedBox(
-                height: 220.h,
+                height: 200.h,
                 child: Image.network(
                   productModel.image ?? '',
-                  fit: BoxFit.fill,
+                  fit: BoxFit.contain,
                 ),
               ),
             ),
             Align(
               alignment: Alignment.topLeft,
-              child: GestureDetector(
-                onTap: () {},
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    top: 6.sp,
-                    left: 14.sp,
-                  ),
-                  child: CircleAvatar(
-                    radius: 18.r,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      isFavorite ? Icons.favorite : Icons.favorite_border,
-                      color: isFavorite ? ColorsManager.primary : Colors.black,
-                    ),
-                  ),
-                ),
+              child: BlocBuilder<UserDataCubit, UserDataState>(
+                builder: (context, state) {
+                  return FavoriteButton(productModel: productModel);
+                },
               ),
             ),
             Align(

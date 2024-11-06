@@ -19,6 +19,8 @@ abstract class _$UserModelCWProxy {
 
   UserModel paymentMethod(UserPaymentMethod paymentMethod);
 
+  UserModel wishList(List<ProductModel> wishList);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `UserModel(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -32,6 +34,7 @@ abstract class _$UserModelCWProxy {
     UserMeasurementsModel? measurements,
     UserNotificationsState? notificationsState,
     UserPaymentMethod? paymentMethod,
+    List<ProductModel>? wishList,
   });
 }
 
@@ -65,6 +68,9 @@ class _$UserModelCWProxyImpl implements _$UserModelCWProxy {
       this(paymentMethod: paymentMethod);
 
   @override
+  UserModel wishList(List<ProductModel> wishList) => this(wishList: wishList);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `UserModel(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -79,6 +85,7 @@ class _$UserModelCWProxyImpl implements _$UserModelCWProxy {
     Object? measurements = const $CopyWithPlaceholder(),
     Object? notificationsState = const $CopyWithPlaceholder(),
     Object? paymentMethod = const $CopyWithPlaceholder(),
+    Object? wishList = const $CopyWithPlaceholder(),
   }) {
     return UserModel(
       uid: _value.uid,
@@ -111,6 +118,10 @@ class _$UserModelCWProxyImpl implements _$UserModelCWProxy {
               ? _value.paymentMethod
               // ignore: cast_nullable_to_non_nullable
               : paymentMethod as UserPaymentMethod,
+      wishList: wishList == const $CopyWithPlaceholder() || wishList == null
+          ? _value.wishList
+          // ignore: cast_nullable_to_non_nullable
+          : wishList as List<ProductModel>,
     );
   }
 }
@@ -140,8 +151,24 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) => UserModel(
       paymentMethod: $enumDecodeNullable(
               _$UserPaymentMethodEnumMap, json['paymentMethod']) ??
           UserPaymentMethod.cash,
+      wishList: (json['wishList'] as List<dynamic>?)
+              ?.map((e) => ProductModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
+Map<String, dynamic> _$UserModelToJson(UserModel instance) => <String, dynamic>{
+      'uid': instance.uid,
+      'email': instance.email,
+      'displayName': instance.displayName,
+      'profileImage': instance.profileImage,
+      'personalInfo': instance.personalInfo,
+      'notificationsState':
+          _$UserNotificationsStateEnumMap[instance.notificationsState]!,
+      'measurements': instance.measurements,
+      'paymentMethod': _$UserPaymentMethodEnumMap[instance.paymentMethod]!,
+      'wishList': instance.wishList,
+    };
 
 const _$UserNotificationsStateEnumMap = {
   UserNotificationsState.on: 'on',

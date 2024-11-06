@@ -1,6 +1,7 @@
 // ignore_for_file: must_call_super
 
 import 'package:bloc/bloc.dart';
+import 'package:diva_e_commerce_app/core/models/category_products_response_model.dart';
 import 'package:diva_e_commerce_app/core/secure_storage/current_user_secure_storage_repository.dart';
 import 'package:diva_e_commerce_app/features/profile/data/repositories/user_data_repository.dart';
 import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_state.dart';
@@ -92,6 +93,44 @@ class UserDataCubit extends Cubit<UserDataState> {
           state: userState ?? user.personalInfo.state,
         );
         final newUser = user.copyWith(personalInfo: personalInfo);
+        _userDataRepository.updateUserInFirestore(newUser);
+        emit(
+          UserDataState.authenticated(newUser),
+        );
+      },
+    );
+  }
+
+  void addProductToWishList(ProductModel product) {
+    state.whenOrNull(
+      authenticated: (user) {
+        final wishList = <ProductModel>[];
+        wishList.addAll(user.wishList);
+        final isNotAdded = wishList
+            .where((item) {
+              return item.id == product.id;
+            })
+            .toList()
+            .isEmpty;
+        if (isNotAdded) {
+          wishList.add(product);
+          final newUser = user.copyWith(wishList: wishList);
+          _userDataRepository.updateUserInFirestore(newUser);
+          emit(
+            UserDataState.authenticated(newUser),
+          );
+        }
+      },
+    );
+  }
+
+  void removeProductToWishList(ProductModel product) {
+    state.whenOrNull(
+      authenticated: (user) {
+        final wishList = <ProductModel>[];
+        wishList.addAll(user.wishList);
+        wishList.remove(product);
+        final newUser = user.copyWith(wishList: wishList);
         _userDataRepository.updateUserInFirestore(newUser);
         emit(
           UserDataState.authenticated(newUser),

@@ -17,6 +17,10 @@ class UserAccountDetailsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<UserDataCubit, UserDataState>(
+      buildWhen: (previous, current) => current.maybeWhen(
+        authenticated: (user) => true,
+        orElse: () => false,
+      ),
       builder: (context, state) {
         return state.maybeWhen(
           authenticated: (user) {

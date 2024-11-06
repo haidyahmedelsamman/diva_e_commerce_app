@@ -1,7 +1,10 @@
+import 'package:diva_e_commerce_app/core/di/dependency_injection.dart';
 import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
 import 'package:diva_e_commerce_app/features/category/ui/categories_tab.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/home_tab.dart';
+import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../cart/cart_tab.dart';
 import '../../../wish_list/ui/wish_list_tab.dart';
@@ -16,10 +19,22 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Widget> bottomTabs = [
-    const HomeTab(),
-    const CategoriesTab(),
-    const CartTab(),
-    const WishListTab(),
+    BlocProvider(
+      create: (context) => getIt<UserDataCubit>(),
+      child: const HomeTab(),
+    ),
+    BlocProvider(
+      create: (context) => getIt<UserDataCubit>(),
+      child: const CategoriesTab(),
+    ),
+    BlocProvider(
+      create: (context) => getIt<UserDataCubit>(),
+      child: const CartTab(),
+    ),
+    BlocProvider(
+      create: (context) => getIt<UserDataCubit>(),
+      child: const WishListTab(),
+    ),
   ];
   int scelectedTab = 0;
   @override

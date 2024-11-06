@@ -59,7 +59,7 @@ Future<void> setupGetIt() async {
     ),
   );
 
-  getIt.registerFactory<SignInCubit>(
+  getIt.registerLazySingleton<SignInCubit>(
     () => SignInCubit(
       getIt(),
       getIt(),

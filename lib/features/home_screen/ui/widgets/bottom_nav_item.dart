@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/colors_manager.dart';
 import '../../../../core/theme/text_style_manager.dart';
 
@@ -38,7 +37,6 @@ class BottomNavItem extends StatelessWidget {
               BlendMode.srcIn,
             ),
           ),
-          horizontalSpace(6),
           Text(
             label,
             style: TextStyleManager.font14PrimaryRegular,

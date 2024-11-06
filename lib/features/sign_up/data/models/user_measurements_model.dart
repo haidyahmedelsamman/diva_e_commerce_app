@@ -24,5 +24,6 @@ class UserMeasurementsModel {
 
   factory UserMeasurementsModel.fromJson(Map<String, dynamic> json) =>
       _$UserMeasurementsModelFromJson(json);
+
   Map<String, dynamic> toJson() => _$UserMeasurementsModelToJson(this);
 }

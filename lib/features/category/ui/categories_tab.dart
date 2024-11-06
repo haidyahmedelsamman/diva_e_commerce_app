@@ -1,3 +1,4 @@
+import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
 import 'package:diva_e_commerce_app/core/widgets/products_list_view.dart';
 import 'package:diva_e_commerce_app/features/category/ui/widgets/categories_list.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class CategoriesTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: context.appTheme.canvasColor,
       body: SafeArea(
         child: Container(
           width: double.infinity,
