@@ -10,6 +10,11 @@ class TextStyleManager {
     fontWeight: FontWeightManager.regular,
     color: ColorsManager.black,
   );
+  static TextStyle font24BlackBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeightManager.bold,
+    color: ColorsManager.black,
+  );
   static TextStyle font24DynamicMedium = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeightManager.medium,

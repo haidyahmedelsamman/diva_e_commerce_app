@@ -1,12 +1,13 @@
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
-import 'package:diva_e_commerce_app/core/routes/app_router.dart';
-import 'package:diva_e_commerce_app/core/theme/text_style_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CategoriesTopBar extends StatelessWidget {
-  const CategoriesTopBar({super.key});
+import '../../../../core/routes/app_router.dart';
+import '../../../../core/theme/text_style_manager.dart';
+
+class WishListTopBar extends StatelessWidget {
+  const WishListTopBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +23,13 @@ class CategoriesTopBar extends StatelessWidget {
         ),
         const Spacer(),
         Text(
-          "Categories",
+          "Wishlist",
           style: TextStyleManager.font24BlackBold,
         ),
         const Spacer(),
-        GestureDetector(
-          onTap: () => context.pushNamed(AppRoutes.cartTabRoute),
-          child: SvgPicture.asset(
-            'assets/svgs/cart_plus_fill.svg',
-            height: 30.h,
-            width: 30.w,
-          ),
+        SizedBox(
+          height: 30.h,
+          width: 30.w,
         ),
       ],
     );

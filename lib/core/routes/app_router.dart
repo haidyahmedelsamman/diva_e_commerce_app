@@ -11,7 +11,7 @@ import 'package:diva_e_commerce_app/features/profile/ui/screens/measurments_scre
 import 'package:diva_e_commerce_app/features/profile/ui/screens/personal_information_screen.dart';
 import 'package:diva_e_commerce_app/features/sign_in/ui/sign_in_screen.dart';
 import 'package:diva_e_commerce_app/features/profile/ui/screens/profile_screen.dart';
-import 'package:diva_e_commerce_app/features/wish_list/wish_list_tab.dart';
+import 'package:diva_e_commerce_app/features/wish_list/ui/wish_list_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/sign_in/logic/sign_in_cubit.dart';

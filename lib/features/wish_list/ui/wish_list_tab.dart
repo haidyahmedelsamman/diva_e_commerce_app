@@ -1,13 +1,12 @@
 import 'package:diva_e_commerce_app/core/widgets/products_list_view.dart';
-import 'package:diva_e_commerce_app/features/category/ui/widgets/categories_list.dart';
+import 'package:diva_e_commerce_app/features/wish_list/ui/widgets/wishlist_top_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/helpers/spacing.dart';
-import 'widgets/categories_top_bar.dart';
 
-class CategoriesTab extends StatelessWidget {
-  const CategoriesTab({super.key});
+class WishListTab extends StatelessWidget {
+  const WishListTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,18 +19,9 @@ class CategoriesTab extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CategoriesTopBar(),
-              verticalSpace(12.h),
-              const Expanded(
-                child: Column(
-                  children: [
-                    CategoriesList(),
-                    ProductsListView(
-                      productsList: [],
-                    ),
-                  ],
-                ),
-              ),
+              const WishListTopBar(),
+              verticalSpace(20.h),
+               const ProductsListView(productsList: [],),
             ],
           ),
         ),

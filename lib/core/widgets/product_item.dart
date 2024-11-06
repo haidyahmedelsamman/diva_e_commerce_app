@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/product_name_and_price.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,11 +7,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/models/category_products_response_model.dart';
 
-class OutfitItem extends StatelessWidget {
+class ProductItem extends StatelessWidget {
   final int itemIndex;
   final bool isFavorite;
   final ProductModel productModel;
-  const OutfitItem({
+  const ProductItem({
     super.key,
     required this.itemIndex,
     required this.isFavorite,
@@ -42,13 +43,21 @@ class OutfitItem extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.topLeft,
-              child: Padding(
-                padding: EdgeInsets.only(
-                  top: 6.sp,
-                  left: 14.sp,
-                ),
-                child: SvgPicture.asset(
-                  'assets/svgs/heart.svg',
+              child: GestureDetector(
+                onTap: () {},
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: 6.sp,
+                    left: 14.sp,
+                  ),
+                  child: CircleAvatar(
+                    radius: 18.r,
+                    backgroundColor: Colors.white,
+                    child: Icon(
+                      isFavorite ? Icons.favorite : Icons.favorite_border,
+                      color: isFavorite ? ColorsManager.primary : Colors.black,
+                    ),
+                  ),
                 ),
               ),
             ),

@@ -32,7 +32,7 @@ class AnimatedSplashScreenState extends State<AnimatedSplashScreen>
             context.pushReplacementNamed(AppRoutes.homeScreenRoute);
           },
           orElse: () {
-            context.pushReplacementNamed(AppRoutes.signInScreenRoute);
+            context.pushReplacementNamed(AppRoutes.homeScreenRoute);
           },
         );
       },

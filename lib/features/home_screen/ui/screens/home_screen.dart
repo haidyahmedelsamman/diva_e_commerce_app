@@ -4,7 +4,7 @@ import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/home_tab.dar
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../cart/cart_tab.dart';
-import '../../../wish_list/wish_list_tab.dart';
+import '../../../wish_list/ui/wish_list_tab.dart';
 import '../widgets/bottom_nav_item.dart';
 
 class HomeScreen extends StatefulWidget {
