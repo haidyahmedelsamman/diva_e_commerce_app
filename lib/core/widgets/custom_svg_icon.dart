@@ -19,10 +19,12 @@ class CustomSVGIcon extends StatelessWidget {
       width: getIconSize(),
       child: SvgPicture.asset(
         fit: BoxFit.contain,
-        color:
-            context.appTheme.colorScheme.brightness.name == ThemeMode.light.name
-                ? Colors.black
-                : Colors.white,
+        colorFilter: ColorFilter.mode(
+          context.appTheme.colorScheme.brightness.name == ThemeMode.light.name
+              ? Colors.black
+              : Colors.white,
+          BlendMode.srcIn,
+        ),
         path,
       ),
     );

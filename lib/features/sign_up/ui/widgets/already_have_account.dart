@@ -7,14 +7,18 @@ class AlreadyHaveAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-        text: TextSpan(children: [
-      TextSpan(
-          text: StringManager.alreadyHaveAnAcount,
-          style: TextStyleManager.font18DynamicRegular),
-      TextSpan(
-          text: StringManager.signIn,
-          style: TextStyleManager.font18PrimaryRegular),
-    ]));
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          StringManager.alreadyHaveAnAcount,
+          style: TextStyleManager.font18DynamicRegular,
+        ),
+        Text(
+          StringManager.signIn,
+          style: TextStyleManager.font18PrimaryRegular,
+        ),
+      ],
+    );
   }
 }

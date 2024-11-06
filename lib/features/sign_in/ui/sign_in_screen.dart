@@ -1,5 +1,6 @@
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
 import 'package:diva_e_commerce_app/core/routes/app_router.dart';
+import 'package:diva_e_commerce_app/core/widgets/spacing/vertical_space.dart';
 import 'package:diva_e_commerce_app/features/sign_in/ui/widgets/dont_have_an_account.dart';
 import 'package:diva_e_commerce_app/features/sign_in/ui/widgets/signin_form.dart';
 import 'package:diva_e_commerce_app/features/sign_in/ui/widgets/sign_in_bloc_listener.dart';
@@ -57,15 +58,13 @@ class SignInScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // const OrDivider(),
-              // const RowCricleAvatarIcon(),
               verticalSpace(20),
               GestureDetector(
                   onTap: () {
                     context.pushNamed(AppRoutes.signUpScreenRoute);
                   },
                   child: const DontHaveAnAccount()),
+              const VerticalSpace(space: 15),
               const SignInBlocListener(),
             ],
           ),

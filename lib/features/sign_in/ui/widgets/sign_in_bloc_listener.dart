@@ -28,7 +28,7 @@ class SignInBlocListener extends StatelessWidget {
           signedin: (user) {
             context.read<UserDataCubit>().updateUserData(user);
             context.pop();
-            context.pushNamed(AppRoutes.homeScreenRoute);
+            context.pushNamedAndRemoveUntil(AppRoutes.homeScreenRoute);
           },
           signedout: (error) {
             setupErrorState(context, error ?? '');
