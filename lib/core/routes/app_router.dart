@@ -53,19 +53,19 @@ class AppRouter {
           ),
           transitionDuration: Duration.zero,
         );
-   case AppRoutes.profileScreenRoute:
+      case AppRoutes.profileScreenRoute:
         return MaterialPageRoute(builder: (_) {
           return const ProfileScreen();
         });
-           case AppRoutes.cartScreenRoute:
+      case AppRoutes.cartScreenRoute:
         return MaterialPageRoute(builder: (_) {
-          return const CartScreen();
+          return CartScreen();
         });
-   
+
       case AppRoutes.productDetailsScreenRoute:
-       final productItem = settings.arguments as ProductModel;
+        final productItem = settings.arguments as ProductModel;
         return MaterialPageRoute(builder: (_) {
-          return  ProductDetailsScreen(productModel:productItem);
+          return ProductDetailsScreen(productModel: productItem);
         });
       default:
         return null;
@@ -80,5 +80,5 @@ class AppRoutes {
   static const String homeScreenRoute = '/homeScreenRoute ';
   static const String profileScreenRoute = '/profileScreenRoute ';
   static const String productDetailsScreenRoute = '/productDetailsScreenRoute';
-    static const String cartScreenRoute = '/cartScreenRoute';
+  static const String cartScreenRoute = '/cartScreenRoute';
 }
