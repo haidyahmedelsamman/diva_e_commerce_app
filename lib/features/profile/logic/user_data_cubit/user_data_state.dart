@@ -4,7 +4,10 @@ part 'user_data_state.freezed.dart';
 
 @freezed
 class UserDataState with _$UserDataState {
-  const factory UserDataState({
-    required UserModel? userModel,
-  }) = _UserDataState;
+  const factory UserDataState.initial() = _Initial;
+  const factory UserDataState.loading() = _Loading;
+  const factory UserDataState.success() = _Success;
+
+  const factory UserDataState.authenticated(UserModel user) = _Authenticated;
+  const factory UserDataState.error({String? errorMessage}) = _Error;
 }

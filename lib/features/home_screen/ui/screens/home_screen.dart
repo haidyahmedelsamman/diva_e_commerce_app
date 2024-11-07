@@ -1,56 +1,99 @@
-import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/categories_list_view_builder.dart';
-import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/outfits_list_view_builder.dart';
+import 'package:diva_e_commerce_app/core/di/dependency_injection.dart';
+import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
+import 'package:diva_e_commerce_app/features/category/ui/categories_tab.dart';
+import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/home_tab.dart';
+import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../core/helpers/spacing.dart';
-import '../widgets/ads_list_view.dart';
-import '../widgets/bottom_nav_bar.dart';
-import '../widgets/home_top_bar.dart';
-import '../widgets/search_text_field_and_filter.dart';
+import '../../../cart/cart_tab.dart';
+import '../../../wish_list/ui/wish_list_tab.dart';
+import '../widgets/bottom_nav_item.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<Widget> bottomTabs = [
+    BlocProvider(
+      create: (context) => getIt<UserDataCubit>(),
+      child: const HomeTab(),
+    ),
+    BlocProvider(
+      create: (context) => getIt<UserDataCubit>(),
+      child: const CategoriesTab(),
+    ),
+    BlocProvider(
+      create: (context) => getIt<UserDataCubit>(),
+      child: const CartTab(),
+    ),
+    BlocProvider(
+      create: (context) => getIt<UserDataCubit>(),
+      child: const WishListTab(),
+    ),
+  ];
+  int scelectedTab = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          width: double.infinity,
-          margin: const EdgeInsets.fromLTRB(
-            20.0,
-            16.0,
-            20.0,
-            8.0,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const HomeTopBar(),
-              verticalSpace(8),
-              SearchTextFieldAndFilter(
-                prefixIcon: Padding(
-                  padding: EdgeInsets.only(left: 10.sp, right: 12.sp),
-                  child: SvgPicture.asset(
-                    height: 50.h,
-                    width: 50.w,
-                    'assets/svgs/search_pink.svg',
-                  ),
-                ),
-                hintText: 'Search here',
-                validator: (value) {},
+      body: bottomTabs[scelectedTab],
+      bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          selectedItemColor: ColorsManager.primary,
+          unselectedItemColor: Colors.black,
+          currentIndex: scelectedTab,
+          onTap: (value) {
+            setState(() {
+              scelectedTab = value;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                'assets/svgs/home.svg',
               ),
-              const AdsListView(),
-              verticalSpace(18),
-              const CategoriesListViewBuilder(),
-              verticalSpace(18),
-              const OutfitsListViewBuilder(),
-              verticalSpace(10),
-              const BottomNavBar(),
-            ],
-          ),
-        ),
-      ),
+              label: '',
+              activeIcon: const BottomNavItem(
+                label: 'Home',
+                imagePath: 'assets/svgs/home.svg',
+              ),
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                'assets/svgs/categories.svg',
+              ),
+              label: '',
+              activeIcon: const BottomNavItem(
+                label: 'Category',
+                imagePath: 'assets/svgs/categories.svg',
+              ),
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                'assets/svgs/cart_plus.svg',
+              ),
+              label: '',
+              activeIcon: const BottomNavItem(
+                label: 'Cart',
+                imagePath: 'assets/svgs/cart_plus.svg',
+              ),
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                'assets/svgs/heart_without_bg.svg',
+              ),
+              label: '',
+              activeIcon: const BottomNavItem(
+                label: 'Favorite',
+                imagePath: 'assets/svgs/heart_without_bg.svg',
+              ),
+            ),
+          ]),
     );
   }
 }

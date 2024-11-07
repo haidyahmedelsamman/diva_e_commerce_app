@@ -5,20 +5,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../theme/colors_manager.dart';
 
 class AppTextFormField extends StatelessWidget {
-  const AppTextFormField(
-      {super.key,
-      this.contentPadding,
-      this.suffixIcon,
-      this.fillColorBackground,
-      this.hintStyle,
-      this.obscureText,
-      this.controller,
-      this.keyboardType,
-      required this.hintText,
-      this.focusedBorder,
-      this.enabledBorder,
-      this.validator,
-      this.onchanged});
+  const AppTextFormField({
+    super.key,
+    this.contentPadding,
+    this.suffixIcon,
+    this.fillColorBackground,
+    this.hintStyle,
+    this.obscureText,
+    this.controller,
+    this.keyboardType,
+    required this.hintText,
+    this.focusedBorder,
+    this.enabledBorder,
+    this.validator,
+    this.onchanged,
+    this.readOnly = false,
+    this.onTap,
+  });
+  final VoidCallback? onTap;
   final EdgeInsetsGeometry? contentPadding;
   final Color? fillColorBackground;
   final Widget? suffixIcon;
@@ -29,11 +33,15 @@ class AppTextFormField extends StatelessWidget {
   final bool? obscureText;
   final TextInputType? keyboardType;
   final TextEditingController? controller;
+  final bool readOnly;
+
   final Function(String?)? validator;
   final Function(String)? onchanged;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onTap: onTap,
+      readOnly: readOnly,
       onChanged: onchanged,
       controller: controller,
       validator: (value) {
@@ -60,11 +68,13 @@ class AppTextFormField extends StatelessWidget {
                 borderSide: const BorderSide(color: ColorsManager.lightGrey)),
         focusedBorder: focusedBorder ??
             OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30.0),
-                borderSide: BorderSide(color: ColorsManager.primary)),
+              borderRadius: BorderRadius.circular(30.0),
+              borderSide: const BorderSide(color: ColorsManager.primary),
+            ),
         errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30.0),
-            borderSide: BorderSide(color: ColorsManager.error, width: 1.3)),
+          borderRadius: BorderRadius.circular(30.0),
+          borderSide: BorderSide(color: ColorsManager.error, width: 1.3),
+        ),
         hintText: hintText,
         hintStyle: TextStyleManager.font18GreyRegular,
         suffixIcon: suffixIcon,

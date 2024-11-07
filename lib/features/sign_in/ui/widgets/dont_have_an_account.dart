@@ -6,12 +6,18 @@ class DontHaveAnAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-        text: TextSpan(children: [
-      TextSpan(
-          text: "Don't have an account",
-          style: TextStyleManager.font18BlackRegular),
-      TextSpan(text: ' Sign Up', style: TextStyleManager.font18PrimaryRegular),
-    ]));
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          "Don't have an account?",
+          style: TextStyleManager.font18DynamicRegular,
+        ),
+        Text(
+          ' Sign Up',
+          style: TextStyleManager.font18PrimaryRegular,
+        ),
+      ],
+    );
   }
 }

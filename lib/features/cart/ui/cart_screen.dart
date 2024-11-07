@@ -19,12 +19,7 @@ class CartScreen extends StatelessWidget {
         price: 300,
         quantity: 500,
         imagePath: 'assets/images/outfit.png'),
-    CartModel
-        id: '3',
-        name: 'name3',
-        price: 200,
-        quantity: 500,
-        imagePath: 'assets/images/outfit.png')
+  
   ];
   CartScreen({super.key});
 

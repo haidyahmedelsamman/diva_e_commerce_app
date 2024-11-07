@@ -1,8 +1,7 @@
-import 'package:diva_e_commerce_app/features/home_screen/data/models/category_products_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/helpers/spacing.dart';
+import '../../../../core/models/category_products_response_model.dart';
 import '../../../../core/theme/text_style_manager.dart';
 
 class ProductNameAndPrice extends StatelessWidget {

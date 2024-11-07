@@ -1,0 +1,72 @@
+import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
+import 'package:diva_e_commerce_app/core/logic/categories_state.dart';
+import 'package:diva_e_commerce_app/core/routes/app_router.dart';
+import 'package:diva_e_commerce_app/core/widgets/product_item.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/logic/categories_cubit.dart';
+import '../../../../core/theme/colors_manager.dart';
+import '../models/category_products_response_model.dart';
+
+class ProductsListView extends StatelessWidget {
+  final List<ProductModel> productsList;
+  const ProductsListView({
+    super.key, required this.productsList,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<CategoriesCubit, CategoriesState>(
+      buildWhen: (previous, current) =>
+          current is CategoryProductsLoading ||
+          current is CategoryProductsSuccess ||
+          current is CategoryProductsError,
+      builder: (context, state) {
+        return state.maybeWhen(
+            categoryProductsLoading: () {
+              return const Expanded(
+                child: Center(
+                  child: CircularProgressIndicator(
+                    color: ColorsManager.primary,
+                  ),
+                ),
+              );
+            },
+            categoryProductsSuccess: (categoryDataList, productsDataList) {
+              return Expanded(
+                child: GridView.builder(
+                  itemCount: productsDataList.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 0.63.sp,
+                    crossAxisCount: 2,
+                  ),
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.w),
+                      child: GestureDetector(
+                        onTap: () {
+                          context.pushNamed(AppRoutes.productDetailsScreenRoute,
+                              arguments: productsDataList[index]);
+                        },
+                        child: ProductItem(
+                          productModel: productsDataList[index],
+                          isFavorite: index == 0 ? true : false,
+                          itemIndex: index,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              );
+            },
+            categoryProductsError: (errorMessage) => Expanded(
+                  child: Center(
+                    child: Text(errorMessage),
+                  ),
+                ),
+            orElse: () => const SizedBox.shrink());
+      },
+    );
+  }
+}

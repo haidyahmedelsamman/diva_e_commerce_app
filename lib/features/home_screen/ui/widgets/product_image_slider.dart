@@ -1,13 +1,15 @@
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
 import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
-import 'package:diva_e_commerce_app/features/home_screen/data/models/category_products_response_model.dart';
+import 'package:diva_e_commerce_app/core/widgets/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../core/models/category_products_response_model.dart';
+
 class ProductImageSlider extends StatefulWidget {
-  final ProductModel productModell;
-  const ProductImageSlider({super.key, required this.productModell});
+  final ProductModel productModel;
+  const ProductImageSlider({super.key, required this.productModel});
 
   @override
   State<ProductImageSlider> createState() => _ProductImageSliderState();
@@ -32,8 +34,8 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
             itemBuilder: (context, index) {
               currentIndex = index;
               return Image.network(
-                widget.productModell.image ?? '',
-                fit: BoxFit.fill,
+                widget.productModel.image ?? '',
+                fit: BoxFit.contain,
               );
             },
           ),
@@ -53,20 +55,11 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
             ),
           ),
           Positioned(
-            height: 40.h,
-            width: 40.w,
-            top: 30.sp,
-            right: 30.sp,
-            child: GestureDetector(
-              onTap: () {
-                context.pop();
-              },
-              child: SvgPicture.asset(
-                'assets/svgs/arrow_share.svg',
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
+              height: 40.h,
+              width: 40.w,
+              top: 30.sp,
+              right: 30.sp,
+              child: FavoriteButton(productModel: widget.productModel)),
           Positioned(
             bottom: 40.sp,
             left: 150.sp,
