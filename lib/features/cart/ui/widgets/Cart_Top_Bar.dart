@@ -1,9 +1,9 @@
-import 'package:diva_e_commerce_app/core/constants/string_manager.dart';
 import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
 import 'package:diva_e_commerce_app/core/theme/text_style_manager.dart';
 import 'package:diva_e_commerce_app/core/widgets/custom_back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/constants/string_manager.dart';
 
 class CartTopBar extends StatelessWidget {
   const CartTopBar({super.key});

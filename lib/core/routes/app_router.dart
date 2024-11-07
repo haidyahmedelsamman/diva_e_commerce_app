@@ -140,11 +140,7 @@ class AppRouter {
           return CartScreen();
         });
 
-      case AppRoutes.productDetailsScreenRoute:
-        final productItem = settings.arguments as ProductModel;
-        return MaterialPageRoute(builder: (_) {
-          return ProductDetailsScreen(productModel: productItem);
-        });
+      
       case AppRoutes.cartTabRoute:
         return MaterialPageRoute(
           builder: (_) {

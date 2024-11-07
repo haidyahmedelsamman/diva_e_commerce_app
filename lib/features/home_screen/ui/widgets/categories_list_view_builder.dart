@@ -39,7 +39,7 @@ class CategoriesListViewBuilder extends StatelessWidget {
           },
           categoriesError: (errorHandler) => const SizedBox.shrink(),
           orElse: () {
-            return SizedBox(child: const Text('else'));
+            return const SizedBox(child:  Text('else'));
           },
         );
       },
