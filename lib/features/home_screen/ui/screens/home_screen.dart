@@ -39,13 +39,14 @@ class _HomeScreenState extends State<HomeScreen> {
   int scelectedTab = 0;
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final iconColor = isDarkMode ? Colors.white : Colors.black;
     return Scaffold(
       body: bottomTabs[scelectedTab],
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
           elevation: 0,
           selectedItemColor: ColorsManager.primary,
-          unselectedItemColor: Colors.black,
           currentIndex: scelectedTab,
           onTap: (value) {
             setState(() {
@@ -56,6 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 'assets/svgs/home.svg',
+                colorFilter: ColorFilter.mode(
+                  iconColor,
+                  BlendMode.srcIn,
+                ),
               ),
               label: '',
               activeIcon: const BottomNavItem(
@@ -66,6 +71,10 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 'assets/svgs/categories.svg',
+                colorFilter: ColorFilter.mode(
+                  iconColor,
+                  BlendMode.srcIn,
+                ),
               ),
               label: '',
               activeIcon: const BottomNavItem(
@@ -76,6 +85,10 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 'assets/svgs/cart_plus.svg',
+                colorFilter: ColorFilter.mode(
+                  iconColor,
+                  BlendMode.srcIn,
+                ),
               ),
               label: '',
               activeIcon: const BottomNavItem(
@@ -86,6 +99,10 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 'assets/svgs/heart_without_bg.svg',
+                colorFilter: ColorFilter.mode(
+                  iconColor,
+                  BlendMode.srcIn,
+                ),
               ),
               label: '',
               activeIcon: const BottomNavItem(

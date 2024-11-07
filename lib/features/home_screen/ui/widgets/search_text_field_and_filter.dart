@@ -86,7 +86,7 @@ class SearchTextFieldAndFilter extends StatelessWidget {
                 filled: true,
               ),
               obscureText: isObscureText ?? false,
-              style: TextStyleManager.font16BlackRegular,
+              style: TextStyleManager.font16BlackRegular(context),
               validator: (value) {
                 return validator(value);
               },

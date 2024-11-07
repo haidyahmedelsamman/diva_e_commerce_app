@@ -1,6 +1,7 @@
 import 'package:diva_e_commerce_app/core/di/dependency_injection.dart';
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
 import 'package:diva_e_commerce_app/core/routes/app_router.dart';
+import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
 import 'package:diva_e_commerce_app/core/widgets/custom_svg_icon.dart';
 import 'package:diva_e_commerce_app/core/widgets/custom_text_button.dart';
 import 'package:diva_e_commerce_app/core/widgets/secondary_screen_custom_scaffold.dart';
@@ -46,7 +47,7 @@ class ProfileScreen extends StatelessWidget {
   CustomTextButton buildSignoutButton(BuildContext context) {
     return CustomTextButton(
       text: 'Signout',
-      backgroundColor: Colors.red,
+      backgroundColor: ColorsManager.primary,
       textColor: Colors.white,
       onPressed: () {
         showDialog(

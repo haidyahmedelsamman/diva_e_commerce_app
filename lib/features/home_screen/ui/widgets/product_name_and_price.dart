@@ -58,7 +58,7 @@ class ProductNameAndPrice extends StatelessWidget {
           padding: EdgeInsets.only(left: 12.0.sp),
           child: Text(
             '${productModel.price} L.E',
-            style: priceTextStyle ?? TextStyleManager.font14BlackRegular,
+            style: priceTextStyle ?? TextStyleManager.font14BlackRegular(context),
           ),
         ),
       ],

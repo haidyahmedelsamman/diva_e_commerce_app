@@ -46,7 +46,7 @@ class SignUpScreen extends StatelessWidget {
                   onPressed: () {
                     validateSignUp(context);
                   },
-                  textStyle: TextStyleManager.font18WhiteRegular,
+                  textStyle: TextStyleManager.font18WhiteRegular(context),
                 ),
                 const OrDivider(),
                 const RowCricleAvatarIcon(),

@@ -12,6 +12,9 @@ class HomeTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final iconColor = isDarkMode ? Colors.white : Colors.black;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -28,19 +31,27 @@ class HomeTopBar extends StatelessWidget {
         horizontalSpace(8),
         Text(
           'Welcome, Haidy',
-          style: TextStyleManager.font16BlackRegular,
+          style: TextStyleManager.font16BlackRegular(context),
         ),
         const Spacer(),
         SvgPicture.asset(
           height: 28.h,
           width: 28.w,
           'assets/svgs/notification.svg',
+          colorFilter: ColorFilter.mode(
+            iconColor,
+            BlendMode.srcIn,
+          ),
         ),
         horizontalSpace(16),
         SvgPicture.asset(
           height: 24.h,
           width: 24.w,
           'assets/svgs/search.svg',
+          colorFilter: ColorFilter.mode(
+            iconColor,
+            BlendMode.srcIn,
+          ),
         ),
       ],
     );

@@ -78,15 +78,15 @@ class AppRouter {
                 ),
             transitionDuration: Duration.zero);
 
-      // case AppRoutes.profileScreenRoute:
-      //   return MaterialPageRoute(
-      //     builder: (_) {
-      //       return BlocProvider(
-      //         create: (context) => getIt<UserDataCubit>(),
-      //         child: const ProfileScreen(),
-      //       );
-      //     },
-      //   );
+      case AppRoutes.profileScreenRoute:
+        return MaterialPageRoute(
+          builder: (_) {
+            return BlocProvider(
+              create: (context) => getIt<UserDataCubit>(),
+              child: const ProfileScreen(),
+            );
+          },
+        );
       case AppRoutes.editUserAccountScreenRoute:
         return MaterialPageRoute(
           builder: (_) {
@@ -140,7 +140,6 @@ class AppRouter {
           return CartScreen();
         });
 
-      
       case AppRoutes.cartTabRoute:
         return MaterialPageRoute(
           builder: (_) {
@@ -181,5 +180,4 @@ class AppRoutes {
   static const String categoriesTabRoute = '/categoriesTabRoute';
   static const String cartTabRoute = '/cartTabRoute';
   static const String wishListTabRoute = '/wishListTabRoute';
-
 }

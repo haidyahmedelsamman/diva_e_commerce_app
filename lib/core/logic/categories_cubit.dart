@@ -42,6 +42,14 @@ class CategoriesCubit extends Cubit<CategoriesState> {
     emit(CategoriesState.onCategoriesTabClick(index));
   }
 
+  void resetSelectedCategory() {
+    selectedCategoriesTabIndex = 0; // Reset to the default index
+    isCategoryTabSelected = false; // Reset the selection flag
+    emit(const CategoriesState
+        .initial()); // Emit the initial state or a custom state if needed
+  }
+
+
   /// Fetches categories from the repository and emits appropriate states.
   void getCategories() async {
     // Emit loading state

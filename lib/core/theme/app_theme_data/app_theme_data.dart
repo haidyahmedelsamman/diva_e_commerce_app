@@ -7,6 +7,9 @@ class AppThemeData {
         color: ColorsManager.darkGray,
       ),
       appBarTheme: _appBarTheme,
+      textTheme: TextTheme(
+        
+      ),
       colorScheme: const ColorScheme.dark(
         primary: ColorsManager.primary,
         secondary: ColorsManager.lightPrimary,

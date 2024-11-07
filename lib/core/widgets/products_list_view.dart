@@ -7,12 +7,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/logic/categories_cubit.dart';
 import '../../../../core/theme/colors_manager.dart';
-import '../models/category_products_response_model.dart';
 
 class ProductsListView extends StatelessWidget {
-  final List<ProductModel> productsList;
   const ProductsListView({
-    super.key, required this.productsList,
+    super.key,
   });
 
   @override

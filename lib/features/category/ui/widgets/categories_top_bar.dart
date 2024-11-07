@@ -23,7 +23,7 @@ class CategoriesTopBar extends StatelessWidget {
         const Spacer(),
         Text(
           "Categories",
-          style: TextStyleManager.font24BlackBold,
+          style: TextStyleManager.font24BlackBold(context),
         ),
         const Spacer(),
         GestureDetector(

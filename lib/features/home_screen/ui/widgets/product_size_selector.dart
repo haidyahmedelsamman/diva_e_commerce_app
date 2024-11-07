@@ -35,9 +35,9 @@ class _ProductSizeSelectorState extends State<ProductSizeSelector> {
               children: [
                 TextSpan(
                     text: 'Your size : ',
-                    style: TextStyleManager.font16BlackSemiBold),
+                    style: TextStyleManager.font16BlackSemiBold(context)),
                 TextSpan(
-                    text: 'Large', style: TextStyleManager.font16BlackRegular),
+                    text: 'Large', style: TextStyleManager.font16BlackRegular(context)),
               ],
             ),
           ),

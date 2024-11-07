@@ -30,7 +30,7 @@ class ProductDetailsScreen extends StatelessWidget {
             ProductNameAndPrice(
               isFavorite: true,
               productModel: productModel,
-              priceTextStyle: TextStyleManager.font20BlackSemiBold,
+              priceTextStyle: TextStyleManager.font20BlackSemiBold(context),
               titleTextStyle: TextStyleManager.font16GreyRegular,
               ratingTextStyle: TextStyleManager.font16GreyRegular,
             ),

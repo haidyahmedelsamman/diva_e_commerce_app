@@ -46,7 +46,7 @@ class CategoryItem extends StatelessWidget {
               categoryName ?? "Item Null",
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
-              style: TextStyleManager.font14BlackRegular,
+              style: TextStyleManager.font14BlackRegular(context),
             ),
           )
         ],

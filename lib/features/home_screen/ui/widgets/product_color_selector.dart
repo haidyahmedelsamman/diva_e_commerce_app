@@ -39,9 +39,9 @@ class _ProductColorSelectorState extends State<ProductColorSelector> {
               children: [
                 TextSpan(
                     text: 'Color : ',
-                    style: TextStyleManager.font16BlackSemiBold),
+                    style: TextStyleManager.font16BlackSemiBold(context)),
                 TextSpan(
-                    text: 'Brown', style: TextStyleManager.font16BlackRegular),
+                    text: 'Brown', style: TextStyleManager.font16BlackRegular(context)),
               ],
             ),
           ),

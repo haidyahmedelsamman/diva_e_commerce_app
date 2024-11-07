@@ -46,7 +46,7 @@ class SignInScreen extends StatelessWidget {
                 onPressed: () {
                   validateSignIn(context);
                 },
-                textStyle: TextStyleManager.font18WhiteRegular,
+                textStyle: TextStyleManager.font18WhiteRegular(context),
               ),
               verticalSpace(10),
               Align(

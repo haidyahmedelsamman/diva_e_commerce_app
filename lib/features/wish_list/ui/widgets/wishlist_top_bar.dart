@@ -24,7 +24,7 @@ class WishListTopBar extends StatelessWidget {
         const Spacer(),
         Text(
           "Wishlist",
-          style: TextStyleManager.font24BlackBold,
+          style: TextStyleManager.font24BlackBold(context),
         ),
         const Spacer(),
         SizedBox(

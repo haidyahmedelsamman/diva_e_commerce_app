@@ -16,7 +16,7 @@ class CartTopBar extends StatelessWidget {
         const Spacer(),
         Text(
           StringManager.cart,
-          style: TextStyleManager.font24BlackRegular,
+          style: TextStyleManager.font24BlackRegular(context),
         ),
         const Spacer(),
         Stack(
@@ -38,7 +38,7 @@ class CartTopBar extends StatelessWidget {
               child: Center(
                 child: Text(
                   '3',
-                  style: TextStyleManager.font12WhiteRegular,
+                  style: TextStyleManager.font12WhiteRegular(context),
                 ),
               ),
             ),

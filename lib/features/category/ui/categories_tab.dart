@@ -27,9 +27,7 @@ class CategoriesTab extends StatelessWidget {
                 child: Column(
                   children: [
                     CategoriesList(),
-                    ProductsListView(
-                      productsList: [],
-                    ),
+                    ProductsListView(),
                   ],
                 ),
               ),

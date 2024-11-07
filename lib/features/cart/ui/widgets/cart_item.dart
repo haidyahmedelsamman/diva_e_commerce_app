@@ -51,7 +51,7 @@ class _CartItemState extends State<CartItem> {
                 width: 180.w,
                 child: Text(
                   widget.cartModel.name,
-                  style: TextStyleManager.font16BlackRegular,
+                  style: TextStyleManager.font16BlackRegular(context),
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
@@ -60,7 +60,7 @@ class _CartItemState extends State<CartItem> {
               ),
               Text(
                 '${widget.cartModel.price} L.E',
-                style: TextStyleManager.font16BlackRegular
+                style: TextStyleManager.font16BlackRegular(context)
                     .copyWith(fontWeight: FontWeight.bold),
               ),
               SizedBox(
@@ -88,7 +88,7 @@ class _CartItemState extends State<CartItem> {
                       const Spacer(),
                       Text(
                         widget.cartModel.quantity.toString(),
-                        style: TextStyleManager.font18WhiteRegular
+                        style: TextStyleManager.font18WhiteRegular(context)
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
