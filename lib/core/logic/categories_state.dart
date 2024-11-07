@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import '../models/category_products_response_model.dart';
 part 'categories_state.freezed.dart';
-
 @freezed
 class CategoriesState with _$CategoriesState {
   /// Represents the initial state before any categories are fetched.

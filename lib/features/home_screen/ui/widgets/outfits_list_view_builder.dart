@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/logic/categories_cubit.dart';
+
 import '../../../../core/theme/colors_manager.dart';
 
 class OutfitsListViewBuilder extends StatelessWidget {

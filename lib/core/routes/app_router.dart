@@ -1,6 +1,7 @@
 import 'package:diva_e_commerce_app/core/di/dependency_injection.dart';
 import 'package:diva_e_commerce_app/core/logic/categories_cubit.dart';
 import 'package:diva_e_commerce_app/features/animated_splash/animated_splash_screen.dart';
+import 'package:diva_e_commerce_app/features/cart/ui/cart_screen.dart';
 import 'package:diva_e_commerce_app/features/cart/cart_tab.dart';
 import 'package:diva_e_commerce_app/features/category/ui/categories_tab.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/screens/home_screen.dart';
@@ -77,15 +78,15 @@ class AppRouter {
                 ),
             transitionDuration: Duration.zero);
 
-      case AppRoutes.profileScreenRoute:
-        return MaterialPageRoute(
-          builder: (_) {
-            return BlocProvider(
-              create: (context) => getIt<UserDataCubit>(),
-              child: const ProfileScreen(),
-            );
-          },
-        );
+      // case AppRoutes.profileScreenRoute:
+      //   return MaterialPageRoute(
+      //     builder: (_) {
+      //       return BlocProvider(
+      //         create: (context) => getIt<UserDataCubit>(),
+      //         child: const ProfileScreen(),
+      //       );
+      //     },
+      //   );
       case AppRoutes.editUserAccountScreenRoute:
         return MaterialPageRoute(
           builder: (_) {
@@ -130,6 +131,20 @@ class AppRouter {
           transitionDuration: Duration.zero,
         );
 
+      case AppRoutes.profileScreenRoute:
+        return MaterialPageRoute(builder: (_) {
+          return const ProfileScreen();
+        });
+      case AppRoutes.cartScreenRoute:
+        return MaterialPageRoute(builder: (_) {
+          return CartScreen();
+        });
+
+      case AppRoutes.productDetailsScreenRoute:
+        final productItem = settings.arguments as ProductModel;
+        return MaterialPageRoute(builder: (_) {
+          return ProductDetailsScreen(productModel: productItem);
+        });
       case AppRoutes.cartTabRoute:
         return MaterialPageRoute(
           builder: (_) {
@@ -145,6 +160,7 @@ class AppRouter {
             );
           },
         );
+
       default:
         return null;
     }
@@ -163,7 +179,11 @@ class AppRoutes {
   static const String measurmentsScreen = '/measurmentsScreen ';
 
   static const String productDetailsScreenRoute = '/productDetailsScreenRoute';
+
+  static const String cartScreenRoute = '/cartScreenRoute';
+
   static const String categoriesTabRoute = '/categoriesTabRoute';
   static const String cartTabRoute = '/cartTabRoute';
   static const String wishListTabRoute = '/wishListTabRoute';
+
 }

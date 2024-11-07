@@ -1,3 +1,5 @@
+
+
 import 'dart:async';
 
 import 'package:diva_e_commerce_app/core/extensions/build_context_extensions.dart';
@@ -26,6 +28,9 @@ class AnimatedSplashScreenState extends State<AnimatedSplashScreen>
     Timer(
       const Duration(seconds: 3),
       () {
+
+        context.pushReplacementNamed(AppRoutes.cartScreenRoute);
+
         context.read<SignInCubit>().state.maybeWhen(
           signedin: (user) {
             context.read<UserDataCubit>().updateUserData(user);
@@ -35,6 +40,7 @@ class AnimatedSplashScreenState extends State<AnimatedSplashScreen>
             context.pushReplacementNamed(AppRoutes.homeScreenRoute);
           },
         );
+
       },
     );
   }

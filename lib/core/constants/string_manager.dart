@@ -1,6 +1,8 @@
+
+
 class StringManager {
   static const String signUp = 'Sign UP';
-    static const String signIn = 'Sign In';
+  static const String signIn = 'Sign In';
 
   static const String email = 'E-mail';
   static const String alreadyHaveAnAcount = 'Already have an account? ';
@@ -10,4 +12,5 @@ class StringManager {
   static const String signUpImagePath = '$imageBasePath/signup_welcome.png';
   static const String googleIconPath = '$imageBasePath/google_icon.png';
   static const String facebookIconPath = '$imageBasePath/facebook_icon.png';
+  static const String cart = 'Cart';
 }

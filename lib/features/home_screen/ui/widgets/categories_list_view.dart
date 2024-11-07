@@ -1,9 +1,10 @@
 import 'package:diva_e_commerce_app/core/logic/categories_cubit.dart';
 import 'package:diva_e_commerce_app/core/logic/categories_state.dart';
-import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/category_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../category/ui/widgets/category_item.dart';
 
 class CategoriesListView extends StatelessWidget {
   final List<String> categoriesList;
