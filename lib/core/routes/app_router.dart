@@ -131,10 +131,6 @@ class AppRouter {
           transitionDuration: Duration.zero,
         );
 
-      case AppRoutes.profileScreenRoute:
-        return MaterialPageRoute(builder: (_) {
-          return const ProfileScreen();
-        });
       case AppRoutes.cartScreenRoute:
         return MaterialPageRoute(builder: (_) {
           return CartScreen();

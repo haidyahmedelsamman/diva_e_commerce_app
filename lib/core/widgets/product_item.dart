@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:diva_e_commerce_app/core/widgets/custom_cache_network_image.dart';
 import 'package:diva_e_commerce_app/core/widgets/favorite_button.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/product_name_and_price.dart';
 import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_cubit.dart';
@@ -31,15 +32,17 @@ class ProductItem extends StatelessWidget {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(
                   25.r,
                 ),
               ),
               child: SizedBox(
                 height: 200.h,
-                child: Image.network(
-                  productModel.image ?? '',
-                  fit: BoxFit.contain,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(25.r),
+                  child: CustomCachedNetworkImage(
+                      imageUrl: productModel.image ?? ''),
                 ),
               ),
             ),

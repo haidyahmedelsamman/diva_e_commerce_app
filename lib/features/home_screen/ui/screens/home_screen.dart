@@ -44,9 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: bottomTabs[scelectedTab],
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white,
           elevation: 0,
           selectedItemColor: ColorsManager.primary,
+          showUnselectedLabels: false,
           currentIndex: scelectedTab,
           onTap: (value) {
             setState(() {
