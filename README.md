@@ -14,7 +14,8 @@
 ![Project Structure](https://github.com/user-attachments/assets/b6888da3-0f69-4369-baef-aa96198f333c)
 
 ## 💻 Tech Behind the Scenes
-  - **👩‍💻State Management:** We use **Cubit** to keep everything running smoothly and responsively, so you can focus on what you love—shopping!
+  - **💡Built with Clean Architecture:** We adhere to Clean Architecture principles to create a well-organized, maintainable, and scalable codebase, promoting separation of concerns and enabling easy testing and extensibility.
+  - **👩‍💻State Management:** We use **Cubit** to keep everything running smoothly and responsively, so you can focus on what you love—shopping! 
   - **📲API Magic:** Our app talks to the server using **Dio and Retrofit**, ensuring you get the latest products and updates quickly.
   - **🕵️‍♂️Authentication with Firebase:** We use Firebase Authentication to provide a seamless and secure sign-in/sign-up experience for our users.
   - **📝Cloud Database with Firestore:** Our app stores and syncs data in real-time using Firestore, ensuring that user data, product information, and order details are always up-to-date.
