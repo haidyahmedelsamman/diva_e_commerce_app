@@ -1,88 +1,47 @@
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2e164b3a-1238-46b6-a7d7-cfc0cd11a8ff" alt="logo"/>
+</p>
 
-# 📱 Diva E-Commerce App
+<div align="center">
+  <h1>E-Commerce App</h1>
+<p>A Flutter-based e-commerce app designed for a wide range of products, including electronics, clothes, and jewelry.</p>
+</div>
 
-![image](https://github.com/user-attachments/assets/9805e721-4c4c-4637-8afe-e12bcb805730)
+- This application is designed specifically for Products, offering a seamless and engaging shopping experience. The app features a clean and modern UI, meticulously crafted using Figma, and implemented in Flutter.
 
-- This Flutter-based e-commerce application is designed specifically for girls' outfits, offering a seamless and engaging shopping experience. The app features a clean and modern UI, meticulously crafted using Figma, and implemented in Flutter.
 
----
-
-## 🚀 Key Features
-
-List the key features of your project:
-  - Smooth Authentication: Sign up and log in effortlessly to enjoy a personalized shopping experience tailored just for you!
-  - Charming Home Screen: Discover the latest trends and special offers at a glance, with a beautiful layout that showcases your favorite styles.
-  - Detailed Product Info: Dive into each outfit with comprehensive details, stunning images, and real customer reviews to help you make the best choices.
-  - Easy Cart Management: Add your must-haves to your cart, adjust quantities, and get ready for a hassle-free checkout process!
-  - Favorites Just for You: Save your top picks in a dedicated favorites section so you can easily find them later.
-  - Your Profile, Your Way: Manage your account and keep track of your orders with ease—because your shopping experience should be all about you!
-  - Browse by Categories & Wishlist: Effortlessly explore different outfit categories and create a wishlist to save all your desired items.
-  - Add New Products: For our lovely admins, easily add new outfits to keep the collection fresh and exciting!
-
----
+## ⚙ Project Structure
+![Project Structure](https://github.com/user-attachments/assets/b6888da3-0f69-4369-baef-aa96198f333c)
 
 ## 💻 Tech Behind the Scenes
-  - State Management: We use Cubit to keep everything running smoothly and responsively, so you can focus on what you love—shopping!
-  - API Magic: Our app talks to the server using Dio and Retrofit, ensuring you get the latest products and updates quickly.
-  - Built with Love: Created in Visual Studio Code, our developers have crafted a delightful shopping experience just for you.
-  - Organized with Jira: Behind the scenes, we use Jira to keep our project on track, ensuring everything is perfectly planned and executed.
+  - **👩‍💻State Management:** We use **Cubit** to keep everything running smoothly and responsively, so you can focus on what you love—shopping!
+  - **📲API Magic:** Our app talks to the server using **Dio and Retrofit**, ensuring you get the latest products and updates quickly.
+  - **🕵️‍♂️Authentication with Firebase:** We use Firebase Authentication to provide a seamless and secure sign-in/sign-up experience for our users.
+  - **📝Cloud Database with Firestore:** Our app stores and syncs data in real-time using Firestore, ensuring that user data, product information, and order details are always up-to-date.
+  - **🎬Built with Love:** Created in **Visual Studio Code**, our developers have crafted a delightful shopping experience just for you.
+  - **🎨UI Design:** Designed in **Figma**, our team has meticulously crafted a visually stunning and user-friendly interface that elevates your shopping experience.
+  - **🛠Testing with Postman:** We use **Postman** to test and ensure the API endpoints are working seamlessly, providing reliable communication between the app and the server.
+  - **👩‍🏫Organized with Jira**: Behind the scenes, we use **Jira** to keep our project on track, ensuring everything is perfectly planned and executed.
 
-## 📸 Screenshots / 📹 Demo
+## 📸 Project UI 
 
-![diva_home_ui](https://github.com/user-attachments/assets/af71d987-1239-4968-af7a-4d7a6a1e0cdb)
+
+![Signin Screen](https://github.com/user-attachments/assets/35cc7d1e-97a4-4f32-9fd7-80ecd0f2a8b1)
+![Signup Screen](https://github.com/user-attachments/assets/e0e4cdac-d786-408c-ab70-39be012640f1)
+![Home Screen](https://github.com/user-attachments/assets/d8a07b87-04e8-4033-8811-cd83b4a2f84d)
+![Category Screen](https://github.com/user-attachments/assets/e83cdcd1-167b-415e-80bd-a29fdef7bc6f)
+![Wishlist Screen](https://github.com/user-attachments/assets/92827585-3e12-477c-b62f-5ff312ec6807)
+![Details Screen](https://github.com/user-attachments/assets/dcfc8e4d-ed7d-45d0-8467-6742a9aa9549)
+![Profile Screen](https://github.com/user-attachments/assets/dbfb73b5-636a-4d5b-a5e9-1a614fbed80d)
+![Profile Screen2](https://github.com/user-attachments/assets/37bd2456-305a-454c-8060-fe1b50a7d18f)
+![Dark Theme](https://github.com/user-attachments/assets/1a8f9d99-dd80-499b-8e37-f789ebf004ce)
 
 
 ---
+## 🙋‍♂️ Diva Team
+![us](https://github.com/user-attachments/assets/7caa6d8a-2ef0-48b7-be29-1b0906213b54)
 
-## 📚 Documentation
 
-
-### Project Structure
-
-```plaintext
-lib/
-├── core/                # Core functionalities shared across features
-│   ├── constants/       # Constant values used throughout the app
-│   ├── theming/         # Theme and styling configurations
-│   ├── helpers/         # Helper functions and utilities
-│   ├── networking/      # Networking code for API calls
-│   ├── routes/          # App routing logic
-│   ├── extensions/      # Extensions for built-in classes
-│   ├── di/              # Dependency injection setup
-│   └── widgets/         # Reusable widgets for the UI
-└── features/            # Feature modules
-    ├── home/            # Home screen feature
-    │   ├── data/        # Data models and repositories
-    │   ├── logic/       # Business logic and state management
-    │   └── ui/          # UI components and screens
-    ├── sign_up/         # Sign-up feature
-    │   ├── data/        
-    │   ├── logic/
-    │   └── ui/
-    ├── login/           # Login feature
-    │   ├── data/
-    │   ├── logic/
-    │   └── ui/
-    ├── profile/         # Profile feature
-    │   ├── data/
-    │   ├── logic/
-    │   └── ui/
-    ├── cart/            # Cart feature
-    │   ├── data/
-    │   ├── logic/
-    │   └── ui/
-    ├── wishlist/        # Wishlist feature
-    │   ├── data/
-    │   ├── logic/
-    │   └── ui/
-    ├── categories/      # Categories feature
-    │   ├── data/
-    │   ├── logic/
-    │   └── ui/
-    └── search/          # Search screen feature
-        ├── data/
-        ├── logic/
-        └── ui/
 
 ```
 
