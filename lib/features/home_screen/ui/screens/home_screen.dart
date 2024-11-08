@@ -1,11 +1,11 @@
 import 'package:diva_e_commerce_app/core/di/dependency_injection.dart';
 import 'package:diva_e_commerce_app/core/theme/colors_manager.dart';
+import 'package:diva_e_commerce_app/core/widgets/custom_svg_icon.dart';
 import 'package:diva_e_commerce_app/features/category/ui/categories_tab.dart';
 import 'package:diva_e_commerce_app/features/home_screen/ui/widgets/home_tab.dart';
 import 'package:diva_e_commerce_app/features/profile/logic/user_data_cubit/user_data_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../../cart/cart_tab.dart';
 import '../../../wish_list/ui/wish_list_tab.dart';
 import '../widgets/bottom_nav_item.dart';
@@ -39,8 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int scelectedTab = 0;
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final iconColor = isDarkMode ? Colors.white : Colors.black;
     return Scaffold(
       body: bottomTabs[scelectedTab],
       bottomNavigationBar: BottomNavigationBar(
@@ -53,59 +51,43 @@ class _HomeScreenState extends State<HomeScreen> {
               scelectedTab = value;
             });
           },
-          items: [
+          items: const [
             BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/svgs/home.svg',
-                colorFilter: ColorFilter.mode(
-                  iconColor,
-                  BlendMode.srcIn,
-                ),
+              icon: CustomSVGIcon(
+                path: 'assets/svgs/home.svg',
               ),
               label: '',
-              activeIcon: const BottomNavItem(
+              activeIcon: BottomNavItem(
                 label: 'Home',
                 imagePath: 'assets/svgs/home.svg',
               ),
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/svgs/categories.svg',
-                colorFilter: ColorFilter.mode(
-                  iconColor,
-                  BlendMode.srcIn,
-                ),
+              icon: CustomSVGIcon(
+                path: 'assets/svgs/categories.svg',
               ),
               label: '',
-              activeIcon: const BottomNavItem(
+              activeIcon: BottomNavItem(
                 label: 'Category',
                 imagePath: 'assets/svgs/categories.svg',
               ),
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/svgs/cart_plus.svg',
-                colorFilter: ColorFilter.mode(
-                  iconColor,
-                  BlendMode.srcIn,
-                ),
+              icon: CustomSVGIcon(
+                path: 'assets/svgs/cart_plus.svg',
               ),
               label: '',
-              activeIcon: const BottomNavItem(
+              activeIcon: BottomNavItem(
                 label: 'Cart',
                 imagePath: 'assets/svgs/cart_plus.svg',
               ),
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/svgs/heart_without_bg.svg',
-                colorFilter: ColorFilter.mode(
-                  iconColor,
-                  BlendMode.srcIn,
-                ),
+              icon: CustomSVGIcon(
+                path: 'assets/svgs/heart_without_bg.svg',
               ),
               label: '',
-              activeIcon: const BottomNavItem(
+              activeIcon: BottomNavItem(
                 label: 'Favorite',
                 imagePath: 'assets/svgs/heart_without_bg.svg',
               ),

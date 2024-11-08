@@ -1,6 +1,6 @@
+import 'package:diva_e_commerce_app/core/widgets/custom_svg_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/theme/colors_manager.dart';
 import '../../../../core/theme/text_style_manager.dart';
@@ -30,12 +30,9 @@ class BottomNavItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SvgPicture.asset(
-            imagePath,
-            colorFilter: const ColorFilter.mode(
-              ColorsManager.primary,
-              BlendMode.srcIn,
-            ),
+          CustomSVGIcon(
+            path: imagePath,
+            color: ColorsManager.primary,
           ),
           Text(
             label,

@@ -6,10 +6,12 @@ import 'package:flutter_svg/svg.dart';
 class CustomSVGIcon extends StatelessWidget {
   final double? size;
   final String path;
+  final Color? color;
   const CustomSVGIcon({
     super.key,
     this.size,
     required this.path,
+    this.color,
   });
 
   @override
@@ -20,14 +22,23 @@ class CustomSVGIcon extends StatelessWidget {
       child: SvgPicture.asset(
         fit: BoxFit.contain,
         colorFilter: ColorFilter.mode(
-          context.appTheme.colorScheme.brightness.name == ThemeMode.light.name
-              ? Colors.black
-              : Colors.white,
+          getIconColor(context),
           BlendMode.srcIn,
         ),
         path,
       ),
     );
+  }
+
+  Color getIconColor(BuildContext context) {
+    if (color != null) {
+      return color!;
+    }
+    if (context.appTheme.brightness == Brightness.dark) {
+      return Colors.white;
+    } else {
+      return Colors.black;
+    }
   }
 
   double getIconSize() {

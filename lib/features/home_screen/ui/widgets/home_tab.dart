@@ -22,32 +22,34 @@ class HomeTab extends StatelessWidget {
             20.0,
             16.0,
             20.0,
-            8.0,
+            0,
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const HomeTopBar(),
-              verticalSpace(8),
-              SearchTextFieldAndFilter(
-                prefixIcon: Padding(
-                  padding: EdgeInsets.only(left: 10.sp, right: 12.sp),
-                  child: SvgPicture.asset(
-                    height: 50.h,
-                    width: 50.w,
-                    'assets/svgs/search_pink.svg',
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const HomeTopBar(),
+                verticalSpace(8),
+                SearchTextFieldAndFilter(
+                  prefixIcon: Padding(
+                    padding: EdgeInsets.only(left: 10.sp, right: 12.sp),
+                    child: SvgPicture.asset(
+                      height: 50.h,
+                      width: 50.w,
+                      'assets/svgs/search_pink.svg',
+                    ),
                   ),
+                  hintText: 'Search here',
+                  validator: (value) {},
                 ),
-                hintText: 'Search here',
-                validator: (value) {},
-              ),
-              const AdsListView(),
-              verticalSpace(18),
-              const CategoriesListViewBuilder(),
-              verticalSpace(18),
-              const OutfitsListViewBuilder(),
-              verticalSpace(10),
-            ],
+                const AdsListView(),
+                verticalSpace(18),
+                const CategoriesListViewBuilder(),
+                verticalSpace(18),
+                const OutfitsListViewBuilder(),
+              ],
+            ),
           ),
         ),
       ),

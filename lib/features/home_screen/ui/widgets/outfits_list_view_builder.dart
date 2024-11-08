@@ -25,39 +25,37 @@ class OutfitsListViewBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
             categoryProductsLoading: () {
-              return const Expanded(
-                child: Center(
-                  child: CircularProgressIndicator(
-                    color: ColorsManager.primary,
-                  ),
+              return const Center(
+                child: CircularProgressIndicator(
+                  color: ColorsManager.primary,
                 ),
               );
             },
-            categoryProductsSuccess: (categoryDataList,productsDataList) {
-              return Expanded(
-                child: GridView.builder(
-                  itemCount: productsDataList.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: 0.63.sp,
-                    crossAxisCount: 2,
-                  ),
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10.w),
-                      child: GestureDetector(
-                        onTap: () {
-                          context.pushNamed(AppRoutes.productDetailsScreenRoute,
-                              arguments: productsDataList[index]);
-                        },
-                        child: ProductItem(
-                          productModel: productsDataList[index],
-                          isFavorite: index == 0 ? true : false,
-                          itemIndex: index,
-                        ),
-                      ),
-                    );
-                  },
+            categoryProductsSuccess: (categoryDataList, productsDataList) {
+              return GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: productsDataList.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  childAspectRatio: 0.63.sp,
+                  crossAxisCount: 2,
                 ),
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w),
+                    child: GestureDetector(
+                      onTap: () {
+                        context.pushNamed(AppRoutes.productDetailsScreenRoute,
+                            arguments: productsDataList[index]);
+                      },
+                      child: ProductItem(
+                        productModel: productsDataList[index],
+                        isFavorite: index == 0 ? true : false,
+                        itemIndex: index,
+                      ),
+                    ),
+                  );
+                },
               );
             },
             categoryProductsError: (errorMessage) => Expanded(
